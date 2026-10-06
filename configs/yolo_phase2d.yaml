@@ -1,0 +1,12 @@
+# Phase 2D YOLO Dataset Configuration
+# Generated with strict subject-level isolation & train-only augmentation
+path: C:/Users/msiva/Music/Drowsiness-Detection-using-YOLOv5
+train: data/processed/yolo_phase2d/images/train
+val: data/processed/yolo_phase2d/images/val
+test: data/processed/yolo_phase2d/images/test
+
+nc: 3
+names:
+  0: eyes_closed
+  1: eyes_open
+  2: yawning

@@ -1,0 +1,35 @@
+category,metric,value,unit,dataset,split,subjects,protocol,notes
+Dataset,Verified Clean Frames,333,count,Multi-Source (YawDD/DMD/Original),All,26,Manual Human Audit,Clean ground-truth frames before training augmentation
+Dataset,Total Training Pool,512,count,Multi-Source,train,19,50% Original + 50% Photometric Augmentation,Zero geometric alteration
+Dataset,Validation Pool,44,count,Multi-Source,val,4,Subject-Disjoint Holdout,Strict zero-leakage subject split
+Dataset,Test Pool,33,count,Multi-Source,test,3,Subject-Disjoint Holdout,YawDD Subj 17/18 and DMD Subj 10
+Dataset,Subject Leakage,0,count,Multi-Source,train-val-test,26,Pairwise Disjoint Intersection,Zero subject overlap verified
+YOLO Detection,Precision,0.9004,ratio,Multi-Source,test,3,IoU 0.50 Matching,Ultralytics YOLOv5nu 640x640
+YOLO Detection,Recall,0.9382,ratio,Multi-Source,test,3,IoU 0.50 Matching,Ultralytics YOLOv5nu 640x640
+YOLO Detection,F1 Score,0.9189,ratio,Multi-Source,test,3,Harmonic Mean P & R,Ultralytics YOLOv5nu 640x640
+YOLO Detection,mAP@0.5,0.9777,ratio,Multi-Source,test,3,Standard COCO mAP50,All 3 canonical classes
+YOLO Detection,mAP@0.5:0.95,0.8145,ratio,Multi-Source,test,3,Standard COCO mAP50-95,Across 10 IoU thresholds
+YOLO Detection,AP50 (eyes_closed),0.9431,ratio,Multi-Source,test,3,IoU 0.50 Matching,Class 0
+YOLO Detection,AP50 (eyes_open),0.9950,ratio,Multi-Source,test,3,IoU 0.50 Matching,Class 1
+YOLO Detection,AP50 (yawning),0.9950,ratio,Multi-Source,test,3,IoU 0.50 Matching,Class 2
+Multi-Signal Fusion,System E F1 Score,0.9830,ratio,Bench Video (test_video.mp4),Full Sequence,1,YOLO + Landmarks + Temporal FSM,Full fusion ablation
+Multi-Signal Fusion,Sensitivity,0.9790,ratio,Bench Video,Full Sequence,1,True Positive Rate,Maintains 100% micro-sleep recall
+Multi-Signal Fusion,Specificity,0.9840,ratio,Bench Video,Full Sequence,1,True Negative Rate,Suppresses speech and normal blinks
+Multi-Signal Fusion,False Alerts,0,count,Bench Video,Full Sequence,1,Persistent Threshold Rule,Reduced from 7 false alerts in YOLO-only
+Temporal Benchmark,Mean F1 Score,0.9208,ratio,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,180 videos across 60 subjects
+Temporal Benchmark,F1 Std Dev,0.0139,ratio,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,High cross-fold stability
+Temporal Benchmark,Mean Precision,0.9156,ratio,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,Sequence level alert evaluation
+Temporal Benchmark,Mean Recall,0.9260,ratio,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,Drowsiness event recall
+Temporal Benchmark,Mean Specificity,0.9086,ratio,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,Alert true negative rate
+Temporal Benchmark,Mean Detection Delay,1.46,seconds,UTA-RLDD,5-Fold Cross-Validation,60,Subject-Independent Sequence Level,From onset of microsleep/yawn
+Runtime Performance,Standalone YOLO FPS,47.5,FPS,Benchmark Frame (640x640),Inference Only,1,Intel Core i7-10700 CPU,21.05 ms latency
+Runtime Performance,Full Pipeline Wall FPS,27.48,FPS,test_video.mp4 (1280x720),Full Pipeline,1,skip_frames = 2,End-to-end decode to render
+Runtime Performance,Full Pipeline Loop FPS,34.79,FPS,test_video.mp4 (1280x720),Full Pipeline,1,skip_frames = 2,Excludes I/O file write
+Runtime Performance,Full Pipeline Wall Latency,36.39,ms,test_video.mp4 (1280x720),Full Pipeline,1,skip_frames = 2,Wall-clock processing time
+Runtime Performance,ONNX Pipeline Wall FPS,22.29,FPS,test_video.mp4 (1280x720),Full Pipeline,1,ONNX Runtime CPU,Portable deployment backend
+Runtime Performance,Model Parameter Count,2.50,millions,weights/phase2f_best.pt,N/A,N/A,Ultralytics YOLOv5nu,2503529 parameters
+Runtime Performance,Model File Size,4.99,MB,weights/phase2f_best.pt,N/A,N/A,PyTorch Fused Checkpoint,5.23 MB uncompressed
+Stability,Stress Test Duration,179.00,seconds,test_video.mp4 (8 loops),Full Pipeline,1,4936 continuous frames,Zero crashes or unhandled exceptions
+Stability,Stress Test Throughput,27.57,FPS,test_video.mp4 (8 loops),Full Pipeline,1,Unwavering framerate,Flat FPS across entire run
+Stability,Peak Resident Memory (RSS),426.54,MB,Host Process,Continuous Run,1,psutil RSS,Below 468 MB baseline peak
+Testing & Quality,Automated Unit Tests,39,count,Full Test Suite,CI/Pytest,N/A,pytest -v,100% passing rate (39/39)

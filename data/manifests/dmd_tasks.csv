@@ -1,0 +1,99 @@
+dataset,subject_id,vehicle_env,stream_type,task_group,action_label,canonical_target,annotation_standard,status_2026
+DMD,DMD_Subject_01,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_01,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_01,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_01,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_01,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_01,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_01,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_05,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_05,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_05,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_05,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_05,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_05,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_05,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_06,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_06,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_06,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_06,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_06,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_06,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_06,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_07,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_07,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_07,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_07,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_07,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_07,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_07,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_09,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_09,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_09,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_09,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_09,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_09,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_09,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_10,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_10,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_10,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_10,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_10,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_10,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_10,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_13,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_13,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_13,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_13,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_13,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_13,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_13,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_14,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_14,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_14,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_14,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_14,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_14,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_14,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_23,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_23,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_23,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_23,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_23,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_23,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_23,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_28,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_28,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_28,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_28,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_28,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_28,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_28,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_29,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_29,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_29,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_29,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_29,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_29,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_29,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_33,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_33,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_33,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_33,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_33,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_33,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_33,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_36,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_36,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_36,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_36,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_36,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_36,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_36,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_37,Real_Car_Highway,RGB_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_37,Real_Car_Highway,RGB_Face,Drowsiness,yawn,yawning (Class 2),OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_37,Real_Car_Highway,RGB_Body,Distraction,phone_call,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_37,Real_Car_Highway,RGB_Body,Distraction,phone_text,DISTRACTION: PHONE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_37,Real_Car_Highway,RGB_Body,Distraction,console_interaction,DISTRACTION: CONSOLE,OpenLABEL_VCD_5.0,AVAILABLE
+DMD,DMD_Subject_37,Real_Car_Highway,IR_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026
+DMD,DMD_Subject_37,Simulator,Depth_Face,Drowsiness,eye_closure,eyes_closed (Class 0),OpenLABEL_VCD_5.0,REMOVED_IN_2026

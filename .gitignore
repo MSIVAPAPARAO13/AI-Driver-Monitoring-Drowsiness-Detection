@@ -1,0 +1,84 @@
+# ==============================================================================
+# Professional .gitignore for AI Driver Monitoring & Drowsiness Detection System
+# ==============================================================================
+
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+credentials.json
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# Logs
+*.log
+logs/
+
+# ML Framework Caches & Tracking
+.ultralytics/
+wandb/
+mlruns/
+runs/
+*.cache
+
+# Temporary, Scratch & Cache Directories
+tmp/
+temp/
+debug/
+outputs/
+scratch/
+kernel.errors.txt
+
+# Dataset Protection (Raw, Annotated & External Non-Redistributable Datasets)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/annotated/
+
+# MediaPipe runtime model assets (auto-downloadable via CDN)
+*.task
+
+# Temporary Video Artifacts
+baseline_test_run.mp4
+*_output.mp4
+
+# Note: Model weights in weights/ and baseline best.pt are tracked.

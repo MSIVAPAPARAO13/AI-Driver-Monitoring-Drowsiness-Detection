@@ -1,0 +1,15 @@
+{
+  "yolo_only_fps": 28.74690625932312,
+  "mediapipe_only_fps": 77.88902060863825,
+  "yolo_plus_mediapipe_fps": 20.428030984830666,
+  "full_phase2b_loop_fps": 28.190833891891653,
+  "full_phase2b_wall_fps": 23.970067656840342,
+  "total_frames": 617,
+  "alerts_critical": 7,
+  "alerts_warning": 0,
+  "detections": {
+    "0": 449,
+    "1": 146,
+    "2": 62
+  }
+}

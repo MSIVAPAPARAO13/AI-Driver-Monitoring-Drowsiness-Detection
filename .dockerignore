@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.github
+.pytest_cache
+venv/
+.venv/
+runs/
+data/raw/
+data/manifests/
+results/
+tests/
+scratch/
+notebooks/

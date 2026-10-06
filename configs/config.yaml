@@ -1,0 +1,131 @@
+# Driver Drowsiness Detection System - Central Configuration
+
+# ==============================================================================
+# Model & Pipeline Baseline Settings
+# ==============================================================================
+model_path: "weights/phase2f_best.pt"
+confidence_threshold: 0.40
+iou_threshold: 0.50
+max_detections: 3
+device: null  # null for auto-detect (CUDA if available, else CPU)
+
+# Inference optimization
+skip_frames: 2
+
+# Baseline Drowsiness Detection Thresholds (Legacy Frame-Counter Engine)
+eye_closure_threshold_seconds: 0.70
+yawn_threshold_seconds: 0.50
+critical_cooldown_seconds: 3.00
+warning_cooldown_seconds: 1.50
+
+# Input and output defaults
+input_source: "test_video.mp4"
+output_path: "output_video.mp4"
+display: false
+save_output: true
+max_frames: null
+
+# Canonical class mapping (Strictly preserves best.pt model behavior)
+classes:
+  0: "eyes_closed"
+  1: "eyes_open"
+  2: "yawning"
+
+# ==============================================================================
+# Phase 2B: Physiological Signals & Temporal Analysis
+# ==============================================================================
+
+# MediaPipe Facial Landmarks
+landmarks:
+  enabled: true
+  model_path: "face_landmarker.task"
+  min_detection_confidence: 0.50
+  min_tracking_confidence: 0.50
+  max_faces: 1
+
+# Eye Aspect Ratio (EAR)
+# NOTE: Thresholds are initial engineering defaults requiring dataset calibration
+ear:
+  enabled: true
+  threshold: 0.21
+  min_closed_duration_seconds: 0.15
+
+# Blink Dynamics Analyzer
+blink:
+  enabled: true
+  normal_blink_min_seconds: 0.08
+  normal_blink_max_seconds: 0.40
+  long_blink_max_seconds: 0.80
+  rolling_window_seconds: 60.0
+
+# Mouth Aspect Ratio (MAR)
+mar:
+  enabled: true
+  threshold: 0.55
+
+# Yawn Duration Analyzer (Distinguishes true yawns from brief speech)
+yawn:
+  enabled: true
+  min_duration_seconds: 2.0
+  max_duration_seconds: 8.0
+  cooldown_seconds: 3.0
+  require_yolo_consensus: false
+
+# Sliding-Window PERCLOS Analyzer
+perclos:
+  enabled: true
+  window_seconds: 60.0
+  minimum_samples: 30
+
+# 3D Head Pose Estimation
+head_pose:
+  enabled: true
+  yaw_threshold_degrees: 20.0
+  pitch_threshold_degrees: 15.0
+  roll_threshold_degrees: 20.0
+  sustained_duration_seconds: 2.0
+
+# Telemetry Logging
+telemetry:
+  enabled: false
+  output_path: "logs/telemetry.csv"
+  format: "csv"
+
+# ==============================================================================
+# Phase 2G: Multi-Signal Fusion & Temporal Fatigue Architecture
+# ==============================================================================
+fusion:
+  enabled: true
+  warning_persistence_seconds: 1.0
+  critical_persistence_seconds: 1.5
+  recovery_seconds: 2.0
+  face_loss_timeout_seconds: 2.0
+  warning_score_threshold: 45.0
+  critical_score_threshold: 75.0
+  weights:
+    eye_closure: 0.35
+    perclos: 0.25
+    blink_anomaly: 0.15
+    yawn_duration: 0.15
+    head_pose: 0.10
+
+alert_manager:
+  mode: "both"  # "visual_only", "audio_only", "both"
+  cooldown_seconds: 2.5
+  audio_warning_hz: 1000
+  audio_critical_hz: 2000
+  audio_duration_ms: 150
+  log_events: true
+  event_log_path: "results/phase2g/logs/pipeline_events.csv"
+
+# ==============================================================================
+# Phase 2H: Real-Time Optimization, Model Export & Deployment Configuration
+# ==============================================================================
+deployment:
+  backend: "pytorch"  # Options: "pytorch", "onnx", "openvino"
+  device: "cpu"
+  model_path: "weights/phase2f_best.pt"
+  imgsz: 640
+  warmup_iterations: 10
+  benchmark_iterations: 100
+

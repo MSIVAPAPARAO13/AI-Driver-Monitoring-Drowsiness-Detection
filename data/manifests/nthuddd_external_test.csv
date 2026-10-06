@@ -1,0 +1,181 @@
+dataset,subject_id,gender,scenario,illumination,modality,role,description
+NTHU-DDD,NTHU_Subj_01,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_01,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_01,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_01,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_01,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_02,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_02,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_02,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_02,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_02,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_03,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_03,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_03,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_03,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_03,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_04,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_04,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_04,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_04,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_04,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_05,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_05,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_05,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_05,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_05,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_06,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_06,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_06,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_06,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_06,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_07,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_07,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_07,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_07,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_07,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_08,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_08,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_08,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_08,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_08,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_09,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_09,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_09,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_09,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_09,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_10,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_10,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_10,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_10,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_10,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_11,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_11,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_11,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_11,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_11,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_12,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_12,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_12,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_12,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_12,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_13,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_13,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_13,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_13,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_13,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_14,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_14,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_14,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_14,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_14,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_15,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_15,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_15,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_15,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_15,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_16,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_16,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_16,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_16,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_16,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_17,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_17,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_17,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_17,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_17,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_18,M,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_18,M,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_18,M,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_18,M,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_18,M,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_19,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_19,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_19,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_19,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_19,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_20,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_20,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_20,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_20,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_20,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_21,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_21,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_21,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_21,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_21,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_22,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_22,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_22,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_22,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_22,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_23,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_23,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_23,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_23,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_23,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_24,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_24,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_24,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_24,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_24,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_25,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_25,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_25,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_25,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_25,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_26,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_26,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_26,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_26,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_26,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_27,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_27,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_27,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_27,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_27,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_28,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_28,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_28,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_28,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_28,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_29,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_29,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_29,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_29,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_29,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_30,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_30,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_30,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_30,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_30,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_31,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_31,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_31,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_31,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_31,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_32,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_32,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_32,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_32,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_32,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_33,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_33,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_33,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_33,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_33,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_34,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_34,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_34,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_34,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_34,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_35,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_35,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_35,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_35,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_35,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses
+NTHU-DDD,NTHU_Subj_36,F,BareFace,Day,RGB,EXTERNAL_TEST_OOD,"Daytime natural lighting, no occlusions"
+NTHU-DDD,NTHU_Subj_36,F,Glasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with prescription glasses / reflections
+NTHU-DDD,NTHU_Subj_36,F,Sunglasses,Day,RGB,EXTERNAL_TEST_OOD,Daytime with heavy ocular sunglasses occlusion
+NTHU-DDD,NTHU_Subj_36,F,Night-BareFace,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with active near-infrared illumination
+NTHU-DDD,NTHU_Subj_36,F,Night-Glasses,Night,Active_NIR,EXTERNAL_TEST_OOD,Night driving with NIR illumination and eyeglasses

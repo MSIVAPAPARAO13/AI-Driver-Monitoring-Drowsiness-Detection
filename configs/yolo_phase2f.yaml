@@ -1,0 +1,9 @@
+names:
+  0: eyes_closed
+  1: eyes_open
+  2: yawning
+nc: 3
+path: C:/Users/msiva/Music/Drowsiness-Detection-using-YOLOv5
+test: data/annotated/images/test
+train: data/annotated/images/train
+val: data/annotated/images/val

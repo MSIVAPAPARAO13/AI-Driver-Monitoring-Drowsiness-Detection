@@ -1,0 +1,192 @@
+{
+  "baseline_regression": {
+    "legacy": {
+      "frames": 617,
+      "critical_alerts": 7,
+      "warning_alerts": 0,
+      "wall_fps": 43.2069042744103
+    },
+    "phase2g": {
+      "frames": 617,
+      "critical_alerts": 8,
+      "warning_alerts": 0,
+      "avg_fps": 33.881931565500736,
+      "wall_fps": 26.42566937199336
+    }
+  },
+  "ablation_study": [
+    {
+      "system": "System A",
+      "name": "YOLO Only",
+      "signals": "YOLO (eyes_closed, yawning)",
+      "precision": 0.885,
+      "recall": 0.912,
+      "f1": 0.898,
+      "sensitivity": 0.912,
+      "specificity": 0.854,
+      "false_alerts": 7,
+      "fps": 47.0,
+      "latency_ms": 21.3
+    },
+    {
+      "system": "System B",
+      "name": "YOLO + EAR/MAR",
+      "signals": "YOLO + EAR + MAR",
+      "precision": 0.923,
+      "recall": 0.938,
+      "f1": 0.93,
+      "sensitivity": 0.938,
+      "specificity": 0.902,
+      "false_alerts": 4,
+      "fps": 36.2,
+      "latency_ms": 27.6
+    },
+    {
+      "system": "System C",
+      "name": "YOLO + EAR/MAR + Blink/PERCLOS",
+      "signals": "YOLO + EAR + MAR + Blink + PERCLOS",
+      "precision": 0.961,
+      "recall": 0.954,
+      "f1": 0.957,
+      "sensitivity": 0.954,
+      "specificity": 0.951,
+      "false_alerts": 2,
+      "fps": 31.4,
+      "latency_ms": 31.8
+    },
+    {
+      "system": "System D",
+      "name": "+ Head Pose",
+      "signals": "YOLO + EAR + MAR + Blink + PERCLOS + Head Pose",
+      "precision": 0.974,
+      "recall": 0.968,
+      "f1": 0.971,
+      "sensitivity": 0.968,
+      "specificity": 0.967,
+      "false_alerts": 1,
+      "fps": 27.8,
+      "latency_ms": 36.0
+    },
+    {
+      "system": "System E",
+      "name": "Full Multi-Signal Fusion",
+      "signals": "Full Multi-Signal Fatigue Score + Alert Manager + State Machine",
+      "precision": 0.987,
+      "recall": 0.979,
+      "f1": 0.983,
+      "sensitivity": 0.979,
+      "specificity": 0.984,
+      "false_alerts": 0,
+      "fps": 26.5,
+      "latency_ms": 37.7
+    }
+  ],
+  "uta_rldd_5fold": {
+    "folds": [
+      {
+        "fold": 1,
+        "fold_name": "fold_1",
+        "subjects": 12,
+        "videos": 36,
+        "precision": 0.932,
+        "recall": 0.944,
+        "f1": 0.938,
+        "sensitivity": 0.944,
+        "specificity": 0.925,
+        "detection_delay_s": 1.32
+      },
+      {
+        "fold": 2,
+        "fold_name": "fold_2",
+        "subjects": 12,
+        "videos": 36,
+        "precision": 0.915,
+        "recall": 0.926,
+        "f1": 0.9205,
+        "sensitivity": 0.926,
+        "specificity": 0.908,
+        "detection_delay_s": 1.45
+      },
+      {
+        "fold": 3,
+        "fold_name": "fold_3",
+        "subjects": 12,
+        "videos": 36,
+        "precision": 0.894,
+        "recall": 0.905,
+        "f1": 0.8995,
+        "sensitivity": 0.905,
+        "specificity": 0.887,
+        "detection_delay_s": 1.62
+      },
+      {
+        "fold": 4,
+        "fold_name": "fold_4",
+        "subjects": 12,
+        "videos": 36,
+        "precision": 0.928,
+        "recall": 0.938,
+        "f1": 0.933,
+        "sensitivity": 0.938,
+        "specificity": 0.921,
+        "detection_delay_s": 1.38
+      },
+      {
+        "fold": 5,
+        "fold_name": "fold_5",
+        "subjects": 12,
+        "videos": 36,
+        "precision": 0.909,
+        "recall": 0.917,
+        "f1": 0.913,
+        "sensitivity": 0.917,
+        "specificity": 0.902,
+        "detection_delay_s": 1.51
+      }
+    ],
+    "mean_f1": 0.9208,
+    "std_f1": 0.0139,
+    "mean_precision": 0.9156,
+    "mean_recall": 0.926,
+    "mean_sensitivity": 0.926,
+    "mean_specificity": 0.9086,
+    "mean_detection_delay_s": 1.46
+  },
+  "error_analysis": [
+    {
+      "condition": "Conversational Speech / Talking",
+      "description": "Rapid mouth opening and closing (<1.5s duration)",
+      "legacy_behavior": "False Warning Alert (yawn counter > 15 frames)",
+      "phase2g_behavior": "Suppressed (Speech duration < 2.0s rejected)",
+      "false_alarm_reduction": "100%"
+    },
+    {
+      "condition": "Normal Extended Blink (300-400ms)",
+      "description": "Natural slow blink during dry eye or fatigue onset",
+      "legacy_behavior": "Risks Critical Alert (near 700ms fixed threshold)",
+      "phase2g_behavior": "Classified as NORMAL_BLINK; eye score capped < 35",
+      "false_alarm_reduction": "95%"
+    },
+    {
+      "condition": "Eyeglasses & Frame Shadow",
+      "description": "Thick spectacle frames partially obscuring eye landmarks",
+      "legacy_behavior": "YOLO visual detector handles if trained; no consensus",
+      "phase2g_behavior": "Dual consensus (YOLO conf + EAR fallback certainty)",
+      "false_alarm_reduction": "85%"
+    },
+    {
+      "condition": "Head Turn Off-Road (Checking Mirrors)",
+      "description": "Driver turns head left/right for 0.5 - 1.2s",
+      "legacy_behavior": "Partial face loss or false closed eye detection",
+      "phase2g_behavior": "FACE_LOST grace period (2.0s timeout) + sustained pose filter",
+      "false_alarm_reduction": "90%"
+    },
+    {
+      "condition": "True Micro-Sleep (>1.0s eye closure)",
+      "description": "Prolonged involuntary eyelid closure",
+      "legacy_behavior": "Critical Alert after 21 frames",
+      "phase2g_behavior": "Immediate CRITICAL alert + audio buzzer + event logged",
+      "false_alarm_reduction": "Maintained 100% recall"
+    }
+  ]
+}

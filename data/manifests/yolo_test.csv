@@ -1,0 +1,9 @@
+dataset,subject_id,video_id,frame_id,image_path,annotation_path,split,class,source
+Original,UNKNOWN,test_video,frame_0498,data/processed/yolo/images/test/frame_0498.jpg,data/processed/yolo/labels/test/frame_0498.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0514,data/processed/yolo/images/test/frame_0514.jpg,data/processed/yolo/labels/test/frame_0514.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0529,data/processed/yolo/images/test/frame_0529.jpg,data/processed/yolo/labels/test/frame_0529.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0545,data/processed/yolo/images/test/frame_0545.jpg,data/processed/yolo/labels/test/frame_0545.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0560,data/processed/yolo/images/test/frame_0560.jpg,data/processed/yolo/labels/test/frame_0560.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0576,data/processed/yolo/images/test/frame_0576.jpg,data/processed/yolo/labels/test/frame_0576.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0591,data/processed/yolo/images/test/frame_0591.jpg,data/processed/yolo/labels/test/frame_0591.txt,TEST,canonical_0_1_2,baseline_anchor
+Original,UNKNOWN,test_video,frame_0607,data/processed/yolo/images/test/frame_0607.jpg,data/processed/yolo/labels/test/frame_0607.txt,TEST,canonical_0_1_2,baseline_anchor

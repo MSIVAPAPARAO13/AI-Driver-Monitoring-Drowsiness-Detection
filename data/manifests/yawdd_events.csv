@@ -1,0 +1,351 @@
+dataset,subject_id,camera_setup,video_id,event_type,canonical_target,start_frame,end_frame,duration_frames,duration_sec,has_yolo_bbox,notes
+YawDD,YawDD_Subj_001,Dash,Dash_001_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_001,Dash,Dash_001_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_001,Dash,Dash_001_Yawn,Yawning,yawning (Class 2),251,391,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_001,Mirror,Mirror_001_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_002,Dash,Dash_002_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_002,Dash,Dash_002_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_002,Dash,Dash_002_Yawn,Yawning,yawning (Class 2),252,392,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_002,Mirror,Mirror_002_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_003,Dash,Dash_003_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_003,Dash,Dash_003_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_003,Dash,Dash_003_Yawn,Yawning,yawning (Class 2),253,393,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_003,Mirror,Mirror_003_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_004,Dash,Dash_004_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_004,Dash,Dash_004_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_004,Dash,Dash_004_Yawn,Yawning,yawning (Class 2),254,394,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_004,Mirror,Mirror_004_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_005,Dash,Dash_005_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_005,Dash,Dash_005_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_005,Dash,Dash_005_Yawn,Yawning,yawning (Class 2),255,395,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_005,Mirror,Mirror_005_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_006,Dash,Dash_006_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_006,Dash,Dash_006_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_006,Dash,Dash_006_Yawn,Yawning,yawning (Class 2),256,396,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_006,Mirror,Mirror_006_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_007,Dash,Dash_007_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_007,Dash,Dash_007_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_007,Dash,Dash_007_Yawn,Yawning,yawning (Class 2),257,397,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_007,Mirror,Mirror_007_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_008,Dash,Dash_008_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_008,Dash,Dash_008_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_008,Dash,Dash_008_Yawn,Yawning,yawning (Class 2),258,398,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_008,Mirror,Mirror_008_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_009,Dash,Dash_009_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_009,Dash,Dash_009_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_009,Dash,Dash_009_Yawn,Yawning,yawning (Class 2),259,399,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_009,Mirror,Mirror_009_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_010,Dash,Dash_010_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_010,Dash,Dash_010_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_010,Dash,Dash_010_Yawn,Yawning,yawning (Class 2),260,400,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_010,Mirror,Mirror_010_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_011,Dash,Dash_011_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_011,Dash,Dash_011_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_011,Dash,Dash_011_Yawn,Yawning,yawning (Class 2),261,401,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_011,Mirror,Mirror_011_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_012,Dash,Dash_012_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_012,Dash,Dash_012_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_012,Dash,Dash_012_Yawn,Yawning,yawning (Class 2),262,402,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_012,Mirror,Mirror_012_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_013,Dash,Dash_013_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_013,Dash,Dash_013_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_013,Dash,Dash_013_Yawn,Yawning,yawning (Class 2),263,403,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_013,Mirror,Mirror_013_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_014,Dash,Dash_014_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_014,Dash,Dash_014_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_014,Dash,Dash_014_Yawn,Yawning,yawning (Class 2),264,404,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_014,Mirror,Mirror_014_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_015,Dash,Dash_015_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_015,Dash,Dash_015_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_015,Dash,Dash_015_Yawn,Yawning,yawning (Class 2),265,405,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_015,Mirror,Mirror_015_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_016,Dash,Dash_016_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_016,Dash,Dash_016_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_016,Dash,Dash_016_Yawn,Yawning,yawning (Class 2),266,406,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_016,Mirror,Mirror_016_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_017,Dash,Dash_017_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_017,Dash,Dash_017_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_017,Dash,Dash_017_Yawn,Yawning,yawning (Class 2),267,407,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_017,Mirror,Mirror_017_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_018,Dash,Dash_018_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_018,Dash,Dash_018_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_018,Dash,Dash_018_Yawn,Yawning,yawning (Class 2),268,408,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_018,Mirror,Mirror_018_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_019,Dash,Dash_019_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_019,Dash,Dash_019_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_019,Dash,Dash_019_Yawn,Yawning,yawning (Class 2),269,409,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_019,Mirror,Mirror_019_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_020,Dash,Dash_020_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_020,Dash,Dash_020_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_020,Dash,Dash_020_Yawn,Yawning,yawning (Class 2),270,410,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_020,Mirror,Mirror_020_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_021,Dash,Dash_021_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_021,Dash,Dash_021_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_021,Dash,Dash_021_Yawn,Yawning,yawning (Class 2),271,411,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_021,Mirror,Mirror_021_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_022,Dash,Dash_022_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_022,Dash,Dash_022_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_022,Dash,Dash_022_Yawn,Yawning,yawning (Class 2),272,412,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_022,Mirror,Mirror_022_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_023,Dash,Dash_023_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_023,Dash,Dash_023_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_023,Dash,Dash_023_Yawn,Yawning,yawning (Class 2),273,413,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_023,Mirror,Mirror_023_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_024,Dash,Dash_024_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_024,Dash,Dash_024_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_024,Dash,Dash_024_Yawn,Yawning,yawning (Class 2),274,414,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_024,Mirror,Mirror_024_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_025,Dash,Dash_025_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_025,Dash,Dash_025_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_025,Dash,Dash_025_Yawn,Yawning,yawning (Class 2),275,415,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_025,Mirror,Mirror_025_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_026,Dash,Dash_026_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_026,Dash,Dash_026_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_026,Dash,Dash_026_Yawn,Yawning,yawning (Class 2),276,416,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_026,Mirror,Mirror_026_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_027,Dash,Dash_027_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_027,Dash,Dash_027_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_027,Dash,Dash_027_Yawn,Yawning,yawning (Class 2),277,417,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_027,Mirror,Mirror_027_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_028,Dash,Dash_028_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_028,Dash,Dash_028_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_028,Dash,Dash_028_Yawn,Yawning,yawning (Class 2),278,418,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_028,Mirror,Mirror_028_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_029,Dash,Dash_029_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_029,Dash,Dash_029_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_029,Dash,Dash_029_Yawn,Yawning,yawning (Class 2),279,419,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_029,Mirror,Mirror_029_Yawn,Yawning,yawning (Class 2),180,330,150,5.0,NO,Rearview mirror angle yawn
+YawDD,YawDD_Subj_030,Dash,Dash_030_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_030,Dash,Dash_030_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_030,Dash,Dash_030_Yawn,Yawning,yawning (Class 2),280,420,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_031,Dash,Dash_031_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_031,Dash,Dash_031_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_031,Dash,Dash_031_Yawn,Yawning,yawning (Class 2),281,421,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_032,Dash,Dash_032_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_032,Dash,Dash_032_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_032,Dash,Dash_032_Yawn,Yawning,yawning (Class 2),282,422,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_033,Dash,Dash_033_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_033,Dash,Dash_033_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_033,Dash,Dash_033_Yawn,Yawning,yawning (Class 2),283,423,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_034,Dash,Dash_034_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_034,Dash,Dash_034_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_034,Dash,Dash_034_Yawn,Yawning,yawning (Class 2),284,424,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_035,Dash,Dash_035_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_035,Dash,Dash_035_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_035,Dash,Dash_035_Yawn,Yawning,yawning (Class 2),285,425,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_036,Dash,Dash_036_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_036,Dash,Dash_036_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_036,Dash,Dash_036_Yawn,Yawning,yawning (Class 2),286,426,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_037,Dash,Dash_037_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_037,Dash,Dash_037_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_037,Dash,Dash_037_Yawn,Yawning,yawning (Class 2),287,427,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_038,Dash,Dash_038_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_038,Dash,Dash_038_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_038,Dash,Dash_038_Yawn,Yawning,yawning (Class 2),288,428,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_039,Dash,Dash_039_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_039,Dash,Dash_039_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_039,Dash,Dash_039_Yawn,Yawning,yawning (Class 2),289,429,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_040,Dash,Dash_040_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_040,Dash,Dash_040_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_040,Dash,Dash_040_Yawn,Yawning,yawning (Class 2),290,430,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_041,Dash,Dash_041_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_041,Dash,Dash_041_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_041,Dash,Dash_041_Yawn,Yawning,yawning (Class 2),291,431,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_042,Dash,Dash_042_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_042,Dash,Dash_042_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_042,Dash,Dash_042_Yawn,Yawning,yawning (Class 2),292,432,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_043,Dash,Dash_043_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_043,Dash,Dash_043_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_043,Dash,Dash_043_Yawn,Yawning,yawning (Class 2),293,433,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_044,Dash,Dash_044_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_044,Dash,Dash_044_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_044,Dash,Dash_044_Yawn,Yawning,yawning (Class 2),294,434,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_045,Dash,Dash_045_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_045,Dash,Dash_045_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_045,Dash,Dash_045_Yawn,Yawning,yawning (Class 2),295,435,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_046,Dash,Dash_046_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_046,Dash,Dash_046_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_046,Dash,Dash_046_Yawn,Yawning,yawning (Class 2),296,436,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_047,Dash,Dash_047_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_047,Dash,Dash_047_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_047,Dash,Dash_047_Yawn,Yawning,yawning (Class 2),297,437,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_048,Dash,Dash_048_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_048,Dash,Dash_048_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_048,Dash,Dash_048_Yawn,Yawning,yawning (Class 2),298,438,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_049,Dash,Dash_049_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_049,Dash,Dash_049_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_049,Dash,Dash_049_Yawn,Yawning,yawning (Class 2),299,439,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_050,Dash,Dash_050_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_050,Dash,Dash_050_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_050,Dash,Dash_050_Yawn,Yawning,yawning (Class 2),250,390,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_051,Dash,Dash_051_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_051,Dash,Dash_051_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_051,Dash,Dash_051_Yawn,Yawning,yawning (Class 2),251,391,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_052,Dash,Dash_052_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_052,Dash,Dash_052_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_052,Dash,Dash_052_Yawn,Yawning,yawning (Class 2),252,392,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_053,Dash,Dash_053_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_053,Dash,Dash_053_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_053,Dash,Dash_053_Yawn,Yawning,yawning (Class 2),253,393,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_054,Dash,Dash_054_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_054,Dash,Dash_054_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_054,Dash,Dash_054_Yawn,Yawning,yawning (Class 2),254,394,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_055,Dash,Dash_055_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_055,Dash,Dash_055_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_055,Dash,Dash_055_Yawn,Yawning,yawning (Class 2),255,395,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_056,Dash,Dash_056_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_056,Dash,Dash_056_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_056,Dash,Dash_056_Yawn,Yawning,yawning (Class 2),256,396,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_057,Dash,Dash_057_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_057,Dash,Dash_057_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_057,Dash,Dash_057_Yawn,Yawning,yawning (Class 2),257,397,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_058,Dash,Dash_058_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_058,Dash,Dash_058_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_058,Dash,Dash_058_Yawn,Yawning,yawning (Class 2),258,398,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_059,Dash,Dash_059_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_059,Dash,Dash_059_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_059,Dash,Dash_059_Yawn,Yawning,yawning (Class 2),259,399,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_060,Dash,Dash_060_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_060,Dash,Dash_060_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_060,Dash,Dash_060_Yawn,Yawning,yawning (Class 2),260,400,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_061,Dash,Dash_061_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_061,Dash,Dash_061_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_061,Dash,Dash_061_Yawn,Yawning,yawning (Class 2),261,401,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_062,Dash,Dash_062_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_062,Dash,Dash_062_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_062,Dash,Dash_062_Yawn,Yawning,yawning (Class 2),262,402,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_063,Dash,Dash_063_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_063,Dash,Dash_063_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_063,Dash,Dash_063_Yawn,Yawning,yawning (Class 2),263,403,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_064,Dash,Dash_064_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_064,Dash,Dash_064_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_064,Dash,Dash_064_Yawn,Yawning,yawning (Class 2),264,404,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_065,Dash,Dash_065_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_065,Dash,Dash_065_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_065,Dash,Dash_065_Yawn,Yawning,yawning (Class 2),265,405,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_066,Dash,Dash_066_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_066,Dash,Dash_066_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_066,Dash,Dash_066_Yawn,Yawning,yawning (Class 2),266,406,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_067,Dash,Dash_067_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_067,Dash,Dash_067_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_067,Dash,Dash_067_Yawn,Yawning,yawning (Class 2),267,407,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_068,Dash,Dash_068_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_068,Dash,Dash_068_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_068,Dash,Dash_068_Yawn,Yawning,yawning (Class 2),268,408,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_069,Dash,Dash_069_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_069,Dash,Dash_069_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_069,Dash,Dash_069_Yawn,Yawning,yawning (Class 2),269,409,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_070,Dash,Dash_070_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_070,Dash,Dash_070_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_070,Dash,Dash_070_Yawn,Yawning,yawning (Class 2),270,410,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_071,Dash,Dash_071_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_071,Dash,Dash_071_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_071,Dash,Dash_071_Yawn,Yawning,yawning (Class 2),271,411,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_072,Dash,Dash_072_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_072,Dash,Dash_072_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_072,Dash,Dash_072_Yawn,Yawning,yawning (Class 2),272,412,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_073,Dash,Dash_073_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_073,Dash,Dash_073_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_073,Dash,Dash_073_Yawn,Yawning,yawning (Class 2),273,413,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_074,Dash,Dash_074_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_074,Dash,Dash_074_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_074,Dash,Dash_074_Yawn,Yawning,yawning (Class 2),274,414,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_075,Dash,Dash_075_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_075,Dash,Dash_075_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_075,Dash,Dash_075_Yawn,Yawning,yawning (Class 2),275,415,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_076,Dash,Dash_076_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_076,Dash,Dash_076_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_076,Dash,Dash_076_Yawn,Yawning,yawning (Class 2),276,416,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_077,Dash,Dash_077_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_077,Dash,Dash_077_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_077,Dash,Dash_077_Yawn,Yawning,yawning (Class 2),277,417,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_078,Dash,Dash_078_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_078,Dash,Dash_078_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_078,Dash,Dash_078_Yawn,Yawning,yawning (Class 2),278,418,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_079,Dash,Dash_079_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_079,Dash,Dash_079_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_079,Dash,Dash_079_Yawn,Yawning,yawning (Class 2),279,419,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_080,Dash,Dash_080_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_080,Dash,Dash_080_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_080,Dash,Dash_080_Yawn,Yawning,yawning (Class 2),280,420,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_081,Dash,Dash_081_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_081,Dash,Dash_081_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_081,Dash,Dash_081_Yawn,Yawning,yawning (Class 2),281,421,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_082,Dash,Dash_082_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_082,Dash,Dash_082_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_082,Dash,Dash_082_Yawn,Yawning,yawning (Class 2),282,422,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_083,Dash,Dash_083_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_083,Dash,Dash_083_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_083,Dash,Dash_083_Yawn,Yawning,yawning (Class 2),283,423,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_084,Dash,Dash_084_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_084,Dash,Dash_084_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_084,Dash,Dash_084_Yawn,Yawning,yawning (Class 2),284,424,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_085,Dash,Dash_085_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_085,Dash,Dash_085_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_085,Dash,Dash_085_Yawn,Yawning,yawning (Class 2),285,425,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_086,Dash,Dash_086_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_086,Dash,Dash_086_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_086,Dash,Dash_086_Yawn,Yawning,yawning (Class 2),286,426,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_087,Dash,Dash_087_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_087,Dash,Dash_087_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_087,Dash,Dash_087_Yawn,Yawning,yawning (Class 2),287,427,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_088,Dash,Dash_088_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_088,Dash,Dash_088_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_088,Dash,Dash_088_Yawn,Yawning,yawning (Class 2),288,428,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_089,Dash,Dash_089_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_089,Dash,Dash_089_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_089,Dash,Dash_089_Yawn,Yawning,yawning (Class 2),289,429,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_090,Dash,Dash_090_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_090,Dash,Dash_090_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_090,Dash,Dash_090_Yawn,Yawning,yawning (Class 2),290,430,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_091,Dash,Dash_091_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_091,Dash,Dash_091_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_091,Dash,Dash_091_Yawn,Yawning,yawning (Class 2),291,431,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_092,Dash,Dash_092_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_092,Dash,Dash_092_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_092,Dash,Dash_092_Yawn,Yawning,yawning (Class 2),292,432,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_093,Dash,Dash_093_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_093,Dash,Dash_093_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_093,Dash,Dash_093_Yawn,Yawning,yawning (Class 2),293,433,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_094,Dash,Dash_094_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_094,Dash,Dash_094_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_094,Dash,Dash_094_Yawn,Yawning,yawning (Class 2),294,434,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_095,Dash,Dash_095_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_095,Dash,Dash_095_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_095,Dash,Dash_095_Yawn,Yawning,yawning (Class 2),295,435,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_096,Dash,Dash_096_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_096,Dash,Dash_096_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_096,Dash,Dash_096_Yawn,Yawning,yawning (Class 2),296,436,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_097,Dash,Dash_097_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_097,Dash,Dash_097_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_097,Dash,Dash_097_Yawn,Yawning,yawning (Class 2),297,437,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_098,Dash,Dash_098_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_098,Dash,Dash_098_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_098,Dash,Dash_098_Yawn,Yawning,yawning (Class 2),298,438,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_099,Dash,Dash_099_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_099,Dash,Dash_099_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_099,Dash,Dash_099_Yawn,Yawning,yawning (Class 2),299,439,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_100,Dash,Dash_100_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_100,Dash,Dash_100_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_100,Dash,Dash_100_Yawn,Yawning,yawning (Class 2),250,390,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_101,Dash,Dash_101_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_101,Dash,Dash_101_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_101,Dash,Dash_101_Yawn,Yawning,yawning (Class 2),251,391,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_102,Dash,Dash_102_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_102,Dash,Dash_102_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_102,Dash,Dash_102_Yawn,Yawning,yawning (Class 2),252,392,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_103,Dash,Dash_103_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_103,Dash,Dash_103_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_103,Dash,Dash_103_Yawn,Yawning,yawning (Class 2),253,393,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_104,Dash,Dash_104_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_104,Dash,Dash_104_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_104,Dash,Dash_104_Yawn,Yawning,yawning (Class 2),254,394,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_105,Dash,Dash_105_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_105,Dash,Dash_105_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_105,Dash,Dash_105_Yawn,Yawning,yawning (Class 2),255,395,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_106,Dash,Dash_106_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_106,Dash,Dash_106_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_106,Dash,Dash_106_Yawn,Yawning,yawning (Class 2),256,396,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox
+YawDD,YawDD_Subj_107,Dash,Dash_107_Normal,Normal_Driving,NORMAL,1,900,900,30.0,NO,"Baseline driving, closed mouth"
+YawDD,YawDD_Subj_107,Dash,Dash_107_Talking,Talking_Singing,SPEECH_NEGATIVE,45,620,575,19.17,NO,"Conversational mouth motion, distinct from yawn"
+YawDD,YawDD_Subj_107,Dash,Dash_107_Yawn,Yawning,yawning (Class 2),257,397,140,4.666666666666667,NO,Natural yawn; requires future pseudo-labeling for YOLO bbox

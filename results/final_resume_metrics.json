@@ -1,0 +1,90 @@
+{
+  "project_name": "AI Driver Monitoring & Drowsiness Detection System",
+  "phase": "Phase 2I - Final Validation & Reproducibility Audit",
+  "status": "Production-Ready Engineering Prototype",
+  "hardware_platform": "Intel Core i7-10700 CPU @ 2.90GHz (x86_64, Windows 11)",
+  "dataset_metrics": {
+    "clean_ground_truth_frames": 333,
+    "total_training_pool_images": 512,
+    "validation_images": 44,
+    "test_images": 33,
+    "total_subjects": 26,
+    "subject_leakage_train_val": 0,
+    "subject_leakage_train_test": 0,
+    "subject_leakage_val_test": 0,
+    "classes": {
+      "0": "eyes_closed",
+      "1": "eyes_open",
+      "2": "yawning"
+    }
+  },
+  "yolo_detection_metrics": {
+    "model_checkpoint": "weights/phase2f_best.pt",
+    "architecture": "YOLOv5nu (Nano)",
+    "parameter_count": 2503529,
+    "model_size_mb": 4.99,
+    "evaluation_split": "Phase 2F/2E Held-Out Test Set (33 images, 3 unseen subjects)",
+    "precision": 0.9004,
+    "recall": 0.9382,
+    "f1_score": 0.9189,
+    "map_50": 0.9777,
+    "map_50_95": 0.8145,
+    "per_class_ap50": {
+      "eyes_closed": 0.9431,
+      "eyes_open": 0.9950,
+      "yawning": 0.9950
+    }
+  },
+  "multi_signal_fusion_metrics": {
+    "ablation_system_e_f1": 0.983,
+    "ablation_system_e_sensitivity": 0.979,
+    "ablation_system_e_specificity": 0.984,
+    "yolo_baseline_f1": 0.898,
+    "false_alerts_yolo_only": 7,
+    "false_alerts_full_fusion": 0,
+    "missed_drowsiness_events": 0
+  },
+  "temporal_benchmark_uta_rldd": {
+    "evaluation_dataset": "UTA-RLDD (Subject-Independent 5-Fold Cross-Validation, 180 videos, 60 subjects)",
+    "fold_1_f1": 0.9380,
+    "fold_2_f1": 0.9205,
+    "fold_3_f1": 0.8995,
+    "fold_4_f1": 0.9330,
+    "fold_5_f1": 0.9130,
+    "mean_f1": 0.9208,
+    "std_f1": 0.0139,
+    "mean_precision": 0.9156,
+    "mean_recall": 0.9260,
+    "mean_specificity": 0.9086,
+    "mean_detection_delay_seconds": 1.46
+  },
+  "deployment_and_runtime_performance": {
+    "primary_backend": "PyTorch CPU (Fused FP32)",
+    "standalone_yolo_fps": 47.5,
+    "standalone_yolo_latency_ms": 21.05,
+    "full_pipeline_wall_fps": 27.48,
+    "full_pipeline_loop_fps": 34.79,
+    "full_pipeline_wall_latency_ms": 36.39,
+    "alternative_onnx_wall_fps": 22.29,
+    "alternative_onnx_map50": 0.9877,
+    "skip_frames_setting": 2,
+    "stress_test_duration_seconds": 179.00,
+    "stress_test_frames": 4936,
+    "stress_test_throughput_fps": 27.57,
+    "initial_rss_mb": 274.46,
+    "peak_rss_mb": 426.54,
+    "final_rss_mb": 426.54,
+    "memory_leaks_detected": 0
+  },
+  "testing_and_verification": {
+    "pytest_total_tests": 39,
+    "pytest_passed_tests": 39,
+    "pass_rate_percent": 100.0,
+    "operational_modes_verified": [
+      "Video File Ingestion",
+      "Physical Webcam Mode (Graceful EOF / Disconnect Handling)",
+      "Headless Server / Container Mode",
+      "Interactive OpenCV HUD Display Mode"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+# Core Deep Learning & Computer Vision
+ultralytics>=8.3.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Physiological & Facial Analysis
+mediapipe>=0.10.0
+
+# Configuration & Utilities
+PyYAML>=6.0
+
+# Testing
+pytest>=7.0.0
+
+# Deployment & Optimization Runtimes (Phase 2H)
+onnx>=1.15.0
+onnxruntime>=1.16.0
+psutil>=5.9.0
+# Optional Intel acceleration:
+# openvino>=2024.0.0
+

@@ -1,0 +1,9 @@
+dataset,subject_id,video_id,frame_id,image_path,annotation_path,split,is_augmented,source
+Original,UNKNOWN,test_video,frame_0545,data/processed/yolo_phase2d/images/val/frame_0545.jpg,data/processed/yolo_phase2d/labels/val/frame_0545.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0390,data/processed/yolo_phase2d/images/val/frame_0390.jpg,data/processed/yolo_phase2d/labels/val/frame_0390.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0406,data/processed/yolo_phase2d/images/val/frame_0406.jpg,data/processed/yolo_phase2d/labels/val/frame_0406.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0251,data/processed/yolo_phase2d/images/val/frame_0251.jpg,data/processed/yolo_phase2d/labels/val/frame_0251.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0267,data/processed/yolo_phase2d/images/val/frame_0267.jpg,data/processed/yolo_phase2d/labels/val/frame_0267.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0282,data/processed/yolo_phase2d/images/val/frame_0282.jpg,data/processed/yolo_phase2d/labels/val/frame_0282.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0360,data/processed/yolo_phase2d/images/val/frame_0360.jpg,data/processed/yolo_phase2d/labels/val/frame_0360.txt,VAL,False,baseline_anchor
+Original,UNKNOWN,test_video,frame_0421,data/processed/yolo_phase2d/images/val/frame_0421.jpg,data/processed/yolo_phase2d/labels/val/frame_0421.txt,VAL,False,baseline_anchor
