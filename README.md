@@ -191,6 +191,14 @@ AI-Driver-Monitoring-Drowsiness-Detection/
 ├── configs/                            # Configuration Profiles
 │   └── config.yaml                     # Primary application configuration (thresholds, backends)
 │
+├── app/                                # Real-Time Browser Web Dashboard (Streamlit + WebRTC)
+│   ├── app.py                          # Streamlit application entrypoint & UI layout
+│   ├── components/                     # Modular dashboard components
+│   │   ├── live_monitor.py             # WebRTC streaming & in-memory pipeline processor
+│   │   ├── dashboard.py                # Visual telemetry badges, charts, logs, summaries
+│   │   └── recommendations.py          # Safety advisory & guidance engine
+│   └── assets/                         # UI static assets & architectural diagrams
+│
 ├── data/                               # Dataset Workspace (Raw data git-ignored)
 │   ├── README.md                       # Data acquisition & workspace guide
 │   ├── manifests/                      # Audited split manifests and ground-truth metadata (CSV)
@@ -293,7 +301,48 @@ pip install -r requirements.txt
 
 ---
 
-## 7. Operational CLI Usage Guide
+## 7. Live Web Demo (Real-Time Browser Dashboard)
+
+The system includes a production-grade, real-time web application built with **Streamlit** and **streamlit-webrtc**. This interface enables zero-latency driver monitoring directly through any standard web browser using WebRTC frame streaming.
+
+### Launching the Web Application
+
+Run the application locally:
+```bash
+streamlit run app/app.py
+```
+
+Then open your browser at:
+```text
+http://localhost:8501
+```
+
+### Operational Workflow:
+1. **Grant Camera Permissions:** When accessing the dashboard, allow browser camera access when prompted.
+2. **Start Monitoring:** Click **START MONITORING** to initialize the WebRTC stream.
+3. **Real-Time Analysis:** The live webcam feed is analyzed frame-by-frame in volatile memory without any disk retention.
+4. **Live Telemetry & Indicators:** Watch physiological signals, fatigue scoring, and state machine transitions update live.
+5. **Stop Monitoring:** Click **STOP MONITORING** to gracefully release the camera hardware and review the session summary.
+
+### Core Interface Features:
+- **LIVE WEBCAM Mode:** In-memory WebRTC video stream processing with bounding boxes, facial landmark tracking, and real-time HUD rendering.
+- **VIDEO UPLOAD Mode:** Reproducible file evaluation mode for recorded driving clips (`test_video.mp4` or user-uploaded MP4/AVI files).
+- **LIVE TELEMETRY:** Sub-pixel Eye Aspect Ratio (EAR), Mouth Aspect Ratio (MAR), rolling 60-second PERCLOS ($P_{80}$), blink rate, yawn duration, 3D head pose (Euler angles), and measured Wall FPS.
+- **FATIGUE SCORE:** Continuous 0–100 multi-signal composite score fusing visual detections and physiological metrics.
+- **SAFETY RECOMMENDATIONS:** Context-aware driver advisories based on active state and signal trends (non-diagnostic safety guidance).
+- **LIVE EVENT LOG:** Real-time chronological timestamped log of driver state transitions and alert triggers.
+- **SESSION SUMMARY:** Comprehensive post-drive report detailing monitoring duration, alert frequency, peak fatigue score, average FPS, and face visibility.
+- **BENCHMARK & ARCHITECTURE TABS:** Dedicated tabs displaying verified offline benchmark results (mAP, F1, latency) and system architectural specifications.
+
+> [!IMPORTANT]
+> **Deployment & Camera Security Notice:**
+> Modern web browsers mandate a secure context (**HTTPS** or `localhost`) for accessing client media devices (webcams).
+> - For **local evaluation**, `http://localhost:8501` functions immediately.
+> - For **public/cloud production deployment**, the application must be served over an **HTTPS** origin with proper WebRTC/STUN/TURN network support.
+
+---
+
+## 8. Operational CLI Usage Guide
 
 The canonical entry point for all operational modes is [`scripts/run_inference.py`](scripts/run_inference.py).
 
@@ -328,7 +377,7 @@ python scripts/run_inference.py --source test_video.mp4 --headless --telemetry -
 
 ---
 
-## 8. Automated Testing & Verification
+## 9. Automated Testing & Verification
 
 The repository maintains an automated test suite with **39/39 passing tests (100% pass rate)** covering configuration, deployment backends, edge-case fault tolerance, physiological mathematics, and multi-signal fusion:
 
@@ -386,7 +435,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 9. Deployment Backends
+## 10. Deployment Backends
 
 | Backend Runtime | Device | Wall FPS | Latency | Status | Primary Use Case |
 |:---|:---|:---:|:---:|:---|:---|
@@ -400,7 +449,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 10. Privacy, Ethics & Data Governance
+## 11. Privacy, Ethics & Data Governance
 
 - **No Biometric Identification:** The pipeline performs no facial recognition, generates no facial embeddings, and stores no biometric identities.
 - **Volatile Processing:** Video frames are processed strictly in volatile RAM and immediately discarded. No video frames are cached or uploaded to remote servers.
@@ -408,7 +457,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 11. Scientific Limitations
+## 12. Scientific Limitations
 
 1. **Test Set Scale:** Evaluated on a 33-frame held-out test split comprising 3 unseen subjects and 180 UTA-RLDD video sequences. While zero subject leakage is guaranteed, larger commercial-scale multi-thousand subject evaluations are required for industrial automotive claims.
 2. **Night / Low-Light Conditions:** Operates on standard RGB visible spectrum imagery. Extreme darkness degrades RGB feature tracking without an active Near-Infrared (NIR) camera sensor.
@@ -417,7 +466,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 12. Research Contributions & Engineering Highlights
+## 13. Research Contributions & Engineering Highlights
 
 Rather than claiming a fundamentally new neural network layer, this work presents a **system-level engineering contribution** to real-time Driver Monitoring Systems:
 1. **Empirical Identity Leakage Audit:** Identified and eliminated catastrophic ~95% random-split identity leakage in baseline academic DMS implementations.
@@ -431,7 +480,7 @@ Rather than claiming a fundamentally new neural network layer, this work present
 
 ---
 
-## 13. Documentation, Portfolio & Interview Links
+## 14. Documentation, Portfolio & Interview Links
 
 - **[docs/FINAL_ARCHITECTURE.md](docs/FINAL_ARCHITECTURE.md):** Formal 4-tier architectural specification.
 - **[docs/DEMO_GUIDE.md](docs/DEMO_GUIDE.md):** Complete CLI usage, flags, and webcam operations.
@@ -444,7 +493,7 @@ Rather than claiming a fundamentally new neural network layer, this work present
 
 ---
 
-## 14. License & Attribution
+## 15. License & Attribution
 
 This project is licensed under the [MIT License](LICENSE).
 
