@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#4edea3", "on-tertiary-container": "#8d0012", "inverse-primary": "#00668a", "on-tertiary": "#68000a", "error-container": "#93000a", "on-primary": "#00354a", "on-secondary-container": "#00311f", "on-primary-container": "#004965", "on-primary-fixed": "#001e2c", "inverse-on-surface": "#303033", "on-secondary-fixed-variant": "#005236", "on-background": "#e4e1e6", "on-surface-variant": "#bdc8d1", "on-tertiary-fixed": "#410004", "surface-container-lowest": "#0e0e11", "surface-tint": "#7bd0ff", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "secondary-container": "#00a572", "surface-container-highest": "#353438", "outline": "#87929a", "surface-dim": "#131316", "outline-variant": "#3e484f", "error": "#ffb4ab", "surface-container": "#1f1f22", "surface-container-low": "#1b1b1e", "surface": "#131316", "on-secondary": "#003824", "primary-fixed-dim": "#7bd0ff", "surface-container-high": "#2a2a2d", "primary-fixed": "#c4e7ff", "tertiary": "#ffbcb7", "surface-bright": "#39393c", "primary": "#8ed5ff", "background": "#131316", "tertiary-container": "#ff938c", "tertiary-fixed-dim": "#ffb3ad", "on-surface": "#e4e1e6", "secondary-fixed": "#6ffbbe", "primary-container": "#38bdf8", "inverse-surface": "#e4e1e6", "on-secondary-fixed": "#002113", "surface-variant": "#353438", "on-primary-fixed-variant": "#004c69", "on-error": "#690005", "tertiary-fixed": "#ffdad7", "on-tertiary-fixed-variant": "#930013" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.5rem", "space-sm": "0.5rem", "space-lg": "1rem", "space-md": "0.75rem", "gutter": "0.75rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "label-code": [ "JetBrains Mono" ], "headline-lg": [ "Outfit" ], "headline-md": [ "Outfit" ], "body-lg": [ "Inter" ], "telemetry-metric": [ "JetBrains Mono" ], "telemetry-unit": [ "JetBrains Mono" ], "body-sm": [ "Inter" ], "label-caps": [ "Outfit" ], "body-md": [ "Inter" ], "display-lg": [ "JetBrains Mono" ] }, "fontSize": { "label-code": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "telemetry-metric": [ "20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "telemetry-unit": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" } ], "body-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-caps": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/40"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-max"><img alt="AeroDMS Sentinel Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UJ-rMUR2drwRTscVXj7ILDCDUXYOkgBzf8bO2y0TlSQd7cqGQowo5STpdTixzpnatmbiyBdKgPlUy4hHHPlhb-go42yaL996MoZbxOk8Xd_P2aWlEYktBDn8RJ9WahtpQsOwm_w92NKAamj7cw-vjX60KMt1hfD0VTPEUU-fJcD-DHS00QsdtFByVIfhDFbmZRP0cT_qFlvFvoSDakPTriVoJNSbmPWljVoSVmYVlxtK6B2dMp9BZ02Ug"/><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-semibold">AeroDMS Sentinel</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/40 text-secondary font-label-code text-label-code"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>LIVE INFERENCE: ACTIVE</div><div class="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/40 text-primary-container font-label-code text-label-code">CONTINUAL LEARNING: COLLECTING</div></div></div></div><nav class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-outline-variant/50" data-active-classes="bg-surface-container-high text-primary border-outline-variant text-on-surface"><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="live-monitor" href="#">Live Monitor</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="video-analysis" href="#">Video Analysis</a><a aria-current="page" class="px-3 py-1.5 rounded transition-colors font-label-code uppercase tracking-wider bg-surface-container-high text-primary border-outline-variant text-on-surface" data-path="continual-learning" href="#">Continual Learning</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="model-performance" href="#">Model Performance</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="architecture-and-privacy" href="#">Architecture &amp; Privacy</a></nav><div class="flex items-center gap-space-md"><div class="hidden 2xl:flex items-center gap-space-sm font-label-code text-label-code"><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">BACKEND:</span> <span class="text-on-surface font-semibold">PyTorch CPU</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">MODEL:</span> <span class="text-on-surface font-semibold">YOLOv5nu-v001</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">FPS:</span> <span class="text-secondary font-semibold">27.5</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">UPTIME:</span> <span class="text-on-surface font-semibold">00:14:22</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface border-r border-outline-variant/40 z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Monitoring Source</span><div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded border border-outline-variant/40"><button class="py-1.5 px-2 rounded bg-surface-container-high text-primary font-label-code text-label-code font-semibold text-center border border-outline-variant/30">Live WebRTC</button><button class="py-1.5 px-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code text-center">File Eval</button></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Display Overlays</span><div class="flex flex-col gap-2 font-body-sm text-body-sm"><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Bounding Boxes (YOLO)</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Driver Face Box</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Class Labels &amp; Scores</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">In-Video HUD Panels</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Pipeline FPS Badge</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label></div></div><div class="p-space-sm rounded bg-surface-container-low border border-primary-container/30 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-primary-container uppercase font-bold">Continual Engine</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded" type="checkbox"/></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Dynamic stream collector into volatile cyclic ring buffer.</p></div><div class="p-space-sm rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-1.5 font-label-code text-label-code"><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider mb-0.5">Model Metrics</span><div class="flex justify-between"><span class="text-on-surface-variant">Arch:</span><span class="text-on-surface">YOLOv5nu</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Classes:</span><span class="text-on-surface">3</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Input:</span><span class="text-on-surface">640x640</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Params:</span><span class="text-on-surface">2.50M</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Inference:</span><span class="text-secondary">36.2ms</span></div></div></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-lowest"><div class="flex items-start gap-2 text-outline font-body-sm text-body-sm"><span class="material-symbols-outlined text-[16px] text-secondary mt-0.5 shrink-0">verified_user</span><div class="flex flex-col gap-0.5"><span class="font-label-caps text-label-caps text-on-surface uppercase">Privacy Certified</span><span class="font-label-code text-label-code text-on-surface-variant text-[10px] leading-tight">Volatile RAM Processing • Zero Identity Embeddings • No Facial Rec</span></div></div></div></aside><div class="pl-64"><main class="relative w-full pt-16 min-h-screen bg-surface-container-lowest px-margin py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP PROTOCOL & RUNTIME POLICY BANNER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-space-md rounded bg-surface-container border border-outline-variant/30 shadow-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-primary-container/10 border border-primary-container/40 text-primary-container font-label-code text-label-code">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span>LEARNER STATUS: COLLECTING BUFFER (ACTIVE)</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/40 hidden sm:block"></div>
+<div class="flex items-center gap-space-md font-label-code text-label-code text-on-surface-variant">
+<div>PROD MODEL: <span class="text-on-surface font-semibold">v001 (YOLOv5nu-640)</span></div>
+<span class="text-outline">/</span>
+<div>USABLE BUFFER: <span class="text-secondary font-semibold">48 / 100 SAMPLES</span></div>
+<span class="text-outline">/</span>
+<div>MEMORY: <span class="text-on-surface font-semibold">14.2 MB (VOLATILE RAM)</span></div>
+</div>
+</div>
+<!-- PRIVACY RUNTIME LOCK CHIP -->
+<div class="flex items-center gap-2 px-3 py-1 rounded bg-surface-container-high border border-outline-variant/50 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">shield_lock</span>
+<span class="font-label-code text-label-code tracking-tight">ZERO PERMANENT RETENTION: Buffer purges immediately post-validation</span>
+</div>
+</div>
+<!-- WORKSPACE MAIN GRID: 50% / 50% FLUID ARCHITECTURE -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- ==================== LEFT COLUMN: BUFFER & HUMAN-IN-THE-LOOP (6 COLS) ==================== -->
+<div class="xl:col-span-6 flex flex-col gap-space-lg">
+<!-- BUFFER QUALITY STATS -->
+<div class="p-space-md rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">dataset</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Quality-Filtered Cyclic Buffer</span>
+</div>
+<button class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-low hover:bg-error-container/20 text-on-surface-variant hover:text-error border border-outline-variant/30 hover:border-error/40 transition-colors font-label-code text-label-code" id="clearBufferBtn">
+<span class="material-symbols-outlined text-[14px]">delete_sweep</span>
+<span>CLEAR BUFFER</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-sm font-label-code">
+<!-- Level 1 -->
+<div class="p-space-sm rounded bg-surface-container-low border border-secondary/20 flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px]">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>LVL 1: VERIFIED</span>
+<span>29%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary">14</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">SAMPLES</span>
+</div>
+<span class="text-[10px] text-outline truncate">Human validated</span>
+</div>
+<!-- Level 2 -->
+<div class="p-space-sm rounded bg-surface-container-low border border-primary-container/20 flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px]">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>LVL 2: PSEUDO</span>
+<span>54%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-telemetry-metric text-primary-container">26</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">SAMPLES</span>
+</div>
+<span class="text-[10px] text-outline truncate">Consensus &gt; 0.92</span>
+</div>
+<!-- Level 3 -->
+<div class="p-space-sm rounded bg-surface-container-low border border-error/30 flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px]">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span>LVL 3: DISPUTED</span>
+<span>17%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-telemetry-metric text-error">08</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">SAMPLES</span>
+</div>
+<span class="text-[10px] text-outline truncate">Low confidence</span>
+</div>
+</div>
+<!-- Buffer Capacity Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-code text-[10px] text-on-surface-variant">
+<span>RAM BUFFER ALLOCATION: 48 / 100 CYCLES</span>
+<span>THRESHOLD TO TRAIN: 64 SAMPLES</span>
+</div>
+<div class="h-1.5 w-full rounded bg-surface-container-lowest overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 14%"></div>
+<div class="bg-primary-container h-full" style="width: 26%"></div>
+<div class="bg-error h-full" style="width: 8%"></div>
+<div class="bg-surface-container-high h-full flex-1"></div>
+</div>
+</div>
+</div>
+<!-- ACTIVE SAMPLE REVIEW CARD (HUMAN-IN-THE-LOOP TOOL) -->
+<div class="rounded bg-surface-container border border-outline-variant/30 flex flex-col overflow-hidden shadow-md">
+<!-- Card Header -->
+<div class="px-space-md py-space-sm bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-code text-label-code">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-on-surface font-semibold uppercase">Pending Inspection: FRAME_#8921_DUSK</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-outline text-[10px]">ID: buf_048</span>
+</div>
+<div class="font-label-code text-label-code text-on-surface-variant">QUEUE: 3 OF 8</div>
+</div>
+<!-- Visual Inspection Field -->
+<div class="p-space-md flex flex-col gap-space-md">
+<div class="relative w-full aspect-video bg-surface-container-lowest rounded overflow-hidden border border-outline-variant/40 flex items-center justify-center">
+<!-- Authentic Cabin Evaluation Image -->
+<img class="w-full h-full object-cover" data-alt="Black and white monochrome infrared driver monitoring cabin camera feed showing adult male driver behind steering wheel at dusk on open road, close crop focus on face with bounding reticle around eyes and steering wheel overlay." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTqoaZtEngHHSdfeSgkv5ZhFiG1oeCUBfpgjnIQeeFVDbxF3YkBnYpz4oJCpqsUMyhawkZMltSzm4rqeELCJEUPPcYFvaPo2J81skxXK0vgrjcbsoIziev0B2f9dw25FmOhK-k69Hlh17PlS5p1OHVs0bhAvg-1nbMZq_IBBDkPgJ3NdOloUqBPl45mCO69uoU5nlb-TMCfsPKD_yeIn2wQ5wSwzK1L2R8OxHJ-VyEr_dyqXAhcW9k"/>
+<!-- Real-time HUD Annotations & Overlays -->
+<div class="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
+<div class="flex justify-between items-start font-label-code text-[10px]">
+<div class="px-1.5 py-0.5 rounded bg-surface-dim/80 text-on-surface border border-outline-variant/40 backdrop-blur-sm">
+                  CROP: CANOPY_IR_CAM_01 [MONOCHROME DUSK]
+                </div>
+<div class="px-1.5 py-0.5 rounded bg-surface-dim/80 text-secondary border border-secondary/40 backdrop-blur-sm">
+                  SYNC: 1000fps IMU LOCK
+                </div>
+</div>
+<!-- Reticle bounding ocular region -->
+<div class="absolute top-[28%] left-[58%] w-[26%] h-[24%] border-2 border-dashed border-error/90 rounded bg-error/10 flex flex-col justify-between p-1">
+<div class="flex justify-between items-center text-[9px] font-label-code text-error bg-surface-dim/90 px-1 py-0.5 rounded w-max">
+<span>EYE_STATE_UNCERTAIN (0.68)</span>
+</div>
+<div class="text-[9px] font-label-code text-tertiary self-end bg-surface-dim/90 px-1 py-0.5 rounded">
+                  EAR: 0.19 &lt; 0.21
+                </div>
+</div>
+<!-- Face Global Bounding Reticle -->
+<div class="absolute top-[20%] left-[53%] w-[38%] h-[58%] border border-primary-container/40 pointer-events-none">
+<div class="absolute top-0 right-0 -translate-y-full font-label-code text-[9px] text-primary-container bg-surface-dim/80 px-1 rounded-t">
+                  FACE_BB: [340, 142, 584, 510]
+                </div>
+</div>
+<!-- Frame Corner HUD brackets -->
+<div class="flex justify-between items-end font-label-code text-[10px] text-outline">
+<span>SENSOR: 60FPS NIR SONY_IMX</span>
+<span>INSPECTION_MODE: CRITICAL_EDGE</span>
+</div>
+</div>
+</div>
+<!-- Micro-telemetry Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm font-label-code">
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">EAR (Ocular)</span>
+<span class="font-telemetry-metric text-telemetry-metric text-error">0.19</span>
+<span class="text-[10px] text-on-surface-variant">Safe &gt; 0.22</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">MAR (Mouth)</span>
+<span class="font-telemetry-metric text-telemetry-metric text-secondary">0.48</span>
+<span class="text-[10px] text-on-surface-variant">Closed: &lt; 0.55</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Edge Conf</span>
+<span class="font-telemetry-metric text-telemetry-metric text-tertiary">0.68</span>
+<span class="text-[10px] text-on-surface-variant">Borderline</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Lighting</span>
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">34 <span class="text-xs text-outline">lux</span></span>
+<span class="text-[10px] text-on-surface-variant">Cabin Dusk</span>
+</div>
+</div>
+<!-- Human Label Confirmation Form -->
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-on-surface-variant whitespace-nowrap">ANNOTATION TARGET:</span>
+<select class="px-2.5 py-1.5 rounded bg-surface-container border border-outline-variant/50 text-on-surface font-label-code text-label-code focus:outline-none focus:border-primary-container">
+<option value="eyes_closed">eyes_closed (Microsleep Alert)</option>
+<option selected="" value="eyes_open">eyes_open (Borderline Squint)</option>
+<option value="yawning">yawning (Fatigue State)</option>
+<option value="distracted">distracted_off_axis</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 self-end sm:self-auto font-label-code text-label-code">
+<button class="px-3 py-1.5 rounded bg-secondary hover:bg-secondary-fixed text-on-secondary font-semibold transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>ACCEPT</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-primary border border-outline-variant/40 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>CORRECT</span>
+</button>
+<button class="px-2.5 py-1.5 rounded bg-surface-container hover:bg-error-container/20 text-error border border-outline-variant/30 transition-colors" title="Drop Sample">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<button class="px-2.5 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant border border-outline-variant/30 transition-colors" title="Skip Sample">
+<span class="material-symbols-outlined text-[16px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- DISTRIBUTION DRIFT MONITOR -->
+<div class="p-space-md rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-space-sm shadow-md font-label-code">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">query_stats</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">In-Cabin Feature Distribution Drift</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 border border-secondary/30 text-secondary text-[10px]">STABLE K-S STAT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="text-outline text-[10px] block mb-0.5">DRIFT SCORE (PSI)</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">0.042</span>
+<span class="text-[10px] text-secondary">±0.08 TOL</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-secondary h-full" style="width: 28%"></div>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="text-outline text-[10px] block mb-0.5">MEAN CABIN ILLUMINANCE</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">114.2</span>
+<span class="text-[10px] text-outline">lux</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-primary-container h-full" style="width: 62%"></div>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="text-outline text-[10px] block mb-0.5">HEAD POSE ALIGNMENT</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary">98.1%</span>
+<span class="text-[10px] text-outline">On-Axis</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-secondary h-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== RIGHT COLUMN: WORKER, GATING & REGISTRY (6 COLS) ==================== -->
+<div class="xl:col-span-6 flex flex-col gap-space-lg">
+<!-- BACKGROUND TRAINING WORKER & LOSS SPARKLINE -->
+<div class="p-space-md rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-code">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Background Continual Worker #01</span>
+</div>
+<div class="px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant/40 text-on-surface-variant font-label-code text-label-code">
+            STATE: <span class="text-primary-container font-semibold">ONLINE (STANDBY)</span>
+</div>
+</div>
+<!-- Epoch & Batch Metrics -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm font-label-code text-center">
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline">CYCLE EPOCH</span>
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">3 <span class="text-sm text-outline">/ 10</span></span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline">BATCH SIZE</span>
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface">64</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline">LEARNING RATE</span>
+<span class="font-telemetry-metric text-telemetry-metric text-primary">5e-4</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="text-[10px] text-outline">VAL LOSS</span>
+<span class="font-telemetry-metric text-telemetry-metric text-secondary">0.0142</span>
+</div>
+</div>
+<!-- Training Progress Bar -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-code text-[11px] text-on-surface-variant">
+<span>EPOCH 3 PROGRESS (ADAPTIVE FINE-TUNE)</span>
+<span class="text-on-surface font-semibold">30% COMPLETED</span>
+</div>
+<div class="h-2 w-full rounded bg-surface-container-low overflow-hidden">
+<div class="bg-primary-container h-full transition-all duration-300" style="width: 30%"></div>
+</div>
+</div>
+<!-- Dynamic Loss Sparkline (Inline SVG Graphic) -->
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1">
+<div class="flex justify-between items-center font-label-code text-[10px] text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1"><span class="w-2 h-0.5 bg-primary-container inline-block"></span> Train Loss (Smooth)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-0.5 bg-secondary inline-block"></span> Val Box Cls Loss</span>
+</div>
+<span class="text-outline">Step 120 / 400</span>
+</div>
+<div class="h-24 w-full relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 400 90">
+<!-- Grid lines -->
+<line class="text-outline-variant/20" stroke="currentColor" stroke-dasharray="2,2" x1="0" x2="400" y1="20" y2="20"></line>
+<line class="text-outline-variant/20" stroke="currentColor" stroke-dasharray="2,2" x1="0" x2="400" y1="50" y2="50"></line>
+<line class="text-outline-variant/20" stroke="currentColor" stroke-dasharray="2,2" x1="0" x2="400" y1="80" y2="80"></line>
+<!-- Train Loss Area Curve -->
+<path class="text-primary-container/10" d="M 0,78 Q 60,65 120,45 T 240,28 T 320,18 L 320,90 L 0,90 Z" fill="currentColor"></path>
+<!-- Train Loss Stroke -->
+<path class="text-primary-container" d="M 0,78 Q 60,65 120,45 T 240,28 T 320,18" fill="none" stroke="currentColor" stroke-width="2"></path>
+<!-- Validation Loss Stroke (Steeper drop) -->
+<path class="text-secondary" d="M 0,85 Q 50,70 120,40 T 240,22 T 320,14" fill="none" stroke="currentColor" stroke-dasharray="4,2" stroke-width="1.8"></path>
+<!-- Active pointer node -->
+<circle class="fill-secondary animate-pulse" cx="320" cy="14" r="3.5"></circle>
+<circle class="fill-primary-container" cx="320" cy="18" r="3"></circle>
+</svg>
+</div>
+</div>
+<!-- Action cluster -->
+<div class="flex flex-wrap items-center gap-space-sm font-label-code text-label-code">
+<button class="px-4 py-2 rounded bg-primary-container hover:bg-primary-fixed text-on-primary-container font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>START BACKGROUND TRAINING</span>
+</button>
+<button class="px-3 py-2 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant/40 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+<span>PAUSE WORKER</span>
+</button>
+<button class="ml-auto px-2.5 py-2 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-label-code text-[11px] border border-outline-variant/30 flex items-center gap-1" id="toggleStdoutBtn">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>STDOUT LOGS</span>
+</button>
+</div>
+<!-- Collapsible Terminal Output -->
+<div class="p-space-sm rounded bg-surface-container-lowest border border-outline-variant/40 font-label-code text-[11px] text-outline flex flex-col gap-1 overflow-x-auto max-h-32" id="stdoutContainer">
+<div class="text-on-surface-variant">[05:14:02.109] [WORKER_01] Cyclic ring buffer initialized: 48 valid frame vectors allocated in volatile memory.</div>
+<div class="text-on-surface-variant">[05:14:05.441] [WORKER_01] Optimizer: AdamW (lr=0.0005, weight_decay=1e-4) with EWC Regularization enabled.</div>
+<div class="text-secondary">[05:14:18.990] [WORKER_01] Epoch 01/10 complete: box_loss=0.0341, cls_loss=0.0210, dfl_loss=0.0118.</div>
+<div class="text-secondary">[05:14:31.220] [WORKER_01] Epoch 02/10 complete: box_loss=0.0252, cls_loss=0.0163, dfl_loss=0.0101.</div>
+<div class="text-primary-container">[05:14:44.780] [WORKER_01] Epoch 03/10 step 120/400: box_loss=0.0182, cls_loss=0.0112, lr=0.00049.</div>
+</div>
+</div>
+<!-- VALIDATION GATE & COMPARATIVE DECISION CARD -->
+<div class="p-space-md rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Atomic Validation Gate (Hot-Swap)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary border border-secondary/40 font-label-code text-[10px]">
+            PASSED CRITERIA
+          </span>
+</div>
+<!-- Comparative Metrics Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-label-code text-label-code border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30 text-outline text-[10px]">
+<th class="py-1.5 px-2">METRIC FOCUS</th>
+<th class="py-1.5 px-2">BASELINE (v001)</th>
+<th class="py-1.5 px-2">CANDIDATE (v002-rc)</th>
+<th class="py-1.5 px-2 text-right">DELTA</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr>
+<td class="py-2 px-2 text-on-surface font-semibold">mAP@0.5 (Global)</td>
+<td class="py-2 px-2 text-on-surface-variant">0.9777</td>
+<td class="py-2 px-2 text-secondary font-semibold">0.9810</td>
+<td class="py-2 px-2 text-right text-secondary">+0.0033 (+0.34%)</td>
+</tr>
+<tr>
+<td class="py-2 px-2 text-on-surface font-semibold">F1 Score (Ocular)</td>
+<td class="py-2 px-2 text-on-surface-variant">0.9189</td>
+<td class="py-2 px-2 text-secondary font-semibold">0.9220</td>
+<td class="py-2 px-2 text-right text-secondary">+0.0031 (+0.34%)</td>
+</tr>
+<tr>
+<td class="py-2 px-2 text-on-surface font-semibold">Dusk / IR Low-Lux Recall</td>
+<td class="py-2 px-2 text-on-surface-variant">0.8940</td>
+<td class="py-2 px-2 text-secondary font-semibold">0.9312</td>
+<td class="py-2 px-2 text-right text-secondary">+0.0372 (+4.16%)</td>
+</tr>
+<tr>
+<td class="py-2 px-2 text-on-surface font-semibold">Inference Latency</td>
+<td class="py-2 px-2 text-on-surface-variant">36.2 ms</td>
+<td class="py-2 px-2 text-on-surface">36.4 ms</td>
+<td class="py-2 px-2 text-right text-outline">+0.2 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Regression Test Indicator -->
+<div class="p-2.5 rounded bg-surface-container-low border border-secondary/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">task_alt</span>
+<div class="flex flex-col">
+<span class="font-label-code text-[11px] text-on-surface font-semibold">Safety Regressions Check: 0 FAILS</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Evaluated over 7 held-out benchmark cabin sets (3,240 frames).</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-code text-[10px] uppercase font-bold">100% CLEAN</span>
+</div>
+<!-- Action Cluster: Hot-Swap or Reject -->
+<div class="flex items-center gap-space-sm font-label-code text-label-code pt-1">
+<button class="flex-1 py-2 px-3 rounded bg-secondary hover:bg-secondary-fixed text-on-secondary font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+<span>PROMOTE TO ACTIVE (HOT-SWAP)</span>
+</button>
+<button class="py-2 px-3 rounded bg-surface-container-low hover:bg-error-container/20 text-on-surface-variant hover:text-error border border-outline-variant/40 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>REJECT CANDIDATE</span>
+</button>
+</div>
+</div>
+<!-- MODEL REGISTRY & ROLLBACK -->
+<div class="p-space-md rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-space-sm shadow-md font-label-code">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Model Registry &amp; Rollback Ledger</span>
+<span class="text-[10px] text-outline">STORED WEIGHTS: 2 SLOTS</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Active model slot -->
+<div class="p-2.5 rounded bg-surface-container-low border border-primary-container/40 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold text-label-code">YOLOv5nu-v001.pt [DEPLOYED]</span>
+<span class="text-[10px] text-outline">Hash: d84a9e2 • 2.50M params • 640x640 input</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container/15 text-primary-container text-[10px] font-semibold">ACTIVE EXEC</span>
+</div>
+<!-- Archived baseline slot -->
+<div class="p-2.5 rounded bg-surface-container-low border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-label-code">YOLOv5nu-v000.pt [BASELINE FACTORY]</span>
+<span class="text-[10px] text-outline">Hash: 11c0f4b • OEM EuroNCAP baseline</span>
+</div>
+</div>
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant/40 text-[10px] transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">history</span>
+<span>ROLLBACK</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-Interaction Script for Interactive Elements -->
+<script>
+  // Simple terminal toggle micro-interaction
+  const toggleBtn = document.getElementById('toggleStdoutBtn');
+  const stdoutBox = document.getElementById('stdoutContainer');
+  if (toggleBtn && stdoutBox) {
+    toggleBtn.addEventListener('click', () => {
+      stdoutBox.classList.toggle('hidden');
+    });
+  }
+
+  // Clear buffer simulation warning
+  const clearBtn = document.getElementById('clearBufferBtn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (confirm("Execute zero-trace RAM purge for all 48 uncommitted training frames? This action cannot be undone.")) {
+        alert("Volatile buffer cleared: 0 uncommitted frames remain.");
+      }
+    });
+  }
+</script></main></div></body></html>

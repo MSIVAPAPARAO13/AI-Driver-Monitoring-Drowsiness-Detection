@@ -10,7 +10,9 @@ venv/
 runs/
 data/raw/
 data/manifests/
-results/
+data/external_eval/
 tests/
 scratch/
 notebooks/
+!results/final_resume_metrics.json
+!results/external/external_baseline_results.csv

@@ -135,6 +135,19 @@ class YOLODetector:
                 except Exception:
                     pass  # Fallback if fuse is not supported or already fused
 
+    def reload_model(self, model_path: str) -> None:
+        """Safely reload model from a new checkpoint path."""
+        p = Path(model_path)
+        if not p.is_absolute() and not p.exists():
+            repo_root = Path(__file__).resolve().parent.parent
+            if (repo_root / model_path).exists():
+                p = repo_root / model_path
+        if not p.exists():
+            raise FileNotFoundError(f"Model checkpoint not found: {p}")
+        new_model = YOLO(str(p), task="detect" if self.backend in ("onnx", "openvino") else None)
+        self.model = new_model
+        self.model_path = p
+
     def predict(self, frame: np.ndarray) -> DetectionResult:
         """
         Run inference on a single BGR image/frame.
@@ -165,11 +178,21 @@ class YOLODetector:
 
         results = self.model.predict(source=frame, **kwargs)[0]
 
+        h, w = frame.shape[:2]
         parsed_boxes: List[DetectionBox] = []
         for box in results.boxes:
             cls_id = int(box.cls[0])
             conf = float(box.conf[0])
             x1, y1, x2, y2 = map(int, box.xyxy[0])
+
+            # Coordinate bounds clamping & degenerate box filtering
+            x1 = max(0, min(w - 1, x1))
+            y1 = max(0, min(h - 1, y1))
+            x2 = max(0, min(w - 1, x2))
+            y2 = max(0, min(h - 1, y2))
+            if x2 <= x1 or y2 <= y1:
+                continue
+
             cls_name = self.class_names.get(cls_id, str(cls_id))
 
             parsed_boxes.append(

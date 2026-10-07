@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#4edea3", "on-tertiary-container": "#8d0012", "inverse-primary": "#00668a", "on-tertiary": "#68000a", "error-container": "#93000a", "on-primary": "#00354a", "on-secondary-container": "#00311f", "on-primary-container": "#004965", "on-primary-fixed": "#001e2c", "inverse-on-surface": "#303033", "on-secondary-fixed-variant": "#005236", "on-background": "#e4e1e6", "on-surface-variant": "#bdc8d1", "on-tertiary-fixed": "#410004", "surface-container-lowest": "#0e0e11", "surface-tint": "#7bd0ff", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "secondary-container": "#00a572", "surface-container-highest": "#353438", "outline": "#87929a", "surface-dim": "#131316", "outline-variant": "#3e484f", "error": "#ffb4ab", "surface-container": "#1f1f22", "surface-container-low": "#1b1b1e", "surface": "#131316", "on-secondary": "#003824", "primary-fixed-dim": "#7bd0ff", "surface-container-high": "#2a2a2d", "primary-fixed": "#c4e7ff", "tertiary": "#ffbcb7", "surface-bright": "#39393c", "primary": "#8ed5ff", "background": "#131316", "tertiary-container": "#ff938c", "tertiary-fixed-dim": "#ffb3ad", "on-surface": "#e4e1e6", "secondary-fixed": "#6ffbbe", "primary-container": "#38bdf8", "inverse-surface": "#e4e1e6", "on-secondary-fixed": "#002113", "surface-variant": "#353438", "on-primary-fixed-variant": "#004c69", "on-error": "#690005", "tertiary-fixed": "#ffdad7", "on-tertiary-fixed-variant": "#930013" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.5rem", "space-sm": "0.5rem", "space-lg": "1rem", "space-md": "0.75rem", "gutter": "0.75rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "label-code": [ "JetBrains Mono" ], "headline-lg": [ "Outfit" ], "headline-md": [ "Outfit" ], "body-lg": [ "Inter" ], "telemetry-metric": [ "JetBrains Mono" ], "telemetry-unit": [ "JetBrains Mono" ], "body-sm": [ "Inter" ], "label-caps": [ "Outfit" ], "body-md": [ "Inter" ], "display-lg": [ "JetBrains Mono" ] }, "fontSize": { "label-code": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "telemetry-metric": [ "20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "telemetry-unit": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" } ], "body-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-caps": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/40"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-max"><img alt="AeroDMS Sentinel Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UJ-rMUR2drwRTscVXj7ILDCDUXYOkgBzf8bO2y0TlSQd7cqGQowo5STpdTixzpnatmbiyBdKgPlUy4hHHPlhb-go42yaL996MoZbxOk8Xd_P2aWlEYktBDn8RJ9WahtpQsOwm_w92NKAamj7cw-vjX60KMt1hfD0VTPEUU-fJcD-DHS00QsdtFByVIfhDFbmZRP0cT_qFlvFvoSDakPTriVoJNSbmPWljVoSVmYVlxtK6B2dMp9BZ02Ug"/><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-semibold">AeroDMS Sentinel</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/40 text-secondary font-label-code text-label-code"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>LIVE INFERENCE: ACTIVE</div><div class="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/40 text-primary-container font-label-code text-label-code">CONTINUAL LEARNING: COLLECTING</div></div></div></div><nav class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-outline-variant/50" data-active-classes="bg-surface-container-high text-primary border-outline-variant text-on-surface"><a aria-current="page" class="px-3 py-1.5 rounded transition-colors font-label-code uppercase tracking-wider bg-surface-container-high text-primary border-outline-variant text-on-surface" data-path="live-monitor" href="#">Live Monitor</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="video-analysis" href="#">Video Analysis</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="continual-learning" href="#">Continual Learning</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="model-performance" href="#">Model Performance</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="architecture-and-privacy" href="#">Architecture &amp; Privacy</a></nav><div class="flex items-center gap-space-md"><div class="hidden 2xl:flex items-center gap-space-sm font-label-code text-label-code"><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">BACKEND:</span> <span class="text-on-surface font-semibold">PyTorch CPU</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">MODEL:</span> <span class="text-on-surface font-semibold">YOLOv5nu-v001</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">FPS:</span> <span class="text-secondary font-semibold">27.5</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">UPTIME:</span> <span class="text-on-surface font-semibold">00:14:22</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface border-r border-outline-variant/40 z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Monitoring Source</span><div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded border border-outline-variant/40"><button class="py-1.5 px-2 rounded bg-surface-container-high text-primary font-label-code text-label-code font-semibold text-center border border-outline-variant/30">Live WebRTC</button><button class="py-1.5 px-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code text-center">File Eval</button></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Display Overlays</span><div class="flex flex-col gap-2 font-body-sm text-body-sm"><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Bounding Boxes (YOLO)</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Driver Face Box</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Class Labels &amp; Scores</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">In-Video HUD Panels</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Pipeline FPS Badge</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label></div></div><div class="p-space-sm rounded bg-surface-container-low border border-primary-container/30 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-primary-container uppercase font-bold">Continual Engine</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded" type="checkbox"/></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Dynamic stream collector into volatile cyclic ring buffer.</p></div><div class="p-space-sm rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-1.5 font-label-code text-label-code"><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider mb-0.5">Model Metrics</span><div class="flex justify-between"><span class="text-on-surface-variant">Arch:</span><span class="text-on-surface">YOLOv5nu</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Classes:</span><span class="text-on-surface">3</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Input:</span><span class="text-on-surface">640x640</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Params:</span><span class="text-on-surface">2.50M</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Inference:</span><span class="text-secondary">36.2ms</span></div></div></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-lowest"><div class="flex items-start gap-2 text-outline font-body-sm text-body-sm"><span class="material-symbols-outlined text-[16px] text-secondary mt-0.5 shrink-0">verified_user</span><div class="flex flex-col gap-0.5"><span class="font-label-caps text-label-caps text-on-surface uppercase">Privacy Certified</span><span class="font-label-code text-label-code text-on-surface-variant text-[10px] leading-tight">Volatile RAM Processing • Zero Identity Embeddings • No Facial Rec</span></div></div></div></aside><div class="pl-64"><main class="relative w-full pt-16 min-h-screen bg-surface-container-lowest px-margin py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP SECTION: 2-COLUMN COCKPIT (60% Video Stage, 40% Alert Center & Telemetry) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (7 Cols ~ 58-60%) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md min-w-0">
+<!-- Video Viewport Card -->
+<div class="relative rounded-lg bg-surface-container-lowest overflow-hidden shadow-2xl transition-all duration-300" id="video-stage">
+<!-- Responsive 16:9 Container -->
+<div class="relative w-full aspect-[16/9] bg-surface-container-lowest overflow-hidden select-none">
+<!-- Live Cabin Image Stream -->
+<img alt="Driver Cabin Telemetry Video Feed" class="w-full h-full object-cover filter contrast-105 brightness-95" id="feed-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOI0ZfvznijtyfsOveaywM5aEsMZ8Ge_MR4780-DkULuk-N9HXVV3wTrPJ6Vh8W2bzQGp5HS4bMpktCjDge6Sv2EiuQfAf7qCX0BDUHgp9w-Xq4vVEt0bAHxsJtJBw25L6mcZV3YvuYhsA_nzQw6eySB8_4Wp8__rg1MUMrwIwV8dEun38I2ZvSBcvokfWDZ6pIUuz7pEmPqobiSYYTigBDbz1mYJqdWW9E3cJDGyE9x8DYbOr5m9W"/>
+<!-- Ambient CRT Scanline Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px]"></div>
+<!-- TOP IN-VIDEO HUD BAR -->
+<div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
+<!-- Left Info Pill -->
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-code text-label-code text-on-surface uppercase tracking-wider">LIVE FEED // CAM_01 • 640x480 • <span class="text-secondary font-semibold" id="hud-fps-val">27.5 FPS</span> • SHUTTER: 1/120s</span>
+</div>
+<!-- Right Dynamic Driver Vigilance Banner -->
+<div class="flex items-center gap-2 px-3 py-1 rounded bg-secondary/15 backdrop-blur-md shadow-sm" id="vigilance-banner">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping" id="vigilance-dot"></span>
+<span class="font-label-code text-label-code font-bold tracking-wider text-secondary uppercase" id="vigilance-text">NORMAL — VIGILANT</span>
+</div>
+</div>
+<!-- COMPUTER VISION BOUNDING BOX OVERLAYS -->
+<!-- Driver Face Tracking Box -->
+<div class="absolute top-[26%] left-[61%] w-[16%] h-[27%] transition-all duration-200 pointer-events-none" id="box-driver">
+<!-- Dotted Bounding Rect -->
+<div class="w-full h-full border border-dashed border-primary shadow-[0_0_8px_rgba(56,189,248,0.35)] relative">
+<div class="absolute -top-5 left-0 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-label-code text-[9px] text-primary whitespace-nowrap uppercase tracking-tighter">
+                DRIVER (TRACKED) #01 [99.2%]
+              </div>
+<!-- Corner Crosshairs -->
+<div class="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute -top-1 -right-1 w-2 h-2 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute -bottom-1 -left-1 w-2 h-2 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2 border-primary"></div>
+</div>
+</div>
+<!-- Left Eye Box -->
+<div class="absolute top-[33.5%] left-[63.2%] w-[4.4%] h-[4.2%] transition-all duration-200 pointer-events-none" id="box-eye-left">
+<div class="w-full h-full border border-secondary shadow-[0_0_6px_rgba(78,222,163,0.4)] relative">
+<div class="absolute -top-4 -left-1 px-1 py-0.2 rounded bg-surface-container-lowest/95 font-label-code text-[8px] text-secondary whitespace-nowrap">
+                eye_L 0.94
+              </div>
+</div>
+</div>
+<!-- Right Eye Box -->
+<div class="absolute top-[33.7%] left-[69.4%] w-[4.4%] h-[4.2%] transition-all duration-200 pointer-events-none" id="box-eye-right">
+<div class="w-full h-full border border-secondary shadow-[0_0_6px_rgba(78,222,163,0.4)] relative">
+<div class="absolute -top-4 -left-1 px-1 py-0.2 rounded bg-surface-container-lowest/95 font-label-code text-[8px] text-secondary whitespace-nowrap">
+                eye_R 0.95
+              </div>
+</div>
+</div>
+<!-- Mouth Bounding Box -->
+<div class="absolute top-[43.5%] left-[64.6%] w-[7.2%] h-[5.2%] transition-all duration-200 pointer-events-none" id="box-mouth">
+<div class="w-full h-full border border-outline shadow-sm relative">
+<div class="absolute -bottom-4 right-0 px-1 py-0.2 rounded bg-surface-container-lowest/95 font-label-code text-[8px] text-on-surface-variant whitespace-nowrap">
+                mouth_closed 0.98
+              </div>
+</div>
+</div>
+<!-- Face Lost Simulation Mask (Hidden by default) -->
+<div class="hidden absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-sm flex flex-col items-center justify-center gap-2 z-20" id="face-lost-overlay">
+<span class="material-symbols-outlined text-tertiary text-4xl animate-bounce">person_off</span>
+<div class="font-headline-md text-headline-md text-tertiary font-bold tracking-wider">OCCLUSION DETECTED — TARGET ACQUISITION LOST</div>
+<div class="font-label-code text-label-code text-on-surface-variant">Searching 640x480 sub-regions | Check IR emitter &amp; head pose angle</div>
+</div>
+<!-- BOTTOM IN-VIDEO HUD BAR -->
+<div class="absolute bottom-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
+<div class="flex items-center gap-3 px-3 py-1 rounded bg-surface-container-lowest/85 backdrop-blur-md shadow-sm font-label-code text-label-code text-on-surface">
+<span class="text-outline">METRICS:</span>
+<span>EAR: <strong class="text-secondary" id="hud-ear">0.31</strong></span>
+<span class="text-outline-variant">|</span>
+<span>MAR: <strong class="text-primary" id="hud-mar">0.18</strong></span>
+<span class="text-outline-variant">|</span>
+<span>PERCLOS: <strong class="text-secondary" id="hud-perclos">4.2%</strong></span>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest/85 backdrop-blur-md shadow-sm font-label-code text-label-code">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-on-surface-variant font-medium">REC • VOLATILE BUFFER (RAM ONLY)</span>
+</div>
+</div>
+</div>
+<!-- Cockpit Quick Simulation Controls -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Simulate State:</span>
+<div class="flex items-center gap-1.5 font-label-code text-label-code">
+<button class="px-2.5 py-1 rounded bg-secondary/15 text-secondary font-semibold hover:bg-secondary/25 transition-all shadow-sm" id="btn-state-normal" onclick="setSimulationState('normal')">
+                Normal State
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all shadow-sm" id="btn-state-warning" onclick="setSimulationState('warning')">
+                Trigger Warning (Yawn)
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all shadow-sm" id="btn-state-critical" onclick="setSimulationState('critical')">
+                Trigger Critical (Microsleep)
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all shadow-sm" id="btn-state-lost" onclick="setSimulationState('lost')">
+                Face Lost
+              </button>
+</div>
+</div>
+<div class="flex items-center gap-2 font-label-code text-label-code text-on-surface-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span>SHM Ring: <span class="text-on-surface font-semibold">120/120</span> Slots</span>
+</div>
+</div>
+</div>
+<!-- Technical Breakdown Accordion -->
+<details class="group rounded-lg bg-surface-container-low shadow-sm transition-all open:bg-surface-container">
+<summary class="list-none flex items-center justify-between p-space-md cursor-pointer select-none">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-lg">info</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">How are alerts triggered? (System Thresholds &amp; Empirical Logic)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-sm text-body-sm text-on-surface-variant space-y-3">
+<p class="leading-relaxed">
+            The AeroDMS Sentinel inferential pipeline processes facial landmark geometries and head pose orientation vectors at native sensor speed without biometric identity storage. Multi-parameter thresholds are calibrated via ISO-compliant automotive driver fatigue standards:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm font-label-code text-label-code text-on-surface pt-1">
+<div class="p-space-sm rounded bg-surface-container-lowest">
+<div class="text-primary font-bold mb-1">OCULAR METRICS (EAR &amp; PERCLOS)</div>
+<div>• Baseline Healthy EAR: <span class="text-secondary">&gt; 0.25</span></div>
+<div>• Microsleep Threshold: <span class="text-tertiary">EAR &lt; 0.21</span> sustained for <span class="text-tertiary font-bold">&gt;1.20s</span></div>
+<div>• PERCLOS P80 Window: Warning trigger at <span class="text-tertiary">&gt; 25.0%</span> closure over 60s</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest">
+<div class="text-primary font-bold mb-1">ORAL &amp; POSTURAL METRICS</div>
+<div>• Mouth Aspect Ratio (MAR): <span class="text-secondary">&lt; 0.35</span> baseline</div>
+<div>• Yawn Event: <span class="text-tertiary">MAR &gt; 0.55</span> sustained for <span class="text-tertiary font-bold">&gt;1.50s</span></div>
+<div>• Conversational Filter: Adaptive suppression during normal speech articulation</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-outline flex items-center justify-between">
+<span>DISCLAIMER: Auxiliary Driver Monitoring System. Does not replace primary driver responsibility or certified medical evaluation.</span>
+<span class="text-secondary">REV: SPEC-DMS-2025.4B</span>
+</div>
+</div>
+</details>
+</div>
+<!-- RIGHT COLUMN (5 Cols ~ 40-42%) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md min-w-0">
+<!-- Top Metrics 4-Tile Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Tile 1: Driver State -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-24">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Driver State</span>
+<span class="material-symbols-outlined text-secondary text-base">psychology</span>
+</div>
+<div class="flex items-baseline gap-2">
+<div class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-code text-label-code font-bold flex items-center gap-1.5 shadow-sm" id="tile-state-pill">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary" id="tile-state-dot"></span>
+<span id="tile-state-text">NORMAL</span>
+</div>
+</div>
+<div class="font-label-code text-[10px] text-on-surface-variant truncate">Saccadic rate optimal • Attentive</div>
+</div>
+<!-- Tile 2: Fatigue Score -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-24">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Fatigue Score</span>
+<span class="material-symbols-outlined text-primary text-base">vital_signs</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold" id="tile-fatigue-val">18</span>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">/100</span>
+</div>
+<span class="font-label-code text-label-code text-secondary font-semibold" id="tile-fatigue-level">LOW RISK</span>
+</div>
+<!-- Mini Progress Bar -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" id="tile-fatigue-bar" style="width: 18%"></div>
+</div>
+</div>
+<!-- Tile 3: Pipeline FPS -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-24">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Pipeline FPS</span>
+<span class="material-symbols-outlined text-secondary text-base">speed</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary font-bold">27.5</span>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">FPS</span>
+</div>
+<div class="font-label-code text-[10px] text-on-surface-variant">Jitter: <span class="text-on-surface">±0.3ms</span> • Latency: <span class="text-secondary">36.2ms</span></div>
+</div>
+<!-- Tile 4: Camera Status -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-24">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Camera Status</span>
+<span class="material-symbols-outlined text-secondary text-base">videocam</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">WebRTC 60fps</span>
+</div>
+<div class="font-label-code text-[10px] text-secondary">ACTIVE • HW IR ILLUM ON</div>
+</div>
+</div>
+<!-- Dedicated CURRENT ALERT Panel -->
+<div class="p-space-md rounded-lg bg-surface-container shadow-md flex flex-col gap-space-sm transition-all duration-300" id="alert-panel">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Active Safety Vector</span>
+<div class="flex items-center gap-1 font-label-code text-[10px] text-on-surface-variant">
+<span>TIMESTAMP:</span>
+<span class="text-on-surface font-semibold" id="alert-timestamp">16:04:38 UTC</span>
+</div>
+</div>
+<!-- Alert Banner -->
+<div class="p-space-sm rounded bg-secondary/15 flex items-center justify-between" id="alert-banner-box">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" id="alert-icon">check_circle</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold tracking-tight" id="alert-title">NORMAL — DRIVER ALERT &amp; ATTENTIVE</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-code text-label-code font-bold" id="alert-pill-tag">CLEAR</span>
+</div>
+<!-- Alert Diagnostic Rows -->
+<div class="space-y-2 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<div class="flex items-start gap-2">
+<span class="font-label-code text-label-code text-outline shrink-0 w-28 uppercase">Condition:</span>
+<span class="text-on-surface" id="alert-condition">Ocular metrics and facial telemetry within standard baseline limits.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-label-code text-label-code text-outline shrink-0 w-28 uppercase">Trigger:</span>
+<span class="text-on-surface font-label-code text-label-code" id="alert-trigger">Zero sustained closure events detected in rolling 60s window.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-label-code text-label-code text-outline shrink-0 w-28 uppercase">Evidence:</span>
+<span class="text-on-surface font-label-code text-[11px] bg-surface-container-lowest px-2 py-1 rounded w-full" id="alert-evidence">EAR: 0.31 (Thr: 0.21) | PERCLOS: 4.2% (Thr: 25.0%) | Fatigue: 18/100</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-label-code text-label-code text-outline shrink-0 w-28 uppercase">Action:</span>
+<span class="text-secondary font-medium" id="alert-action">Continue normal vehicle operation. System active in passive monitoring mode.</span>
+</div>
+</div>
+</div>
+<!-- Alert Event History Timeline Component -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-sm flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Alert Event History</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-code text-[10px]" id="history-count">4 Events</span>
+</div>
+<button class="font-label-code text-label-code text-outline hover:text-on-surface transition-colors flex items-center gap-1" onclick="clearHistory()">
+<span class="material-symbols-outlined text-[14px]">delete_sweep</span>
+<span>Clear History</span>
+</button>
+</div>
+<!-- Scrollable Feed -->
+<div class="space-y-2 max-h-52 overflow-y-auto pr-1" id="history-container">
+<!-- Event Item 1: Recovery -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-code text-[11px] text-outline shrink-0">16:04:30</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary font-label-code text-[10px] font-bold shrink-0">RECOVERY</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Alertness indicators returning to safe baseline</span>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant font-mono shrink-0">EAR: 0.29</span>
+</div>
+<!-- Event Item 2: Critical -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-code text-[11px] text-outline shrink-0">16:04:12</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-code text-[10px] font-bold shrink-0">CRITICAL</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Microsleep detected (&gt;1.2s duration)</span>
+</div>
+<span class="font-label-code text-[11px] text-tertiary font-mono shrink-0">EAR: 0.11</span>
+</div>
+<!-- Event Item 3: Warning Closure -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-code text-[11px] text-outline shrink-0">16:03:45</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary-container font-label-code text-[10px] font-bold shrink-0">WARNING</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Sustained ocular closure trend</span>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant font-mono shrink-0">EAR: 0.18</span>
+</div>
+<!-- Event Item 4: Warning Yawn -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-code text-[11px] text-outline shrink-0">16:01:20</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary-container font-label-code text-[10px] font-bold shrink-0">WARNING</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Yawn detected (&gt;1.5s sustained)</span>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant font-mono shrink-0">MAR: 0.62</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- LOWER FULL-WIDTH ROW: PHYSIOLOGICAL TELEMETRY & MULTI-SIGNAL SPARKLINE -->
+<div class="flex flex-col gap-space-sm">
+<!-- Row Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Synchronized Biometric Telemetry Matrix</span>
+<span class="text-outline-variant font-label-code text-[11px]">• Real-time Landmark Geometry (468 Mesh Points)</span>
+</div>
+<div class="flex items-center gap-3 font-label-code text-label-code">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="w-2 h-0.5 bg-secondary"></span>
+<span>EAR Stream</span>
+</span>
+<span class="flex items-center gap-1.5 text-primary">
+<span class="w-2 h-0.5 bg-primary"></span>
+<span>Fatigue (x10⁻²)</span>
+</span>
+<span class="flex items-center gap-1.5 text-tertiary">
+<span class="w-2 h-0.5 border-t border-dashed border-tertiary"></span>
+<span>Critical Threshold</span>
+</span>
+</div>
+</div>
+<!-- 5-Column Detailed Signal Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Signal 1: Eye State -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-28">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">1. Eye State</span>
+<span class="material-symbols-outlined text-secondary text-base" id="sig-eye-icon">visibility</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary font-bold" id="sig-eye-val">OPEN</span>
+<span class="font-label-code text-label-code text-on-surface-variant">L: 0.94 / R: 0.95</span>
+</div>
+<div class="flex justify-between font-label-code text-[10px] text-on-surface-variant">
+<span>Closure Duration:</span>
+<span class="text-on-surface font-semibold" id="sig-eye-duration">0.00s</span>
+</div>
+</div>
+<!-- Signal 2: EAR -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-28">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">2. EAR (Eye Aspect Ratio)</span>
+<span class="font-label-code text-[10px] text-outline">Thr: 0.21</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold" id="sig-ear-val">0.31</span>
+<span class="font-label-code text-label-code text-secondary font-semibold" id="sig-ear-status">NORMAL</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" id="sig-ear-bar" style="width: 77%"></div>
+</div>
+</div>
+<!-- Signal 3: MAR -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-28">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">3. MAR (Mouth Aspect)</span>
+<span class="font-label-code text-[10px] text-outline">Thr: 0.55</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold" id="sig-mar-val">0.18</span>
+<span class="font-label-code text-label-code text-secondary font-semibold" id="sig-mar-status">FILTER ACTIVE</span>
+</div>
+<div class="flex justify-between font-label-code text-[10px] text-on-surface-variant">
+<span>Speech Suppression:</span>
+<span class="text-primary font-semibold">ENGAGED</span>
+</div>
+</div>
+<!-- Signal 4: PERCLOS -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-28">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">4. PERCLOS (P80)</span>
+<span class="font-label-code text-[10px] text-outline">Rolling 60s</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold" id="sig-perclos-val">4.2%</span>
+<span class="font-label-code text-label-code text-outline">Thr: 25.0%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" id="sig-perclos-bar" style="width: 17%"></div>
+</div>
+</div>
+<!-- Signal 5: Head Pose -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col justify-between h-28">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">5. Head Pose (Euler)</span>
+<span class="font-label-code text-[10px] text-secondary font-bold" id="sig-pose-status">FORWARD</span>
+</div>
+<div class="font-telemetry-metric text-telemetry-metric text-on-surface font-bold text-ellipsis overflow-hidden whitespace-nowrap">
+          HEAD_FORWARD
+        </div>
+<div class="flex justify-between font-label-code text-[10px] text-on-surface-variant">
+<span>Y: <strong class="text-on-surface">+2.1°</strong></span>
+<span>P: <strong class="text-on-surface">-1.4°</strong></span>
+<span>R: <strong class="text-on-surface">+0.8°</strong></span>
+</div>
+</div>
+</div>
+<!-- Multi-signal ECG-style Timeline Waveform -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-code text-[10px] text-outline">
+<div class="flex items-center gap-2">
+<span>ROLLING REAL-TIME SPARKLINE (PAST 150 INFERENCE FRAMES ~ 5.4s)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<div class="flex items-center gap-4">
+<span>EAR RANGE: 0.00 — 0.40</span>
+<span>FATIGUE RANGE: 0 — 100</span>
+</div>
+</div>
+<!-- Dynamic SVG Canvas -->
+<div class="relative w-full h-24 bg-surface-container-lowest rounded overflow-hidden">
+<!-- SVG Waveform -->
+<svg class="w-full h-full" id="telemetry-sparkline" preserveaspectratio="none" viewbox="0 0 600 100">
+<defs>
+<lineargradient id="earGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4edea3" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#4edea3" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="fatigueGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#3e484f" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="600" y1="20" y2="20"></line>
+<line stroke="#3e484f" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="600" y1="50" y2="50"></line>
+<line stroke="#3e484f" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="600" y1="80" y2="80"></line>
+<!-- Critical Threshold Line (EAR = 0.21 -> y ~ 55) -->
+<line stroke="#ffb4ab" stroke-dasharray="4,4" stroke-width="1" x1="0" x2="600" y1="55" y2="55"></line>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="8" x="6" y="52">EAR CRITICAL (0.21)</text>
+<!-- Fatigue Area & Path -->
+<path d="M 0 100 L 0 85 Q 150 82, 300 84 T 600 82 L 600 100 Z" fill="url(#fatigueGrad)" id="path-fatigue-fill"></path>
+<path d="M 0 85 Q 150 82, 300 84 T 600 82" fill="none" id="path-fatigue-line" stroke="#38bdf8" stroke-width="1.5"></path>
+<!-- EAR Area & Path -->
+<path d="M 0 100 L 0 32 Q 100 28, 200 35 T 400 30 T 600 33 L 600 100 Z" fill="url(#earGrad)" id="path-ear-fill"></path>
+<path d="M 0 32 Q 100 28, 200 35 T 400 30 T 600 33" fill="none" id="path-ear-line" stroke="#4edea3" stroke-width="2"></path>
+<!-- Current Playhead Pulse Cursor -->
+<line stroke="#8ed5ff" stroke-width="2" x1="598" x2="598" y1="0" y2="100"></line>
+<circle cx="598" cy="33" fill="#4edea3" r="3"></circle>
+<circle cx="598" cy="82" fill="#38bdf8" r="3"></circle>
+</svg>
+<!-- Current Value Tags -->
+<div class="absolute right-3 top-2 flex flex-col items-end gap-0.5 font-label-code text-[9px] pointer-events-none">
+<span class="text-secondary font-bold">EAR: <span id="spark-ear-val">0.31</span></span>
+<span class="text-primary font-bold">FATIGUE: <span id="spark-fatigue-val">18</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentState = 'normal';
+  let historyEvents = [
+    { time: '16:04:30', type: 'RECOVERY', color: 'secondary', desc: 'Alertness indicators returning to safe baseline', metric: 'EAR: 0.29' },
+    { time: '16:04:12', type: 'CRITICAL', color: 'tertiary', desc: 'Microsleep detected (>1.2s duration)', metric: 'EAR: 0.11' },
+    { time: '16:03:45', type: 'WARNING', color: 'primary-container', desc: 'Sustained ocular closure trend', metric: 'EAR: 0.18' },
+    { time: '16:01:20', type: 'WARNING', color: 'primary-container', desc: 'Yawn detected (>1.5s sustained)', metric: 'MAR: 0.62' }
+  ];
+
+  function setSimulationState(state) {
+    currentState = state;
+
+    // Reset button appearances
+    ['normal', 'warning', 'critical', 'lost'].forEach(s => {
+      const btn = document.getElementById('btn-state-' + s);
+      if (btn) {
+        btn.className = "px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all shadow-sm";
+      }
+    });
+
+    const activeBtn = document.getElementById('btn-state-' + state);
+    const boxDriver = document.getElementById('box-driver');
+    const boxEyeL = document.getElementById('box-eye-left');
+    const boxEyeR = document.getElementById('box-eye-right');
+    const boxMouth = document.getElementById('box-mouth');
+    const faceLost = document.getElementById('face-lost-overlay');
+    const videoStage = document.getElementById('video-stage');
+
+    const vigBanner = document.getElementById('vigilance-banner');
+    const vigDot = document.getElementById('vigilance-dot');
+    const vigText = document.getElementById('vigilance-text');
+
+    const hudEar = document.getElementById('hud-ear');
+    const hudMar = document.getElementById('hud-mar');
+    const hudPerclos = document.getElementById('hud-perclos');
+
+    const tileStatePill = document.getElementById('tile-state-pill');
+    const tileStateDot = document.getElementById('tile-state-dot');
+    const tileStateText = document.getElementById('tile-state-text');
+
+    const tileFatigueVal = document.getElementById('tile-fatigue-val');
+    const tileFatigueLevel = document.getElementById('tile-fatigue-level');
+    const tileFatigueBar = document.getElementById('tile-fatigue-bar');
+
+    const alertPanel = document.getElementById('alert-panel');
+    const alertBannerBox = document.getElementById('alert-banner-box');
+    const alertIcon = document.getElementById('alert-icon');
+    const alertTitle = document.getElementById('alert-title');
+    const alertPillTag = document.getElementById('alert-pill-tag');
+    const alertCondition = document.getElementById('alert-condition');
+    const alertTrigger = document.getElementById('alert-trigger');
+    const alertEvidence = document.getElementById('alert-evidence');
+    const alertAction = document.getElementById('alert-action');
+    const alertTimestamp = document.getElementById('alert-timestamp');
+
+    const sigEyeVal = document.getElementById('sig-eye-val');
+    const sigEyeDuration = document.getElementById('sig-eye-duration');
+    const sigEyeIcon = document.getElementById('sig-eye-icon');
+    const sigEarVal = document.getElementById('sig-ear-val');
+    const sigEarStatus = document.getElementById('sig-ear-status');
+    const sigEarBar = document.getElementById('sig-ear-bar');
+    const sigMarVal = document.getElementById('sig-mar-val');
+    const sigMarStatus = document.getElementById('sig-mar-status');
+    const sigPerclosVal = document.getElementById('sig-perclos-val');
+    const sigPerclosBar = document.getElementById('sig-perclos-bar');
+    const sigPoseStatus = document.getElementById('sig-pose-status');
+
+    const pathEarLine = document.getElementById('path-ear-line');
+    const pathEarFill = document.getElementById('path-ear-fill');
+    const pathFatigueLine = document.getElementById('path-fatigue-line');
+    const pathFatigueFill = document.getElementById('path-fatigue-fill');
+    const sparkEarVal = document.getElementById('spark-ear-val');
+    const sparkFatigueVal = document.getElementById('spark-fatigue-val');
+
+    const now = new Date();
+    const timeStr = now.toISOString().substr(11, 8) + ' UTC';
+    if (alertTimestamp) alertTimestamp.innerText = timeStr;
+
+    // Default visibility
+    faceLost.classList.add('hidden');
+    boxDriver.classList.remove('hidden');
+    boxEyeL.classList.remove('hidden');
+    boxEyeR.classList.remove('hidden');
+    boxMouth.classList.remove('hidden');
+    videoStage.classList.remove('ring-2', 'ring-tertiary', 'ring-primary-container');
+
+    if (state === 'normal') {
+      if (activeBtn) activeBtn.className = "px-2.5 py-1 rounded bg-secondary/15 text-secondary font-semibold shadow-sm";
+
+      vigBanner.className = "flex items-center gap-2 px-3 py-1 rounded bg-secondary/15 backdrop-blur-md shadow-sm";
+      vigDot.className = "w-2 h-2 rounded-full bg-secondary animate-ping";
+      vigText.className = "font-label-code text-label-code font-bold tracking-wider text-secondary uppercase";
+      vigText.innerText = "NORMAL — VIGILANT";
+
+      hudEar.innerText = "0.31";
+      hudEar.className = "text-secondary font-semibold";
+      hudMar.innerText = "0.18";
+      hudPerclos.innerText = "4.2%";
+
+      tileStatePill.className = "px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-code text-label-code font-bold flex items-center gap-1.5 shadow-sm";
+      tileStateDot.className = "w-1.5 h-1.5 rounded-full bg-secondary";
+      tileStateText.innerText = "NORMAL";
+
+      tileFatigueVal.innerText = "18";
+      tileFatigueVal.className = "font-telemetry-metric text-telemetry-metric text-on-surface font-bold";
+      tileFatigueLevel.innerText = "LOW RISK";
+      tileFatigueLevel.className = "font-label-code text-label-code text-secondary font-semibold";
+      tileFatigueBar.className = "bg-secondary h-full rounded-full transition-all duration-300";
+      tileFatigueBar.style.width = "18%";
+
+      alertBannerBox.className = "p-space-sm rounded bg-secondary/15 flex items-center justify-between";
+      alertIcon.innerText = "check_circle";
+      alertIcon.className = "material-symbols-outlined text-secondary text-lg";
+      alertTitle.innerText = "NORMAL — DRIVER ALERT & ATTENTIVE";
+      alertTitle.className = "font-headline-md text-headline-md text-secondary font-bold tracking-tight";
+      alertPillTag.className = "px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-code text-label-code font-bold";
+      alertPillTag.innerText = "CLEAR";
+
+      alertCondition.innerText = "Ocular metrics and facial telemetry within standard baseline limits.";
+      alertTrigger.innerText = "Zero sustained closure events detected in rolling 60s window.";
+      alertEvidence.innerText = "EAR: 0.31 (Thr: 0.21) | PERCLOS: 4.2% (Thr: 25.0%) | Fatigue: 18/100";
+      alertAction.innerText = "Continue normal vehicle operation. System active in passive monitoring mode.";
+      alertAction.className = "text-secondary font-medium";
+
+      sigEyeVal.innerText = "OPEN";
+      sigEyeVal.className = "font-telemetry-metric text-telemetry-metric text-secondary font-bold";
+      sigEyeDuration.innerText = "0.00s";
+      sigEyeIcon.innerText = "visibility";
+      sigEyeIcon.className = "material-symbols-outlined text-secondary text-base";
+
+      sigEarVal.innerText = "0.31";
+      sigEarStatus.innerText = "NORMAL";
+      sigEarStatus.className = "font-label-code text-label-code text-secondary font-semibold";
+      sigEarBar.className = "bg-secondary h-full rounded-full transition-all duration-300";
+      sigEarBar.style.width = "77%";
+
+      sigMarVal.innerText = "0.18";
+      sigMarStatus.innerText = "FILTER ACTIVE";
+      sigMarStatus.className = "font-label-code text-label-code text-secondary font-semibold";
+
+      sigPerclosVal.innerText = "4.2%";
+      sigPerclosBar.className = "bg-secondary h-full rounded-full transition-all duration-300";
+      sigPerclosBar.style.width = "17%";
+
+      sigPoseStatus.innerText = "FORWARD";
+      sigPoseStatus.className = "font-label-code text-[10px] text-secondary font-bold";
+
+      pathEarLine.setAttribute('d', 'M 0 32 Q 100 28, 200 35 T 400 30 T 600 33');
+      pathEarFill.setAttribute('d', 'M 0 100 L 0 32 Q 100 28, 200 35 T 400 30 T 600 33 L 600 100 Z');
+      pathFatigueLine.setAttribute('d', 'M 0 85 Q 150 82, 300 84 T 600 82');
+      pathFatigueFill.setAttribute('d', 'M 0 100 L 0 85 Q 150 82, 300 84 T 600 82 L 600 100 Z');
+      sparkEarVal.innerText = "0.31";
+      sparkFatigueVal.innerText = "18";
+
+    } else if (state === 'warning') {
+      if (activeBtn) activeBtn.className = "px-2.5 py-1 rounded bg-primary-container/20 text-primary-container font-semibold shadow-sm";
+
+      vigBanner.className = "flex items-center gap-2 px-3 py-1 rounded bg-primary-container/20 backdrop-blur-md shadow-sm";
+      vigDot.className = "w-2 h-2 rounded-full bg-primary-container animate-pulse";
+      vigText.className = "font-label-code text-label-code font-bold tracking-wider text-primary-container uppercase";
+      vigText.innerText = "WARNING — YAWN DETECTED";
+
+      hudEar.innerText = "0.24";
+      hudMar.innerText = "0.64";
+      hudPerclos.innerText = "12.8%";
+
+      tileStatePill.className = "px-2 py-0.5 rounded bg-primary-container/20 text-primary-container font-label-code text-label-code font-bold flex items-center gap-1.5 shadow-sm";
+      tileStateDot.className = "w-1.5 h-1.5 rounded-full bg-primary-container";
+      tileStateText.innerText = "YAWN ADVISORY";
+
+      tileFatigueVal.innerText = "48";
+      tileFatigueVal.className = "font-telemetry-metric text-telemetry-metric text-primary-container font-bold";
+      tileFatigueLevel.innerText = "ELEVATED";
+      tileFatigueLevel.className = "font-label-code text-label-code text-primary-container font-semibold";
+      tileFatigueBar.className = "bg-primary-container h-full rounded-full transition-all duration-300";
+      tileFatigueBar.style.width = "48%";
+
+      alertBannerBox.className = "p-space-sm rounded bg-primary-container/20 flex items-center justify-between";
+      alertIcon.innerText = "warning";
+      alertIcon.className = "material-symbols-outlined text-primary-container text-lg";
+      alertTitle.innerText = "ADVISORY — EXTENDED YAWN DETECTED";
+      alertTitle.className = "font-headline-md text-headline-md text-primary-container font-bold tracking-tight";
+      alertPillTag.className = "px-2 py-0.5 rounded bg-primary-container/30 text-primary font-label-code text-label-code font-bold";
+      alertPillTag.innerText = "STAGE 1";
+
+      alertCondition.innerText = "Mouth aperture exceeded baseline yawning thresholds for >1.5 seconds.";
+      alertTrigger.innerText = "MAR: 0.64 sustained > 1.8s (Filtered for natural cabin conversation).";
+      alertEvidence.innerText = "MAR: 0.64 (Thr: 0.55) | EAR: 0.24 | PERCLOS: 12.8% | Fatigue: 48/100";
+      alertAction.innerText = "Audio chime primed. Monitor cabin temperature and driver vocal cadence.";
+      alertAction.className = "text-primary font-medium";
+
+      sigMarVal.innerText = "0.64";
+      sigMarStatus.innerText = "YAWN EXCEEDED";
+      sigMarStatus.className = "font-label-code text-label-code text-primary-container font-bold";
+
+      sigEarVal.innerText = "0.24";
+      sigEarStatus.innerText = "DROPPING";
+      sigEarStatus.className = "font-label-code text-label-code text-primary-container font-semibold";
+
+      addHistoryItem({
+        time: timeStr.split(' ')[0],
+        type: 'WARNING',
+        color: 'primary-container',
+        desc: 'Yawn detected (>1.5s sustained aperture)',
+        metric: 'MAR: 0.64'
+      });
+
+    } else if (state === 'critical') {
+      if (activeBtn) activeBtn.className = "px-2.5 py-1 rounded bg-tertiary-container/30 text-tertiary font-semibold shadow-sm";
+      videoStage.classList.add('ring-2', 'ring-tertiary');
+
+      vigBanner.className = "flex items-center gap-2 px-3 py-1 rounded bg-tertiary-container/30 backdrop-blur-md shadow-sm";
+      vigDot.className = "w-2 h-2 rounded-full bg-tertiary animate-ping";
+      vigText.className = "font-label-code text-label-code font-bold tracking-wider text-tertiary uppercase";
+      vigText.innerText = "CRITICAL — MICROSLEEP ALARM";
+
+      hudEar.innerText = "0.08";
+      hudEar.className = "text-tertiary font-bold";
+      hudPerclos.innerText = "38.5%";
+
+      tileStatePill.className = "px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-code text-label-code font-bold flex items-center gap-1.5 shadow-sm";
+      tileStateDot.className = "w-1.5 h-1.5 rounded-full bg-tertiary";
+      tileStateText.innerText = "MICROSLEEP";
+
+      tileFatigueVal.innerText = "89";
+      tileFatigueVal.className = "font-telemetry-metric text-telemetry-metric text-tertiary font-bold";
+      tileFatigueLevel.innerText = "HAZARDOUS";
+      tileFatigueLevel.className = "font-label-code text-label-code text-tertiary font-bold";
+      tileFatigueBar.className = "bg-tertiary h-full rounded-full transition-all duration-300";
+      tileFatigueBar.style.width = "89%";
+
+      alertBannerBox.className = "p-space-sm rounded bg-tertiary-container/30 flex items-center justify-between";
+      alertIcon.innerText = "fmd_bad";
+      alertIcon.className = "material-symbols-outlined text-tertiary text-lg animate-bounce";
+      alertTitle.innerText = "CRITICAL — SUSTAINED EYE CLOSURE (>1.2s)";
+      alertTitle.className = "font-headline-md text-headline-md text-tertiary font-bold tracking-tight";
+      alertPillTag.className = "px-2 py-0.5 rounded bg-tertiary text-on-tertiary font-label-code text-label-code font-bold animate-pulse";
+      alertPillTag.innerText = "ACTIVE ALARM";
+
+      alertCondition.innerText = "Bilateral eye closure exceeds physiological blink window threshold (1.20s).";
+      alertTrigger.innerText = "EAR < 0.21 sustained continuously for 1.45 seconds.";
+      alertEvidence.innerText = "EAR: 0.08 (Thr: 0.21) | PERCLOS: 38.5% (Thr: 25.0%) | Fatigue: 89/100";
+      alertAction.innerText = "IMMEDIATE: Trigger steering haptic pulse & audible frequency siren.";
+      alertAction.className = "text-tertiary font-bold";
+
+      sigEyeVal.innerText = "CLOSED";
+      sigEyeVal.className = "font-telemetry-metric text-telemetry-metric text-tertiary font-bold";
+      sigEyeDuration.innerText = "1.45s";
+      sigEyeIcon.innerText = "visibility_off";
+      sigEyeIcon.className = "material-symbols-outlined text-tertiary text-base";
+
+      sigEarVal.innerText = "0.08";
+      sigEarStatus.innerText = "CRITICAL";
+      sigEarStatus.className = "font-label-code text-label-code text-tertiary font-bold";
+      sigEarBar.className = "bg-tertiary h-full rounded-full transition-all duration-300";
+      sigEarBar.style.width = "20%";
+
+      sigPerclosVal.innerText = "38.5%";
+      sigPerclosBar.className = "bg-tertiary h-full rounded-full transition-all duration-300";
+      sigPerclosBar.style.width = "85%";
+
+      pathEarLine.setAttribute('d', 'M 0 32 Q 100 28, 200 35 T 350 40 L 450 78 T 600 80');
+      pathEarFill.setAttribute('d', 'M 0 100 L 0 32 Q 100 28, 200 35 T 350 40 L 450 78 T 600 80 L 600 100 Z');
+      pathFatigueLine.setAttribute('d', 'M 0 85 Q 150 82, 300 60 T 500 25 T 600 15');
+      pathFatigueFill.setAttribute('d', 'M 0 100 L 0 85 Q 150 82, 300 60 T 500 25 T 600 15 L 600 100 Z');
+      sparkEarVal.innerText = "0.08";
+      sparkFatigueVal.innerText = "89";
+
+      addHistoryItem({
+        time: timeStr.split(' ')[0],
+        type: 'CRITICAL',
+        color: 'tertiary',
+        desc: 'Microsleep detected (>1.2s ocular closure)',
+        metric: 'EAR: 0.08'
+      });
+
+    } else if (state === 'lost') {
+      if (activeBtn) activeBtn.className = "px-2.5 py-1 rounded bg-tertiary-container/20 text-tertiary font-semibold shadow-sm";
+      faceLost.classList.remove('hidden');
+      boxDriver.classList.add('hidden');
+      boxEyeL.classList.add('hidden');
+      boxEyeR.classList.add('hidden');
+      boxMouth.classList.add('hidden');
+
+      vigBanner.className = "flex items-center gap-2 px-3 py-1 rounded bg-tertiary/20 backdrop-blur-md shadow-sm";
+      vigDot.className = "w-2 h-2 rounded-full bg-tertiary";
+      vigText.className = "font-label-code text-label-code font-bold tracking-wider text-tertiary uppercase";
+      vigText.innerText = "TARGET LOST — OCCLUSION";
+
+      tileStatePill.className = "px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-label-code text-label-code font-bold flex items-center gap-1.5 shadow-sm";
+      tileStateDot.className = "w-1.5 h-1.5 rounded-full bg-tertiary";
+      tileStateText.innerText = "FACE LOST";
+
+      alertBannerBox.className = "p-space-sm rounded bg-tertiary/20 flex items-center justify-between";
+      alertIcon.innerText = "person_off";
+      alertIcon.className = "material-symbols-outlined text-tertiary text-lg";
+      alertTitle.innerText = "SENSOR DISRUPTION — DRIVER OCCLUDED";
+      alertTitle.className = "font-headline-md text-headline-md text-tertiary font-bold tracking-tight";
+      alertPillTag.className = "px-2 py-0.5 rounded bg-tertiary text-on-tertiary font-label-code text-label-code font-bold";
+      alertPillTag.innerText = "NO FIX";
+
+      alertCondition.innerText = "Landmark mesh generation failed across 18 consecutive frames.";
+      alertTrigger.innerText = "Head pitch/yaw exceeded geometric detection boundary (>45° off-axis).";
+      alertEvidence.innerText = "Confidence: 0.0% | Model: YOLOv5nu-v001 | Infrared illuminator: ON";
+      alertAction.innerText = "Prompt driver to look toward forward roadway quadrant.";
+      alertAction.className = "text-tertiary font-medium";
+
+      sigPoseStatus.innerText = "OFF-AXIS";
+      sigPoseStatus.className = "font-label-code text-[10px] text-tertiary font-bold";
+    }
+  }
+
+  function addHistoryItem(item) {
+    historyEvents.unshift(item);
+    renderHistory();
+  }
+
+  function clearHistory() {
+    historyEvents = [];
+    renderHistory();
+  }
+
+  function renderHistory() {
+    const container = document.getElementById('history-container');
+    const countBadge = document.getElementById('history-count');
+    if (!container) return;
+
+    if (countBadge) countBadge.innerText = historyEvents.length + ' Events';
+
+    if (historyEvents.length === 0) {
+      container.innerHTML = `
+        <div class="p-6 text-center text-outline font-label-code text-label-code">
+          NO HISTORICAL INCIDENTS DETECTED IN ACTIVE BUFFER
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = historyEvents.map(ev => {
+      let badgeStyle = "bg-secondary/15 text-secondary";
+      if (ev.color === 'tertiary') badgeStyle = "bg-tertiary-container/20 text-tertiary";
+      if (ev.color === 'primary-container') badgeStyle = "bg-primary-container/20 text-primary-container";
+
+      return `
+        <div class="p-2.5 rounded bg-surface-container flex items-center justify-between gap-2 shadow-sm">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="font-label-code text-[11px] text-outline shrink-0">${ev.time}</span>
+            <span class="px-1.5 py-0.5 rounded ${badgeStyle} font-label-code text-[10px] font-bold shrink-0">${ev.type}</span>
+            <span class="font-body-sm text-body-sm text-on-surface truncate">${ev.desc}</span>
+          </div>
+          <span class="font-label-code text-[11px] text-on-surface-variant font-mono shrink-0">${ev.metric}</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Micro-fluctuation loop to simulate live sub-second hardware jitter
+  setInterval(() => {
+    if (currentState === 'normal') {
+      const earBase = 0.31;
+      const jitter = ((Math.random() - 0.5) * 0.02).toFixed(2);
+      const curEar = (earBase + parseFloat(jitter)).toFixed(2);
+      const hudEar = document.getElementById('hud-ear');
+      const sigEarVal = document.getElementById('sig-ear-val');
+      const sparkEarVal = document.getElementById('spark-ear-val');
+
+      if (hudEar) hudEar.innerText = curEar;
+      if (sigEarVal) sigEarVal.innerText = curEar;
+      if (sparkEarVal) sparkEarVal.innerText = curEar;
+
+      const fpsJitter = (27.5 + (Math.random() - 0.5) * 0.4).toFixed(1);
+      const hudFps = document.getElementById('hud-fps-val');
+      if (hudFps) hudFps.innerText = fpsJitter + " FPS";
+    }
+  }, 1200);
+</script></main></div></body></html>

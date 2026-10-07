@@ -73,6 +73,7 @@ data/interim/*
 data/processed/*
 !data/processed/.gitkeep
 data/annotated/
+data/external_eval/
 
 # MediaPipe runtime model assets (auto-downloadable via CDN)
 *.task
@@ -82,3 +83,11 @@ baseline_test_run.mp4
 *_output.mp4
 
 # Note: Model weights in weights/ and baseline best.pt are tracked.
+
+# Continual Learning Local Model Registry Weights & Artifacts
+models/active/*.pt
+models/candidates/*.pt
+models/archive/*.pt
+models/scratch/
+!models/registry.json
+!models/**/.gitkeep

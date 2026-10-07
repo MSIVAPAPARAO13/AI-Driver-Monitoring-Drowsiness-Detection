@@ -126,6 +126,27 @@ class DeploymentConfig:
 
 
 @dataclass
+class ContinualLearningConfig:
+    """Configuration for safe continual learning and online adaptation."""
+    enabled: bool = False  # Privacy off by default
+    buffer_capacity: int = 500
+    min_samples_for_training: int = 20
+    replay_ratio: float = 0.5  # 50% replay from base dataset, 50% adaptation
+    uncertainty_low: float = 0.35
+    uncertainty_high: float = 0.65
+    pseudo_label_threshold: float = 0.75
+    max_drift_threshold: float = 0.25
+    max_regression_tolerance: float = 0.02  # Max acceptable mAP regression on base validation
+    min_adaptation_f1: float = 0.85
+    registry_dir: str = "models"
+    candidate_epochs: int = 5
+    candidate_batch_size: int = 8
+    candidate_imgsz: int = 416
+    learning_rate: float = 0.001
+    base_data_yaml: str = "configs/yolo_phase2f.yaml"
+
+
+@dataclass
 class AppConfig:
     """Central configuration for the drowsiness detection pipeline."""
 
@@ -172,6 +193,9 @@ class AppConfig:
     # Phase 2H Deployment & Export Optimization
     deployment: DeploymentConfig = field(default_factory=DeploymentConfig)
 
+    # Continual Learning & Online Adaptation
+    continual_learning: ContinualLearningConfig = field(default_factory=ContinualLearningConfig)
+
     @classmethod
     def from_yaml(cls, yaml_path: Union[str, Path], **overrides) -> "AppConfig":
         """Load configuration from a YAML file with optional runtime overrides."""
@@ -199,6 +223,7 @@ class AppConfig:
             "telemetry": TelemetryConfig,
             "alert_manager": AlertManagerConfig,
             "deployment": DeploymentConfig,
+            "continual_learning": ContinualLearningConfig,
         }
         for key, sub_cls in sub_configs.items():
             if key in data and isinstance(data[key], dict):

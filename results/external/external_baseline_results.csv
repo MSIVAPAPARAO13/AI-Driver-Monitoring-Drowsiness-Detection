@@ -1,0 +1,8 @@
+source_dataset,video_id,duration_sec,resolution,source_fps,frames_processed,avg_wall_fps,mean_latency_ms,state_transitions,transition_log,final_state,warning_alerts,critical_alerts,peak_fatigue_score,yawns_detected,face_lost_seconds,total_boxes_audited,box_boundary_violations,box_class_violations,status
+Canonical,Canonical_Driving,20.47,1280x720,30.1,617,25.5,39.24,1,NORMAL->CRITICAL (f21),CRITICAL,0,1,100.0,2,0.0,779,0,0,PASS
+UTA,UTA_RLDD_MicroSleep,5.0,1280x720,30.0,150,27.3,36.57,1,NORMAL->CRITICAL (f21),CRITICAL,0,1,100.0,0,0.0,156,0,0,PASS
+YawDD,YawDD_Yawn_Speech,5.33,1280x720,30.0,160,27.1,36.96,1,NORMAL->CRITICAL (f21),CRITICAL,0,1,100.0,0,0.0,160,0,0,PASS
+SUST,SUST_DDD_LowLight,4.0,1280x720,30.0,120,27.9,35.79,1,NORMAL->CRITICAL (f21),CRITICAL,0,1,100.0,0,0.0,124,0,0,PASS
+DriveAct,DriveAct_FaceLoss_Angle,4.67,1280x720,30.0,140,30.8,32.46,3,NORMAL->CRITICAL (f21); CRITICAL->NORMAL (f62); NORMAL->CRITICAL (f108),CRITICAL,0,2,100.0,0,27.88,98,0,0,PASS
+Vertical,Vertical_Mobile_720x1280,3.33,720x1280,30.0,100,38.9,25.71,0,,NORMAL,0,0,0.0,0,133.58,0,0,0,PASS
+Long,Long_Stability_600Frames,20.0,1280x720,30.0,600,24.6,40.71,1,NORMAL->CRITICAL (f21),CRITICAL,0,1,100.0,0,0.0,616,0,0,PASS

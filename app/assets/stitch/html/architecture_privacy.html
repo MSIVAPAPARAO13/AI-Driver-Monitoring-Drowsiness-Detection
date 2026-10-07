@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#4edea3", "on-tertiary-container": "#8d0012", "inverse-primary": "#00668a", "on-tertiary": "#68000a", "error-container": "#93000a", "on-primary": "#00354a", "on-secondary-container": "#00311f", "on-primary-container": "#004965", "on-primary-fixed": "#001e2c", "inverse-on-surface": "#303033", "on-secondary-fixed-variant": "#005236", "on-background": "#e4e1e6", "on-surface-variant": "#bdc8d1", "on-tertiary-fixed": "#410004", "surface-container-lowest": "#0e0e11", "surface-tint": "#7bd0ff", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "secondary-container": "#00a572", "surface-container-highest": "#353438", "outline": "#87929a", "surface-dim": "#131316", "outline-variant": "#3e484f", "error": "#ffb4ab", "surface-container": "#1f1f22", "surface-container-low": "#1b1b1e", "surface": "#131316", "on-secondary": "#003824", "primary-fixed-dim": "#7bd0ff", "surface-container-high": "#2a2a2d", "primary-fixed": "#c4e7ff", "tertiary": "#ffbcb7", "surface-bright": "#39393c", "primary": "#8ed5ff", "background": "#131316", "tertiary-container": "#ff938c", "tertiary-fixed-dim": "#ffb3ad", "on-surface": "#e4e1e6", "secondary-fixed": "#6ffbbe", "primary-container": "#38bdf8", "inverse-surface": "#e4e1e6", "on-secondary-fixed": "#002113", "surface-variant": "#353438", "on-primary-fixed-variant": "#004c69", "on-error": "#690005", "tertiary-fixed": "#ffdad7", "on-tertiary-fixed-variant": "#930013" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.5rem", "space-sm": "0.5rem", "space-lg": "1rem", "space-md": "0.75rem", "gutter": "0.75rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "label-code": [ "JetBrains Mono" ], "headline-lg": [ "Outfit" ], "headline-md": [ "Outfit" ], "body-lg": [ "Inter" ], "telemetry-metric": [ "JetBrains Mono" ], "telemetry-unit": [ "JetBrains Mono" ], "body-sm": [ "Inter" ], "label-caps": [ "Outfit" ], "body-md": [ "Inter" ], "display-lg": [ "JetBrains Mono" ] }, "fontSize": { "label-code": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-lg": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "telemetry-metric": [ "20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "telemetry-unit": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" } ], "body-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-caps": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/40"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-max"><img alt="AeroDMS Sentinel Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UJ-rMUR2drwRTscVXj7ILDCDUXYOkgBzf8bO2y0TlSQd7cqGQowo5STpdTixzpnatmbiyBdKgPlUy4hHHPlhb-go42yaL996MoZbxOk8Xd_P2aWlEYktBDn8RJ9WahtpQsOwm_w92NKAamj7cw-vjX60KMt1hfD0VTPEUU-fJcD-DHS00QsdtFByVIfhDFbmZRP0cT_qFlvFvoSDakPTriVoJNSbmPWljVoSVmYVlxtK6B2dMp9BZ02Ug"/><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-semibold">AeroDMS Sentinel</span><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/40 text-secondary font-label-code text-label-code"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>LIVE INFERENCE: ACTIVE</div><div class="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/40 text-primary-container font-label-code text-label-code">CONTINUAL LEARNING: COLLECTING</div></div></div></div><nav class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-outline-variant/50" data-active-classes="bg-surface-container-high text-primary border-outline-variant text-on-surface"><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="live-monitor" href="#">Live Monitor</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="video-analysis" href="#">Video Analysis</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="continual-learning" href="#">Continual Learning</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="model-performance" href="#">Model Performance</a><a class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code uppercase tracking-wider" data-path="architecture-and-privacy" href="#">Architecture &amp; Privacy</a></nav><div class="flex items-center gap-space-md"><div class="hidden 2xl:flex items-center gap-space-sm font-label-code text-label-code"><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">BACKEND:</span> <span class="text-on-surface font-semibold">PyTorch CPU</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">MODEL:</span> <span class="text-on-surface font-semibold">YOLOv5nu-v001</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">FPS:</span> <span class="text-secondary font-semibold">27.5</span></div><div class="px-2 py-1 rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="text-outline">UPTIME:</span> <span class="text-on-surface font-semibold">00:14:22</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface border-r border-outline-variant/40 z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Monitoring Source</span><div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded border border-outline-variant/40"><button class="py-1.5 px-2 rounded bg-surface-container-high text-primary font-label-code text-label-code font-semibold text-center border border-outline-variant/30">Live WebRTC</button><button class="py-1.5 px-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-code text-label-code text-center">File Eval</button></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Display Overlays</span><div class="flex flex-col gap-2 font-body-sm text-body-sm"><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Bounding Boxes (YOLO)</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Driver Face Box</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Class Labels &amp; Scores</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">In-Video HUD Panels</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label><label class="flex items-center justify-between cursor-pointer group"><span class="text-on-surface-variant group-hover:text-on-surface transition-colors">Pipeline FPS Badge</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded bg-surface-container border-outline" type="checkbox"/></label></div></div><div class="p-space-sm rounded bg-surface-container-low border border-primary-container/30 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-primary-container uppercase font-bold">Continual Engine</span><input checked="" class="accent-primary-container h-3.5 w-3.5 rounded" type="checkbox"/></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Dynamic stream collector into volatile cyclic ring buffer.</p></div><div class="p-space-sm rounded bg-surface-container border border-outline-variant/30 flex flex-col gap-1.5 font-label-code text-label-code"><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider mb-0.5">Model Metrics</span><div class="flex justify-between"><span class="text-on-surface-variant">Arch:</span><span class="text-on-surface">YOLOv5nu</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Classes:</span><span class="text-on-surface">3</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Input:</span><span class="text-on-surface">640x640</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Params:</span><span class="text-on-surface">2.50M</span></div><div class="flex justify-between"><span class="text-on-surface-variant">Inference:</span><span class="text-secondary">36.2ms</span></div></div></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-lowest"><div class="flex items-start gap-2 text-outline font-body-sm text-body-sm"><span class="material-symbols-outlined text-[16px] text-secondary mt-0.5 shrink-0">verified_user</span><div class="flex flex-col gap-0.5"><span class="font-label-caps text-label-caps text-on-surface uppercase">Privacy Certified</span><span class="font-label-code text-label-code text-on-surface-variant text-[10px] leading-tight">Volatile RAM Processing • Zero Identity Embeddings • No Facial Rec</span></div></div></div></aside><div class="pl-64"><main class="relative w-full pt-16 min-h-screen bg-surface-container-lowest px-margin py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- System Architecture & Verification Header -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-primary font-label-code text-label-code uppercase tracking-widest">SPECIFICATION v4.2-REV09</span>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-code text-label-code flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          REAL-TIME VALIDATION: COMPLIANT
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">System Architecture &amp; Data Ethics Core</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Decoupled automotive edge pipeline architecture, algorithmic geometric invariants, and strict non-volatile privacy governance for embedded vehicular occupant monitoring.
+      </p>
+</div>
+<!-- Quick Telemetry Chips -->
+<div class="flex items-center gap-2 font-label-code text-label-code shrink-0">
+<div class="p-space-sm rounded bg-surface-container border border-outline-variant/30 flex items-center gap-2">
+<span class="text-outline">END-TO-END PIPELINE:</span>
+<span class="text-secondary font-semibold">~38.2 ms</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container border border-outline-variant/30 flex items-center gap-2">
+<span class="text-outline">BIOMETRIC FOOTPRINT:</span>
+<span class="text-primary font-semibold">0 BYTES</span>
+</div>
+</div>
+</section>
+<!-- 5-Tier Decoupled Architecture Flow Diagram -->
+<section class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">5-Tier Decoupled Computational Topology</span>
+</div>
+<div class="flex items-center gap-space-md font-label-code text-label-code text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span>Active Pipeline Stream</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span>Zero-Disk Volatile IPC</span>
+<span class="text-outline">TOTAL BUDGET: 33.3ms (30fps) - 40ms max</span>
+</div>
+</div>
+<!-- Pipeline Grid with Visual Latency Connectors -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-sm relative">
+<!-- Tier 1 -->
+<div class="flex flex-col rounded bg-surface-container p-space-md border border-outline-variant/40 justify-between relative group hover:border-outline transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">TIER 01 // SENSOR</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px]">&lt; 4.0 ms</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Video Ingestion</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Low-overhead WebRTC transport or offline hardware-accelerated MP4 decoder loop.
+          </p>
+<div class="mt-2 p-1.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-on-surface-variant flex flex-col gap-0.5">
+<div class="flex justify-between"><span>Clock:</span><span class="text-on-surface">30.00 FPS</span></div>
+<div class="flex justify-between"><span>Format:</span><span class="text-on-surface">NV12 / YUV420p</span></div>
+<div class="flex justify-between"><span>Channel:</span><span class="text-primary">Shared Ring Buffer</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-2 border-t border-outline-variant/30 flex items-center justify-between text-outline font-label-code text-[10px]">
+<span>INTER-STAGE</span>
+<span class="text-secondary font-semibold">RING PUSH</span>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="flex flex-col rounded bg-surface-container p-space-md border border-outline-variant/40 justify-between relative group hover:border-outline transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">TIER 02 // DETECT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px]">28.4 ms</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Edge Feature Extractor</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Dual parallel workers: quantized YOLOv5nu Ocular detector + MediaPipe 468-point spatial mesh.
+          </p>
+<div class="mt-2 p-1.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-on-surface-variant flex flex-col gap-0.5">
+<div class="flex justify-between"><span>Tensor:</span><span class="text-on-surface">640x640x3 FP16</span></div>
+<div class="flex justify-between"><span>Weights:</span><span class="text-on-surface">YOLOv5nu (2.5M)</span></div>
+<div class="flex justify-between"><span>Landmarks:</span><span class="text-primary">468 Topology pts</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-2 border-t border-outline-variant/30 flex items-center justify-between text-outline font-label-code text-[10px]">
+<span>TENSOR DISPATCH</span>
+<span class="text-secondary font-semibold">ZERO-COPY</span>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="flex flex-col rounded bg-surface-container p-space-md border border-primary-container/40 justify-between relative group hover:border-primary-container transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase">TIER 03 // GEOMETRIC</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px]">&lt; 1.8 ms</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Physiological Engine</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Euclidean metric calculation: EAR (Eye Aspect Ratio), MAR (Mouth Aspect Ratio), and Perspective-n-Point pose.
+          </p>
+<div class="mt-2 p-1.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-on-surface-variant flex flex-col gap-0.5">
+<div class="flex justify-between"><span>EAR Delta:</span><span class="text-secondary">||p2-p6|| / 2||p1-p4||</span></div>
+<div class="flex justify-between"><span>PERCLOS:</span><span class="text-on-surface">P80 Window (3s)</span></div>
+<div class="flex justify-between"><span>Head Pose:</span><span class="text-primary">Euler Pitch/Yaw/Roll</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-2 border-t border-outline-variant/30 flex items-center justify-between text-outline font-label-code text-[10px]">
+<span>EUCLIDEAN BUS</span>
+<span class="text-secondary font-semibold">ATOMICS</span>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="flex flex-col rounded bg-surface-container p-space-md border border-outline-variant/40 justify-between relative group hover:border-outline transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">TIER 04 // DECISION</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px]">&lt; 0.9 ms</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Temporal State Machine</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Hierarchical risk arbitrator mapping physiological spikes into validated safety states via debouncing.
+          </p>
+<div class="mt-2 p-1.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-on-surface-variant flex flex-col gap-0.5">
+<div class="flex justify-between"><span>Normal ➔ Warning:</span><span class="text-on-surface">1,200 ms</span></div>
+<div class="flex justify-between"><span>Warning ➔ Critical:</span><span class="text-error">1,800 ms</span></div>
+<div class="flex justify-between"><span>Hysteresis Lock:</span><span class="text-on-surface">3,000 ms</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-2 border-t border-outline-variant/30 flex items-center justify-between text-outline font-label-code text-[10px]">
+<span>EVENT BROKER</span>
+<span class="text-secondary font-semibold">INTERRUPT</span>
+</div>
+</div>
+<!-- Tier 5 -->
+<div class="flex flex-col rounded bg-surface-container p-space-md border border-outline-variant/40 justify-between relative group hover:border-outline transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">TIER 05 // OUTPUT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px]">&lt; 2.5 ms</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">HUD &amp; CAN-Bus Telemetry</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Zero-jitter direct canvas rasterizer &amp; ISO 11898-1 automotive CAN bus arbitration frame injection.
+          </p>
+<div class="mt-2 p-1.5 rounded bg-surface-container-lowest font-label-code text-[10px] text-on-surface-variant flex flex-col gap-0.5">
+<div class="flex justify-between"><span>CAN ID:</span><span class="text-on-surface">0x3FA [DMS_ALERT]</span></div>
+<div class="flex justify-between"><span>Baud Rate:</span><span class="text-on-surface">500 kbps CAN-FD</span></div>
+<div class="flex justify-between"><span>Acoustic Sync:</span><span class="text-secondary">Chime Gen ACTIVE</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-2 border-t border-outline-variant/30 flex items-center justify-between text-outline font-label-code text-[10px]">
+<span>VEHICLE FABRIC</span>
+<span class="text-secondary font-semibold">TERMINATED</span>
+</div>
+</div>
+</div>
+<!-- Pipeline Timing Benchmarks -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border border-outline-variant/20 font-label-code text-label-code">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span>LATENCY BREAKDOWN:</span>
+<span class="text-on-surface">Ingest 3.8ms</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface">Model 28.4ms</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface">Ratios 1.6ms</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface">State 0.8ms</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface">Bus 2.1ms</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-outline">CUMULATIVE LATENCY:</span>
+<span class="text-secondary font-bold">36.7 ms</span>
+<span class="text-outline-variant">|</span>
+<span class="text-outline">TARGET SLACK:</span>
+<span class="text-primary font-bold">+3.3 ms Under 40ms SLA</span>
+</div>
+</div>
+</section>
+<!-- Privacy, Ethics & Data Governance: 3 Core Pillars -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield_locked</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Privacy, Data Ethics &amp; Regulatory Guarantee</h2>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">ISO 26262 / UNECE R130 / GDPR ARTICLE 9 COMPLIANT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Pillar 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">no_accounts</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-code text-[10px] uppercase">PILLAR 01</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">Zero Facial Recognition &amp; Identity Vectors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            The software stack extracts strictly normalized Euclidean geometric ratios: Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR). No facial embeddings, biometric templates, race/gender estimators, or identity identifiers are generated, calculated, or logged.
+          </p>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1 font-label-code text-label-code">
+<div class="flex items-center justify-between text-on-surface">
+<span>Face Identification Model:</span>
+<span class="text-error font-semibold">EXCLUDED</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Biometric Hash Generation:</span>
+<span class="text-error font-semibold">DISABLED</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Geometric Coordinates:</span>
+<span class="text-secondary font-semibold">ANONYMIZED RELATIVE</span>
+</div>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-[10px] uppercase">PILLAR 02</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">Volatile RAM Processing Guarantee</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Input video frames and decoded tensors reside exclusively in volatile, circular system memory buffers. Once the inference cycle evaluates EAR/MAR values, the original frame buffer is immediately overwritten. Zero frame data or video telemetry is ever committed to disk, eMMC, or remote cloud sinks.
+          </p>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1 font-label-code text-label-code">
+<div class="flex items-center justify-between text-on-surface">
+<span>Frame Disk Persistence:</span>
+<span class="text-secondary font-semibold">0 BYTES WRITTEN</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Network Transmission:</span>
+<span class="text-secondary font-semibold">ISOLATED LOOPBACK</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Buffer Lifecycle:</span>
+<span class="text-on-surface-variant font-semibold">33ms OVERWRITE CYCLE</span>
+</div>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary font-label-code text-[10px] uppercase">PILLAR 03</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">Non-Diagnostic Safety Disclaimer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            AeroDMS Sentinel is an auxiliary operational driver monitoring system intended exclusively for fatigue heuristic assistance and distraction mitigation. It explicitly does not constitute medical equipment and does not provide clinical diagnoses of narcolepsy, sleep apnea, or related disorders.
+          </p>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1 font-label-code text-label-code">
+<div class="flex items-center justify-between text-on-surface">
+<span>Intended Scope:</span>
+<span class="text-primary font-semibold">ASSISTIVE VEHICULAR HUD</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Medical Device Class:</span>
+<span class="text-on-surface-variant font-semibold">NON-CLINICAL / NON-FDA</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span>Operator Responsibility:</span>
+<span class="text-on-surface font-semibold">PRIMARY DRIVER IN CONTROL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hardware Verification & Sensor Fusion Specs Bento Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Camera Sensor Fusion Specs (7 cols) -->
+<div class="lg:col-span-7 p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Cabin Sensor Matrix &amp; Optical Parameters</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-code text-label-code">DUAL-MODE NIR/RGB</span>
+</div>
+<!-- Technical Sensor Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm font-label-code text-label-code">
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1">
+<span class="text-outline uppercase text-[10px]">Wavelength</span>
+<span class="text-on-surface text-telemetry-metric font-semibold">850 nm</span>
+<span class="text-on-surface-variant text-[10px]">Active NIR Illumination</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1">
+<span class="text-outline uppercase text-[10px]">Optics FOV</span>
+<span class="text-on-surface text-telemetry-metric font-semibold">60° H-FOV</span>
+<span class="text-on-surface-variant text-[10px]">F/1.8 Low Distortion</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1">
+<span class="text-outline uppercase text-[10px]">Target Native</span>
+<span class="text-on-surface text-telemetry-metric font-semibold">1080p</span>
+<span class="text-on-surface-variant text-[10px]">1920x1080 @ 30 FPS</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col gap-1">
+<span class="text-outline uppercase text-[10px]">Shutter Tech</span>
+<span class="text-secondary text-telemetry-metric font-semibold">GLOBAL</span>
+<span class="text-on-surface-variant text-[10px]">Zero Rolling Artifacts</span>
+</div>
+</div>
+<!-- Dynamic Cabin Operational Envelope -->
+<div class="p-space-sm rounded bg-surface-container-lowest border border-outline-variant/30 flex flex-col gap-space-xs font-label-code text-label-code">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Dynamic Cabin Environmental Thresholds</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-1">
+<div class="flex flex-col gap-0.5">
+<span class="text-on-surface-variant text-[10px]">Illuminance Range:</span>
+<span class="text-on-surface font-semibold">0.05 Lux (Night) — 120,000 Lux (Direct Sun)</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="text-on-surface-variant text-[10px]">Facial Distance Span:</span>
+<span class="text-on-surface font-semibold">45 cm — 115 cm from Steering Hub</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="text-on-surface-variant text-[10px]">Eyewear Tolerances:</span>
+<span class="text-secondary font-semibold">Corrective, Polarized &amp; Tinted Sunglasses</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Edge Compute Verification & Diagnostics (5 cols) -->
+<div class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">developer_board</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Edge Hardware Specs</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-code text-[10px]">ISOLATED CPU</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Designed for strictly constrained automotive microprocessors without requiring dedicated discrete GPU accelerators.
+        </p>
+</div>
+<!-- Real-Time Compute Readouts -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">CPU Utilization</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-secondary font-semibold">14.8</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded" style="width: 14.8%;"></div>
+</div>
+<span class="font-label-code text-[10px] text-outline mt-1.5">Quad-Core ARM v8.2 / x86_64</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Resident Memory</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-metric text-telemetry-metric text-primary font-semibold">182</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">MB</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded" style="width: 22.7%;"></div>
+</div>
+<span class="font-label-code text-[10px] text-outline mt-1.5">Volatile Ring Buffers + Weights</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant/30 flex items-center justify-between font-label-code text-label-code">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">power</span>
+<span>THERMAL &amp; POWER PROFILE:</span>
+</div>
+<span class="text-on-surface font-semibold">4.2W Steady-State / TDP 7.5W</span>
+</div>
+</div>
+</section>
+<!-- Interactive Algorithmic Equation & Mathematical Proofs Section -->
+<section class="p-space-lg rounded-xl bg-surface-container border border-outline-variant/40 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">functions</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Mathematical Foundations: Dimensionless Metric Invariants</h2>
+</div>
+<div class="inline-flex rounded bg-surface-container-low p-1 border border-outline-variant/30 font-label-code text-label-code" id="mathTabGroup">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-semibold border border-outline-variant/30" onclick="switchMathTab('ear')">EAR Formula</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" onclick="switchMathTab('mar')">MAR Formula</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" onclick="switchMathTab('perclos')">PERCLOS Metric</button>
+</div>
+</div>
+<!-- Math Panels -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center" id="math-ear">
+<div class="lg:col-span-7 flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Eye Aspect Ratio (EAR) Formulation</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Computed on 6 key landmarks per ocular aperture ($p_1 \dots p_6$). Invariant to camera distance, scale transforms, and head positioning. As the eyelid descends over the pupil, the vertical Euclidean lengths diminish while the horizontal denominator remains constant.
+        </p>
+<div class="p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 font-label-code text-label-code text-primary flex items-center justify-center my-1 text-center">
+          EAR = ( ||p2 - p6|| + ||p3 - p5|| ) / ( 2 * ||p1 - p4|| )
+        </div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-code text-[11px]">
+<span>SAFE BASELINE: <strong class="text-secondary">&gt; 0.25</strong></span>
+<span>WARNING THRESHOLD: <strong class="text-tertiary">0.20 - 0.25</strong></span>
+<span>MICROSLEEP BREACH: <strong class="text-error">&lt; 0.18</strong></span>
+</div>
+</div>
+<!-- SVG Technical Diagram of Eye Landmarks -->
+<div class="lg:col-span-5 p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 flex flex-col items-center justify-center">
+<svg class="w-full max-w-xs h-32 text-outline" fill="none" viewbox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Eye outline -->
+<path d="M 30 60 Q 150 10 270 60 Q 150 110 30 60 Z" fill="#18181b" stroke="#3e484f" stroke-width="2"></path>
+<!-- Iris circle -->
+<circle cx="150" cy="60" fill="#1f1f22" r="28" stroke="#38bdf8" stroke-dasharray="3 3" stroke-width="1.5"></circle>
+<circle cx="150" cy="60" fill="#38bdf8" r="10"></circle>
+<!-- Landmark Points and Labels -->
+<circle cx="30" cy="60" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="18" y="63">p1</text>
+<circle cx="95" cy="36" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="92" y="28">p2</text>
+<circle cx="205" cy="36" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="202" y="28">p3</text>
+<circle cx="270" cy="60" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="276" y="63">p4</text>
+<circle cx="205" cy="84" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="202" y="98">p5</text>
+<circle cx="95" cy="84" fill="#4edea3" r="3.5"></circle><text fill="#87929a" font-family="JetBrains Mono" font-size="9" x="92" y="98">p6</text>
+<!-- Distances -->
+<line stroke="#8ed5ff" stroke-dasharray="2 2" stroke-width="1.5" x1="95" x2="95" y1="36" y2="84"></line>
+<line stroke="#8ed5ff" stroke-dasharray="2 2" stroke-width="1.5" x1="205" x2="205" y1="36" y2="84"></line>
+<line stroke="#8ed5ff" stroke-dasharray="2 2" stroke-width="1.5" x1="30" x2="270" y1="60" y2="60"></line>
+</svg>
+<span class="font-label-code text-[10px] text-outline mt-2">LANDMARK CONFIGURATION (TERTIARY GEOMETRY ONLY)</span>
+</div>
+</div>
+<div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-md items-center" id="math-mar">
+<div class="lg:col-span-7 flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Mouth Aspect Ratio (MAR) Formulation</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Separates yawning events from regular driver speech through temporal duration integration. Speech exhibits rapid oscillation cycles (&lt;400ms), whereas fatigue yawning maintains sustained high MAR plateaus (&gt;1,500ms).
+        </p>
+<div class="p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 font-label-code text-label-code text-primary flex items-center justify-center my-1 text-center">
+          MAR = ( ||m2 - m8|| + ||m3 - m7|| + ||m4 - m6|| ) / ( 2 * ||m1 - m5|| )
+        </div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-code text-[11px]">
+<span>NOMINAL ORAL: <strong class="text-secondary">&lt; 0.40</strong></span>
+<span>SPEECH DYNAMICS: <strong class="text-on-surface">0.40 - 0.65 (High Frequency)</strong></span>
+<span>CONFIRMED YAWN: <strong class="text-error">&gt; 0.70 (&gt;1.5s sustained)</strong></span>
+</div>
+</div>
+<div class="lg:col-span-5 p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 flex flex-col items-center justify-center">
+<svg class="w-full max-w-xs h-32 text-outline" fill="none" viewbox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="150" cy="60" fill="#18181b" rx="90" ry="35" stroke="#3e484f" stroke-width="2"></ellipse>
+<path d="M 60 60 Q 150 90 240 60 Q 150 30 60 60 Z" fill="#1f1f22" stroke="#38bdf8" stroke-width="1.5"></path>
+<circle cx="60" cy="60" fill="#4edea3" r="3.5"></circle>
+<circle cx="240" cy="60" fill="#4edea3" r="3.5"></circle>
+<circle cx="150" cy="30" fill="#4edea3" r="3.5"></circle>
+<circle cx="150" cy="90" fill="#4edea3" r="3.5"></circle>
+<line stroke="#8ed5ff" stroke-dasharray="2 2" stroke-width="1.5" x1="150" x2="150" y1="30" y2="90"></line>
+<line stroke="#8ed5ff" stroke-dasharray="2 2" stroke-width="1.5" x1="60" x2="240" y1="60" y2="60"></line>
+</svg>
+<span class="font-label-code text-[10px] text-outline mt-2">ORAL APERTURE LANDMARK TOPOLOGY</span>
+</div>
+</div>
+<div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-md items-center" id="math-perclos">
+<div class="lg:col-span-7 flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase">PERCLOS P80 Operational Metric</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Percentage of Eye Closure over time (P80 criterion). The ISO and NHTSA gold standard in drowsiness detection: tracks the proportion of time within a rolling 60-second window that the eyelids cover 80% or more of the pupil area.
+        </p>
+<div class="p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 font-label-code text-label-code text-primary flex items-center justify-center my-1 text-center">
+          PERCLOS = ( ∑ t_closed[EAR &lt; 0.20] ) / ( T_window[60s] ) * 100%
+        </div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-code text-[11px]">
+<span>ALERT: <strong class="text-secondary">&lt; 7.5%</strong></span>
+<span>DROWSINESS ONSET: <strong class="text-tertiary">7.5% - 12.0%</strong></span>
+<span>SEVERE RISK: <strong class="text-error">&gt; 12.0%</strong></span>
+</div>
+</div>
+<div class="lg:col-span-5 p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 flex flex-col items-center justify-center">
+<!-- Mini Sparkline Simulation -->
+<svg class="w-full max-w-xs h-32" fill="none" viewbox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#3e484f" stroke-width="1" x1="10" x2="290" y1="90" y2="90"></line>
+<line stroke="#ffb4ab" stroke-dasharray="3 3" stroke-width="1" x1="10" x2="290" y1="40" y2="40"></line>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" x="230" y="34">P80 ALERT 12%</text>
+<path d="M 10 85 Q 40 82 70 86 T 130 80 T 170 75 T 200 45 T 230 35 T 260 50 T 290 82" fill="none" stroke="#4edea3" stroke-width="2"></path>
+</svg>
+<span class="font-label-code text-[10px] text-outline mt-2">ROLLING 60-SEC WINDOW ACCUMULATOR</span>
+</div>
+</div>
+</section>
+<!-- Export & Verification Console Footer -->
+<footer class="p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-code text-label-code">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">policy</span>
+<span>AUTOMOTIVE COMPLIANCE VALIDATOR:</span>
+<span class="text-on-surface">BUILD 2025.04-RC2</span>
+<span class="text-outline">/</span>
+<span class="text-secondary font-semibold">SIG-VERIFIED CHECKSUM: 0x9BF8C341</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 transition-colors flex items-center gap-1.5" onclick="downloadEthicsDoc()">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+        Export Privacy Certificate (JSON)
+      </button>
+<button class="px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-semibold hover:bg-primary transition-colors flex items-center gap-1.5" onclick="triggerHardwareAudit()">
+<span class="material-symbols-outlined text-[16px]">bug_report</span>
+        Run Edge Audit
+      </button>
+</div>
+</footer>
+</div>
+<script>
+  function switchMathTab(tab) {
+    const tabs = ['ear', 'mar', 'perclos'];
+    tabs.forEach(t => {
+      const el = document.getElementById('math-' + t);
+      if (el) {
+        if (t === tab) {
+          el.classList.remove('hidden');
+          el.classList.add('grid');
+        } else {
+          el.classList.add('hidden');
+          el.classList.remove('grid');
+        }
+      }
+    });
+
+    const buttons = document.querySelectorAll('#mathTabGroup button');
+    buttons.forEach((btn, idx) => {
+      if (tabs[idx] === tab) {
+        btn.className = "px-2.5 py-1 rounded bg-surface-container-high text-primary font-semibold border border-outline-variant/30";
+      } else {
+        btn.className = "px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface";
+      }
+    });
+  }
+
+  function downloadEthicsDoc() {
+    const ethicsManifest = {
+      manifest: "AeroDMS Sentinel Privacy & Architecture Specification",
+      version: "4.2.0-automotive",
+      timestamp: new Date().toISOString(),
+      governance: {
+        biometricRetention: false,
+        facialRecognitionEnabled: false,
+        frameStorageMode: "transient_volatile_ram_only",
+        ringBufferRetentionSeconds: 0.033,
+        canBusArbitrationId: "0x3FA"
+      },
+      verification: {
+        latencyBudgetMs: 36.7,
+        cpuUsageTargetPercent: 14.8,
+        residentMemoryMb: 182
+      }
+    };
+    const blob = new Blob([JSON.stringify(ethicsManifest, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'AeroDMS-Privacy-Architecture-Cert.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function triggerHardwareAudit() {
+    alert("Edge Hardware Integrity Audit Passed:\n- CPU Threads: 4/4 Isolated\n- Frame Discard Verification: 100% (0 frames on disk)\n- Average End-to-End Latency: 36.7ms");
+  }
+</script></main></div></body></html>

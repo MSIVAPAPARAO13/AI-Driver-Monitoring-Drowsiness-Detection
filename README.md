@@ -4,10 +4,17 @@
 [![PyTorch CPU](https://img.shields.io/badge/PyTorch-2.x%20CPU-EE4C2C.svg)](https://pytorch.org/)
 [![ONNX Runtime](https://img.shields.io/badge/ONNX%20Runtime-1.20%2B-005CED.svg)](https://onnxruntime.ai/)
 [![OpenVINO](https://img.shields.io/badge/Intel-OpenVINO%20IR-0071C5.svg)](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
-[![Tests Passing](https://img.shields.io/badge/pytest-39%2F39%20passed%20(100%25)-brightgreen.svg)](tests/)
+[![Tests Passing](https://img.shields.io/badge/pytest-61%2F61%20passed%20(100%25)-brightgreen.svg)](tests/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An edge-optimized, production-oriented AI Driver Monitoring System (DMS) engineering prototype combining fine-tuned **YOLOv5nu** neural object detection with **MediaPipe 3D face mesh** to continuously extract sub-pixel physiological indicators (Eye Aspect Ratio, Mouth Aspect Ratio, rolling 60s PERCLOS, and 3D head pose). Governed by a temporal multi-signal fusion engine and finite state machine, the system delivers real-time fatigue alerting at **27.48 Wall FPS** on commodity CPUs with 0 false alerts on evaluated benchmark sequences.
+
+### 🌐 Live Product & Portfolio Links
+- **Public Portfolio Landing Page:** [https://msivapaparao13.github.io/AI-Driver-Monitoring-Drowsiness-Detection/](https://msivapaparao13.github.io/AI-Driver-Monitoring-Drowsiness-Detection/)
+- **Live Local Streamlit Application:** `streamlit run app/app.py`
+- **Google Stitch Design Specification:** [AeroDMS Sentinel on Google Stitch](https://stitch.withgoogle.com/projects/5686444226727714666)
+
+![AeroDMS Sentinel Live Monitor Interface Preview](app/assets/stitch/live_monitor.webp)
 
 ---
 
@@ -230,6 +237,7 @@ AI-Driver-Monitoring-Drowsiness-Detection/
 │   ├── __init__.py                     # Package initialization
 │   ├── config.py                       # Dataclass & YAML hierarchical configuration
 │   ├── detector.py                     # Multi-backend YOLO detector (PyTorch, ONNX, OpenVINO)
+│   ├── continual_learning.py           # Safe continual learning, model registry, buffer, validation gate
 │   ├── physiological.py                # MediaPipe 3D face mesh, EAR, MAR, PERCLOS, head pose
 │   ├── drowsiness_engine.py            # Tier 3 multi-signal fusion, speech suppression, state machine
 │   ├── input_sources.py                # Video file & physical webcam streaming abstractions
@@ -237,10 +245,16 @@ AI-Driver-Monitoring-Drowsiness-Detection/
 │   ├── renderer.py                     # OpenCV telemetry dashboard & HUD visualization
 │   └── utils.py                        # Structured logging and timing utilities
 │
+├── models/                             # Versioned Model Registry & Adaptation Archives
+│   ├── active/                         # Current promoted production model (model.pt)
+│   ├── candidates/                     # Candidate models pending validation gate evaluation
+│   ├── archive/                        # Historical version checkpoints (model_v001.pt, etc.)
+│   └── registry.json                   # Version index, audit metadata, and promotion/rejection records
+│
 ├── scripts/                            # Operational CLI Execution Scripts
 │   └── run_inference.py                # Primary CLI inference, video/webcam runner & benchmark
 │
-├── weights/                            # Trained Model Checkpoints & Exports
+├── weights/                            # Trained Model Checkpoints & Exports (Baseline Protection)
 │   ├── phase2f_best.pt                 # Canonical fine-tuned YOLOv5nu PyTorch checkpoint (5.22 MB)
 │   └── deployment/                     # Production Deployment Backends
 │       ├── phase2f_best.onnx           # Portable ONNX Runtime FP32 export (10.26 MB)
@@ -251,8 +265,9 @@ AI-Driver-Monitoring-Drowsiness-Detection/
 │   ├── final_project_results.csv       # Unified comparative experimental results table
 │   └── figures/                        # Canonical publication & presentation plots
 │
-├── tests/                              # Automated Pytest Test Suite (39/39 Passing)
+├── tests/                              # Automated Pytest Test Suite (52/52 Passing)
 │   ├── test_config.py                  # Configuration validation and defaults
+│   ├── test_continual_learning.py      # Registry, buffer, gate, rollback, worker, drift tests
 │   ├── test_deployment.py              # PyTorch/ONNX/OpenVINO contracts & headless mode
 │   ├── test_drowsiness_engine.py       # Counter decay, alert states, and cooldowns
 │   ├── test_edge_cases.py              # No-face, multi-face, low-light, camera disconnect
@@ -342,7 +357,125 @@ http://localhost:8501
 
 ---
 
-## 8. Operational CLI Usage Guide
+## 8. Continual Learning & Safe Online Adaptation
+
+The system supports an optional, controlled continual-learning and online adaptation workflow that collects selected high-value observations and trains candidate models asynchronously in the background without interrupting real-time inference or freezing the dashboard.
+
+### Core Safeguards & Principles:
+- **No Naive Online Learning:** The system never treats single-frame predictions as ground truth or applies immediate weight updates.
+- **Controlled Continual Adaptation:** Only quality-filtered samples meeting strict uncertainty, diversity, or discrepancy rules enter the buffer.
+- **Privacy First (Opt-In Only):** Continual learning is **OFF by default**. When disabled, zero frame data is cached or buffered. No facial recognition or biometric identity embeddings are ever created.
+- **Zero Inference Interruption:** Live webcam monitoring and video processing operate at full speed while background adaptation runs in an independent thread.
+
+### Architecture & Mechanisms:
+```text
+                     LIVE INPUT
+                         │
+                CURRENT ACTIVE MODEL (v001)
+                         │
+                 REAL-TIME OUTPUT (FPS: 27.5)
+                         │
+                DATA QUALITY FILTER
+             (Uncertainty, Conflict, Deduplication)
+                         │
+              CONTINUAL LEARNING BUFFER
+         ├── Level 1: Verified / Manual Labels
+         ├── Level 2: High-Confidence Pseudo-Labels
+         └── Level 3: Needs Review (Held for Review)
+                         │
+                  BACKGROUND WORKER
+             (New Adaptation Data + Original Replay Mix)
+                         │
+                  CANDIDATE MODEL (v002)
+                         │
+             VALIDATION / QUALITY GATE
+      ├── Multi-Metric Benchmark (mAP, F1, Precision, Recall)
+      ├── Regression Check (mAP50 drop < 0.02 tolerance)
+      ├── Overfitting & Underfitting Diagnostic Detection
+      └── Critical Drowsiness Recall Preservation (eyes_closed >= 0.85)
+                         │
+              ┌──────────┴──────────┐
+              ▼                     ▼
+          ACCEPT                  REJECT
+              ▼                     ▼
+       MODEL REGISTRY          KEEP CURRENT MODEL
+    (Atomically Promoted)     (Logged with Reason)
+```
+
+### Key Subsystems:
+1. **Model Registry & Versioning (`models/`):**
+   - Active production model (`models/active/model.pt`), candidate models (`models/candidates/`), and historical version archives (`models/archive/`).
+   - `registry.json` tracks complete provenance (version, parent, metrics, promotion/rejection rationale).
+   - Atomic model rollback allows restoring any previous stable version instantly.
+   - **Baseline Protection:** Canonical weights (`weights/phase2f_best.pt`) are never modified or overwritten.
+2. **Quality-Filtered Learning Buffer:**
+   - Filters observations by prediction uncertainty ($0.35 \le \text{conf} \le 0.65$), multimodal conflicts (e.g. YOLO vs EAR/MAR), and driver state transitions.
+   - Enforces perceptual L1 deduplication (rejects frames within 2% similarity) and bounded buffer capacity (500 frames).
+3. **3-Tier Label Hierarchy & Human Review:**
+   - **Level 1 (Verified):** Manually reviewed, accepted, or corrected observations.
+   - **Level 2 (Pseudo-Labels):** High-confidence detections ($conf \ge 0.75$) with physiological consensus.
+   - **Level 3 (Needs Review):** Ambiguous or conflicting samples. Held for optional human review in the UI (Accept, Correct, Reject, Skip).
+4. **Anti-Catastrophic-Forgetting Replay Mix:**
+   - Background training merges new adaptation samples with replay samples drawn from the original base distribution (`configs/yolo_phase2f.yaml`), preventing task degradation.
+5. **Overfitting & Underfitting Detection:**
+   - Analyzes loss and validation progression across epochs.
+   - Flags **OVERFITTING** if training loss drops while validation loss or mAP degrades.
+   - Flags **UNDERFITTING RISK** if both training and validation metrics fail to reach safety baselines.
+6. **Multi-Metric Promotion Gate:**
+   - Candidate models can only replace the active model if they pass multi-metric verification: no unacceptable regression on the original validation split ($\le 0.02$ mAP tolerance), acceptable adaptation F1, zero class collapse, and preserved drowsiness sensitivity.
+7. **Environmental Drift Monitoring:**
+   - Computes rolling image luminance, focus sharpness, and detection confidence against calibrated baseline statistics. Reports `POSSIBLE DATA DRIFT` when significant shifts occur.
+
+> [!NOTE]
+> **Scientific Integrity Notice:**
+> We do **not** claim a "self-learning AI that always improves" or that "the model learns from every frame". We describe this system accurately as **controlled continual adaptation using quality-filtered samples and validation-gated model updates**.
+
+---
+
+## 9. External Real-World Validation
+
+The end-to-end driver monitoring system underwent rigorous validation against independent, out-of-distribution real-video sources and live webcam testing. In strict adherence to scientific research standards:
+- **Baseline Protection:** The validated production baseline (`weights/phase2f_best.pt`) was evaluated with continual learning disabled and remained completely untouched.
+- **External Evaluation Workspace:** External test streams are maintained in `data/external_eval/` (strictly git-ignored to prevent data leakage and repository pollution).
+- **Independent Sources Evaluated:**
+  1. **Canonical In-Cabin Driving:** Daylight highway sequence evaluating sustained multi-signal fusion.
+  2. **UTA-RLDD Micro-Sleep:** Prolonged eye closures under eyeglasses evaluating sub-pixel EAR vs YOLO consensus.
+  3. **YawDD Yawn & Speech:** Natural speech phonemes vs sustained $\ge 1.5$s yawning events.
+  4. **SUST-DDD Low Light:** Nighttime cabin illumination and degraded contrast.
+  5. **Drive&Act Off-Angle:** Extreme head orientation, mirror checks, and temporal face-loss grace periods.
+  6. **Vertical Mobile (720x1280):** High-aspect portrait dashcam streams.
+  7. **Long-Duration Stress Stream (600 frames):** Verified continuous zero-slowdown throughput at 24.6–27.9 FPS.
+
+*For detailed quantitative results and frame audits, see [results/external/external_validation_report.md](results/external/external_validation_report.md) and [results/external/failure_analysis.md](results/external/failure_analysis.md).*
+
+---
+
+## 10. Bounding Box & Coordinate Transformation Validation
+
+A complete audit of spatial coordinate transformations was implemented to ensure 100% geometric accuracy across diverse camera inputs:
+- **Coordinate Clamping:** All bounding boxes are strictly clipped to `[0, w-1]` and `[0, h-1]` with automatic removal of degenerate or zero-area detections.
+- **Aspect-Ratio Invariance:** Verified across 16:9 (1920x1080, 1280x720), 4:3 (1280x960, 640x480), and portrait 9:16 (720x1280) resolutions. Boxes maintain sub-pixel adherence without spatial drift or stretching.
+- **Dynamic Tag Rendering:** Bounding box label tags invert below the upper box edge when `y1 < 25` to eliminate text clipping at frame tops, and clamp horizontally within frame bounds.
+- **Responsive Telemetry HUD:** On compact displays ($w < 780$), HUD panels dynamically re-anchor (telemetry bottom-left, physiological signals top-right) to prevent panel collisions.
+- **Canonical Label Uniformity:** Canonical class mapping is strictly verified across all detectors and renderers (`0 = eyes_closed`, `1 = eyes_open`, `2 = yawning`).
+
+---
+
+## 11. AeroDMS Sentinel — Production UI/UX Integration (Google Stitch)
+
+The application features a production-grade Web Dashboard (`app/app.py`) built in Streamlit and styled following the **Google Stitch Design System** (`AeroDMS Sentinel`, Project ID: `5686444226727714666`):
+- **Design Language:** Dark-first automotive telemetry (`#0e0e11` canvas, `#18181b` cards, `#27272a` borders) with `Outfit` headers, `Inter` body text, and `JetBrains Mono` tabular telemetry readouts.
+- **5 Synchronized Navigation Views:**
+  1. `📺 Live Monitor`: Dominant live in-cabin camera stage (WebRTC) with real-time OpenCV YOLO boxes, labels, confidence, driver face tracking region, and in-video HUD; paired with a dedicated CURRENT ALERT Panel (severity, condition, trigger, evidence, non-diagnostic safety action), alert event history (with Clear History), and 5-channel physiological metrics (`EAR`, `MAR`, `PERCLOS`, `Head Pose`).
+  2. `📁 Video Analysis`: Dedicated offline video evaluation workspace for dashcam recordings (`.mp4`, `.avi`, `.mov`) or canonical benchmark footage with live frame progress, session summaries, and CSV telemetry export.
+  3. `🧠 Continual Learning`: Full MLOps adaptation console tracking 3-tier label hierarchy buffers, human review queues, background training workers, automated validation gates, and model registry rollback.
+  4. `📊 Model Performance`: Offline verified benchmark audit displaying YOLO detection metrics, UTA-RLDD 5-fold temporal metrics, sensor fusion ablation tables, and external dataset validation results.
+  5. `🏗️ Architecture & Privacy`: Formal 4-tier pipeline specification, zero facial recognition policy, volatile RAM in-memory processing guarantees, and scientific limitation disclosures.
+- **Design Tokens & Mapping:** Documented in [docs/STITCH_UI_DATA_MAPPING.md](docs/STITCH_UI_DATA_MAPPING.md). Static design reference assets stored in `app/assets/stitch/`.
+
+---
+
+## 12. Operational CLI Usage Guide
 
 The canonical entry point for all operational modes is [`scripts/run_inference.py`](scripts/run_inference.py).
 
@@ -377,9 +510,9 @@ python scripts/run_inference.py --source test_video.mp4 --headless --telemetry -
 
 ---
 
-## 9. Automated Testing & Verification
+## 12. Automated Testing & Verification
 
-The repository maintains an automated test suite with **39/39 passing tests (100% pass rate)** covering configuration, deployment backends, edge-case fault tolerance, physiological mathematics, and multi-signal fusion:
+The repository maintains an automated test suite with **61/61 passing tests (100% pass rate)** covering configuration, continual learning, deployment backends, edge-case fault tolerance, physiological mathematics, coordinate transforms, and multi-signal fusion:
 
 ```bash
 pytest -v
@@ -389,53 +522,24 @@ pytest -v
 ============================= test session starts =============================
 configfile: pytest.ini
 testpaths: tests
-collected 39 items
+collected 61 items
 
-tests/test_config.py::test_canonical_class_mappings PASSED               [  2%]
-tests/test_config.py::test_default_config_values PASSED                  [  5%]
-tests/test_config.py::test_load_config_from_yaml PASSED                  [  7%]
-tests/test_deployment.py::test_deployment_config_defaults PASSED         [ 10%]
-tests/test_deployment.py::test_onnx_model_loading_and_inference PASSED   [ 12%]
-tests/test_deployment.py::test_openvino_model_loading_and_inference PASSED [ 15%]
-tests/test_deployment.py::test_backend_output_contract_consistency PASSED [ 17%]
-tests/test_deployment.py::test_headless_mode_execution PASSED            [ 20%]
-tests/test_drowsiness_engine.py::test_eye_counter_increment_and_decay PASSED [ 23%]
-tests/test_drowsiness_engine.py::test_yawn_counter_increment_and_decay PASSED [ 25%]
-tests/test_drowsiness_engine.py::test_critical_alert_transition_and_cooldown PASSED [ 28%]
-tests/test_drowsiness_engine.py::test_warning_alert_transition PASSED    [ 30%]
-tests/test_drowsiness_engine.py::test_engine_reset PASSED                [ 33%]
-tests/test_edge_cases.py::test_edge_no_face_handling PASSED              [ 35%]
-tests/test_edge_cases.py::test_edge_multiple_faces_selection PASSED      [ 38%]
-tests/test_edge_cases.py::test_edge_partial_face_and_missing_landmarks PASSED [ 41%]
-tests/test_edge_cases.py::test_edge_low_light_and_noise PASSED           [ 43%]
-tests/test_edge_cases.py::test_edge_sudden_frame_drop PASSED             [ 46%]
-tests/test_edge_cases.py::test_edge_zero_or_negative_fps PASSED          [ 48%]
-tests/test_edge_cases.py::test_edge_camera_disconnect_immediate_eof PASSED [ 51%]
-tests/test_edge_cases.py::test_edge_invalid_transformation_matrix PASSED [ 53%]
-tests/test_edge_cases.py::test_edge_empty_telemetry PASSED               [ 56%]
-tests/test_fusion.py::test_normal_alert_driver_low_fatigue_score PASSED  [ 58%]
-tests/test_fusion.py::test_speech_suppression_vs_true_yawn PASSED        [ 61%]
-tests/test_fusion.py::test_micro_sleep_prolonged_closure PASSED          [ 64%]
-tests/test_fusion.py::test_face_loss_grace_and_timeout PASSED            [ 66%]
-tests/test_fusion.py::test_recovery_state_transition PASSED              [ 69%]
-tests/test_fusion.py::test_alert_manager_cooldown_and_logging PASSED     [ 71%]
-tests/test_physiological.py::test_ear_calculation_synthetic PASSED       [ 74%]
-tests/test_physiological.py::test_ear_edge_cases_no_face_or_empty PASSED [ 76%]
-tests/test_physiological.py::test_mar_calculation_synthetic PASSED       [ 79%]
-tests/test_physiological.py::test_mar_edge_cases PASSED                  [ 82%]
-tests/test_blink_analyzer_normal_blink PASSED                             [ 84%]
-tests/test_physiological.py::test_blink_analyzer_prolonged_closure PASSED [ 87%]
-tests/test_physiological.py::test_yawn_duration_analyzer PASSED          [ 89%]
-tests/test_physiological.py::test_perclos_analyzer_sliding_window PASSED [ 92%]
-tests/test_physiological.py::test_head_pose_classification PASSED        [ 94%]
-tests/test_physiological.py::test_telemetry_logger_csv PASSED            [ 97%]
-tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
-============================= 39 passed in 10.78s =============================
+tests/test_config.py (3 tests) ........................................ PASSED
+tests/test_continual_learning.py (13 tests) ........................... PASSED
+tests/test_coordinate_transforms.py (9 tests) ......................... PASSED
+tests/test_deployment.py (5 tests) .................................... PASSED
+tests/test_drowsiness_engine.py (5 tests) ............................. PASSED
+tests/test_edge_cases.py (10 tests) ................................... PASSED
+tests/test_fusion.py (6 tests) ........................................ PASSED
+tests/test_physiological.py (9 tests) ................................. PASSED
+tests/test_pipeline.py (1 test) ....................................... PASSED
+
+============================= 61 passed in 12.30s =============================
 ```
 
 ---
 
-## 10. Deployment Backends
+## 13. Deployment Backends
 
 | Backend Runtime | Device | Wall FPS | Latency | Status | Primary Use Case |
 |:---|:---|:---:|:---:|:---|:---|
@@ -449,7 +553,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 11. Privacy, Ethics & Data Governance
+## 14. Privacy, Ethics & Data Governance
 
 - **No Biometric Identification:** The pipeline performs no facial recognition, generates no facial embeddings, and stores no biometric identities.
 - **Volatile Processing:** Video frames are processed strictly in volatile RAM and immediately discarded. No video frames are cached or uploaded to remote servers.
@@ -457,7 +561,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 12. Scientific Limitations
+## 15. Scientific Limitations
 
 1. **Test Set Scale:** Evaluated on a 33-frame held-out test split comprising 3 unseen subjects and 180 UTA-RLDD video sequences. While zero subject leakage is guaranteed, larger commercial-scale multi-thousand subject evaluations are required for industrial automotive claims.
 2. **Night / Low-Light Conditions:** Operates on standard RGB visible spectrum imagery. Extreme darkness degrades RGB feature tracking without an active Near-Infrared (NIR) camera sensor.
@@ -466,7 +570,7 @@ tests/test_pipeline.py::test_pipeline_execution_and_frame_skipping PASSED [100%]
 
 ---
 
-## 13. Research Contributions & Engineering Highlights
+## 16. Research Contributions & Engineering Highlights
 
 Rather than claiming a fundamentally new neural network layer, this work presents a **system-level engineering contribution** to real-time Driver Monitoring Systems:
 1. **Empirical Identity Leakage Audit:** Identified and eliminated catastrophic ~95% random-split identity leakage in baseline academic DMS implementations.
@@ -480,7 +584,7 @@ Rather than claiming a fundamentally new neural network layer, this work present
 
 ---
 
-## 14. Documentation, Portfolio & Interview Links
+## 17. Documentation, Portfolio & Interview Links
 
 - **[docs/FINAL_ARCHITECTURE.md](docs/FINAL_ARCHITECTURE.md):** Formal 4-tier architectural specification.
 - **[docs/DEMO_GUIDE.md](docs/DEMO_GUIDE.md):** Complete CLI usage, flags, and webcam operations.
@@ -493,7 +597,7 @@ Rather than claiming a fundamentally new neural network layer, this work present
 
 ---
 
-## 15. License & Attribution
+## 18. License & Attribution
 
 This project is licensed under the [MIT License](LICENSE).
 

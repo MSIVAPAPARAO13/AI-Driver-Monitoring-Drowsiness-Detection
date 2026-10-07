@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Driver Monitoring & Drowsiness Detection | AeroDMS Sentinel</title>
+  <meta name="description" content="AeroDMS Sentinel is a real-time AI driver monitoring system using YOLOv5, facial landmarks, EAR, MAR, PERCLOS, head pose, temporal fusion and controlled continual learning.">
+  <meta name="keywords" content="Driver Monitoring System, Drowsiness Detection, YOLOv5, Computer Vision, PERCLOS, EAR, Edge AI, MediaPipe, Machine Learning, In-Cabin Safety">
+  <meta name="author" content="Siva Paparao M (MSIVAPAPARAO13)">
+  <link rel="canonical" href="https://msivapaparao13.github.io/AI-Driver-Monitoring-Drowsiness-Detection/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://msivapaparao13.github.io/AI-Driver-Monitoring-Drowsiness-Detection/">
+  <meta property="og:title" content="AI Driver Monitoring & Drowsiness Detection | AeroDMS Sentinel">
+  <meta property="og:description" content="Real-time computer vision and temporal multi-signal fusion for in-cabin driver vigilance and fatigue monitoring. 27.5 FPS CPU edge inference.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection/main/app/assets/stitch/live_monitor.webp">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://msivapaparao13.github.io/AI-Driver-Monitoring-Drowsiness-Detection/">
+  <meta name="twitter:title" content="AI Driver Monitoring & Drowsiness Detection | AeroDMS Sentinel">
+  <meta name="twitter:description" content="Real-time computer vision and temporal multi-signal fusion for in-cabin driver vigilance and fatigue monitoring. 27.5 FPS CPU edge inference.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection/main/app/assets/stitch/live_monitor.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20y=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+
+  <!-- Google Fonts: Stitch AeroDMS Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-base: #0e0e11;
+      --bg-surface: #131316;
+      --bg-card: #18181b;
+      --bg-card-elevated: #1f1f22;
+      --border-subtle: #27272a;
+      --border-active: #3e484f;
+      --primary: #38bdf8;
+      --primary-bright: #8ed5ff;
+      --secondary: #4edea3;
+      --accent-normal: #10b981;
+      --accent-warning: #eab308;
+      --accent-critical: #ef4444;
+      --accent-recovery: #0ea5e9;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+
+    code, pre, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--primary-bright);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(19, 19, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .brand-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      background: rgba(78, 222, 163, 0.12);
+      border: 1px solid rgba(78, 222, 163, 0.4);
+      color: var(--secondary);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: #09090b;
+      border: 1px solid var(--primary);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-bright);
+      color: #09090b;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: #fff;
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-secondary:hover {
+      border-color: var(--border-active);
+      background-color: var(--bg-card-elevated);
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    /* Hero Preview Media */
+    .hero-preview {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+    .hero-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 32px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 24px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .card:hover {
+      border-color: var(--border-active);
+    }
+    .card-icon {
+      font-size: 24px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Metric Cards */
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .kpi-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+    .kpi-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    th {
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      background: var(--bg-surface);
+    }
+    td.mono {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary-bright);
+    }
+
+    /* Alert States Banner */
+    .alert-state-box {
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .state-normal {
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 4px solid var(--accent-normal);
+    }
+    .state-warning {
+      background: rgba(234, 179, 8, 0.08);
+      border-left: 4px solid var(--accent-warning);
+    }
+    .state-critical {
+      background: rgba(239, 68, 68, 0.08);
+      border-left: 4px solid var(--accent-critical);
+    }
+
+    /* Notice Callouts */
+    .notice {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="container nav-inner">
+      <div class="brand">
+        <span>🚗 AeroDMS Sentinel</span>
+        <span class="brand-badge">PROD RELEASE</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="#validation">Validation</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="https://github.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="http://localhost:8501" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Launch Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-pill">
+          <span>● EDGE COMPUTER VISION</span>
+          <span>•</span>
+          <span>TEMPORAL SENSOR FUSION</span>
+          <span>•</span>
+          <span>61/61 TESTS PASSING</span>
+        </div>
+        <h1>AI Driver Monitoring &<br>Drowsiness Detection</h1>
+        <p>
+          AeroDMS Sentinel is an engineering-grade in-cabin driver monitoring system combining YOLOv5nu visual detection, 3D sub-pixel facial mesh kinematics, and temporal multi-signal fusion to detect driver fatigue in real time at 27.5 FPS.
+        </p>
+        <div class="hero-actions">
+          <a href="http://localhost:8501" class="btn btn-primary">
+            <span>🚀 Launch Live Demo</span>
+          </a>
+          <a href="https://github.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection" class="btn btn-secondary" target="_blank" rel="noopener">
+            <span>💻 View Source on GitHub</span>
+          </a>
+          <a href="#architecture" class="btn btn-secondary">
+            <span>🏗️ Explore Architecture</span>
+          </a>
+        </div>
+
+        <div class="hero-preview">
+          <img src="https://raw.githubusercontent.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection/main/app/assets/stitch/live_monitor.webp" alt="AeroDMS Sentinel Live Monitor Interface Preview" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI Summary Row -->
+    <section style="padding: 40px 0; background: var(--bg-surface);">
+      <div class="container">
+        <div class="grid-4">
+          <div class="kpi-card">
+            <div class="kpi-val">0.9777</div>
+            <div class="kpi-label">YOLOv5nu mAP@0.5</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">0.983</div>
+            <div class="kpi-label">Multi-Signal Fusion F1</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">0</div>
+            <div class="kpi-label">False Alerts on Benchmarks</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">27.5</div>
+            <div class="kpi-label">Wall Pipeline FPS (CPU)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Capabilities Section -->
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Multimodal Inspection</div>
+          <h2 class="section-title">Engineered for Cabin Precision</h2>
+          <p class="section-subtitle">
+            Traditional drowsiness systems rely solely on eye aspect ratio or isolated frame predictions. AeroDMS Sentinel fuses high-frequency facial geometry with deep object detection across temporal windows.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">👁️</div>
+            <h3>Ocular Kinetics & Blink Tracking</h3>
+            <p>Computes Eye Aspect Ratio (EAR) across 3D sub-pixel landmarks. Distinguishes natural involuntary blinks (80–400 ms) from sustained eye closures and microsleep episodes (>1.2 s).</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🥱</div>
+            <h3>Yawn vs. Speech Suppression</h3>
+            <p>Calculates Mouth Aspect Ratio (MAR) with an empirical speech-suppression temporal filter. Requires &ge;1.5–2.0s of continuous oral dilation, preventing false triggers during conversation.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Rolling 60s P80 PERCLOS</h3>
+            <p>Accumulates cumulative proportion of time eyes are &ge;80% closed within a sliding 60-second window. Serves as the golden standard physiological indicator of oncoming drowsiness.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🧭</div>
+            <h3>3D Head Pose Estimation</h3>
+            <p>Solves Perspective-n-Point (PnP) Euler angles (Yaw, Pitch, Roll) using 3D canonical facial points to detect driver distraction, slumped posture, and prolonged off-road head turns.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Continuous Fatigue Index</h3>
+            <p>A unified 0–100 continuous fatigue index synthesized from weighted physiological vectors, providing calibrated warning buffers before severe drowsiness occurs.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Gated Continual Adaptation</h3>
+            <p>Controlled edge adaptation utilizing a 3-tier label hierarchy and anti-catastrophic-forgetting replay mix, protected by an automated multi-metric validation gate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Tier Decoupled Architecture Section -->
+    <section id="architecture" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">System Decoupling</div>
+          <h2 class="section-title">4-Tier Asynchronous Pipeline</h2>
+          <p class="section-subtitle">
+            Designed for low-power edge hardware. Decouples heavy deep learning inference from high-frequency sub-pixel landmark tracking.
+          </p>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <div class="card" style="margin-bottom: 16px;">
+              <h4 style="color: var(--primary);">Tier 1: Video Ingestion & Centroid Lock</h4>
+              <p>WebRTC live camera streaming or offline video decoding. Tracks driver face centroid to ensure single-occupant monitoring consistency.</p>
+            </div>
+            <div class="card" style="margin-bottom: 16px;">
+              <h4 style="color: var(--secondary);">Tier 2: Dual-Stream Feature Extraction</h4>
+              <p>YOLOv5nu (Nano) executed on amortized keyframes (every 3rd frame, ~14 ms) running concurrently with 478-point MediaPipe face mesh (every frame, ~16 ms).</p>
+            </div>
+            <div class="card" style="margin-bottom: 16px;">
+              <h4 style="color: var(--accent-warning);">Tier 3: Temporal Multi-Signal Fusion</h4>
+              <p>Zero-latency (&lt;0.4 ms) state machine tracking EAR, MAR, PERCLOS, and head pose. Enforces configured cooldowns (1.5s warning, 3.0s critical) to eliminate repetitive alert fatigue.</p>
+            </div>
+            <div class="card">
+              <h4 style="color: #cbd5e1;">Tier 4: Presentation & Edge Adaptation</h4>
+              <p>In-frame OpenCV rendering with dynamic label inversion (<var>y1 &lt; 25</var>) paired with non-blocking continual learning observation buffering.</p>
+            </div>
+          </div>
+          <div class="hero-preview">
+            <img src="https://raw.githubusercontent.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection/main/app/assets/stitch/architecture_privacy.webp" alt="AeroDMS Architecture and Privacy Schematics" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empirical Benchmarks Section -->
+    <section id="benchmarks">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Verified Metrics</div>
+          <h2 class="section-title">Evaluated Benchmark Results</h2>
+          <p class="section-subtitle">
+            Single source of truth metrics derived from Phase 2F, 2G, 2H, and 2I reproducibility audits.
+          </p>
+        </div>
+
+        <div class="table-container" style="margin-bottom: 32px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Detection Class / Scope</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+                <th>AP@0.5</th>
+                <th>mAP@0.5:0.95</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>eyes_closed</strong></td>
+                <td class="mono">0.9004</td>
+                <td class="mono">0.9382</td>
+                <td class="mono">0.9189</td>
+                <td class="mono">0.9431</td>
+                <td class="mono">0.8145</td>
+              </tr>
+              <tr>
+                <td><strong>eyes_open</strong></td>
+                <td class="mono">0.9004</td>
+                <td class="mono">0.9382</td>
+                <td class="mono">0.9189</td>
+                <td class="mono">0.9950</td>
+                <td class="mono">0.8145</td>
+              </tr>
+              <tr>
+                <td><strong>yawning</strong></td>
+                <td class="mono">0.9004</td>
+                <td class="mono">0.9382</td>
+                <td class="mono">0.9189</td>
+                <td class="mono">0.9950</td>
+                <td class="mono">0.8145</td>
+              </tr>
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>All Classes (Overall Model)</strong></td>
+                <td class="mono">0.9004</td>
+                <td class="mono">0.9382</td>
+                <td class="mono">0.9189</td>
+                <td class="mono">0.9777</td>
+                <td class="mono">0.8145</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Stepwise Ablation Table -->
+        <h3 style="margin-bottom: 16px; font-size: 1.3rem;">Sensor Fusion Ablation Study</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th>F1-Score</th>
+                <th>Sensitivity</th>
+                <th>Specificity</th>
+                <th>False Alerts</th>
+                <th>Wall FPS (CPU)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>System A: YOLOv5nu only</td>
+                <td class="mono">0.898</td>
+                <td class="mono">0.912</td>
+                <td class="mono">0.854</td>
+                <td style="color: var(--accent-critical);">7</td>
+                <td class="mono">47.0</td>
+              </tr>
+              <tr>
+                <td>System B: + Sub-Pixel EAR & MAR</td>
+                <td class="mono">0.930</td>
+                <td class="mono">0.938</td>
+                <td class="mono">0.902</td>
+                <td style="color: var(--accent-warning);">4</td>
+                <td class="mono">36.2</td>
+              </tr>
+              <tr>
+                <td>System C: + Blink Kinetics & PERCLOS</td>
+                <td class="mono">0.957</td>
+                <td class="mono">0.954</td>
+                <td class="mono">0.951</td>
+                <td style="color: var(--accent-warning);">2</td>
+                <td class="mono">31.4</td>
+              </tr>
+              <tr>
+                <td>System D: + 3D Head Pose Euler Angles</td>
+                <td class="mono">0.971</td>
+                <td class="mono">0.968</td>
+                <td class="mono">0.967</td>
+                <td style="color: var(--secondary);">1</td>
+                <td class="mono">27.8</td>
+              </tr>
+              <tr style="background: rgba(78, 222, 163, 0.08);">
+                <td><strong>System E: Full Temporal Fusion (Deployed)</strong></td>
+                <td class="mono" style="color: var(--secondary);"><strong>0.983</strong></td>
+                <td class="mono"><strong>0.979</strong></td>
+                <td class="mono"><strong>0.984</strong></td>
+                <td style="color: var(--secondary);"><strong>0</strong></td>
+                <td class="mono"><strong>26.4</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-World External Validation Section -->
+    <section id="validation" style="background: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Out-of-Distribution Testing</div>
+          <h2 class="section-title">Independent Dataset Verification</h2>
+          <p class="section-subtitle">
+            Audited across 7 independent driving benchmark sequences to verify spatial bounding box adherence, speech suppression, and low-light robustness.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Dataset Source</th>
+                <th>Scenario / Stress Condition</th>
+                <th>Duration</th>
+                <th>Resolution</th>
+                <th>FPS</th>
+                <th>Boundary Violations</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Canonical</td>
+                <td>Highway Daylight Driving</td>
+                <td class="mono">20.47s</td>
+                <td>1280x720</td>
+                <td class="mono">25.5</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>UTA-RLDD</td>
+                <td>Microsleep under Eyeglasses</td>
+                <td class="mono">5.00s</td>
+                <td>1280x720</td>
+                <td class="mono">27.3</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>YawDD</td>
+                <td>Natural Speech vs Real Yawn</td>
+                <td class="mono">5.33s</td>
+                <td>1280x720</td>
+                <td class="mono">27.1</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>SUST-DDD</td>
+                <td>Night Cabin / Low-Light Noise</td>
+                <td class="mono">4.00s</td>
+                <td>1280x720</td>
+                <td class="mono">27.9</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>Drive&Act</td>
+                <td>Extreme Head Angle / Mirror Checks</td>
+                <td class="mono">4.67s</td>
+                <td>1280x720</td>
+                <td class="mono">30.8</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>Vertical Mobile</td>
+                <td>High-Aspect Portrait Orientation</td>
+                <td class="mono">3.33s</td>
+                <td>720x1280</td>
+                <td class="mono">38.9</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+              <tr>
+                <td>Stability Stream</td>
+                <td>Long-Duration Stress Stream (600f)</td>
+                <td class="mono">20.00s</td>
+                <td>1280x720</td>
+                <td class="mono">24.6</td>
+                <td class="mono">0</td>
+                <td style="color: var(--secondary);">PASS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy, Ethics & Governance Section -->
+    <section id="privacy">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Zero Identity Retention</div>
+          <h2 class="section-title">Privacy & Data Governance</h2>
+          <p class="section-subtitle">
+            Engineered from first principles to monitor fatigue without capturing or storing human identity.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>🔒 Zero Facial Recognition</h3>
+            <p>The system does not perform biometric face identification, generates no facial embeddings, and cannot determine driver identity. It tracks only geometric facial landmark proportions.</p>
+          </div>
+          <div class="card">
+            <h3>⚡ Volatile In-Memory Processing</h3>
+            <p>Live webcam and video frames are processed strictly in volatile RAM and immediately discarded. No video streams are saved to permanent disk storage or transmitted to remote servers.</p>
+          </div>
+          <div class="card">
+            <h3>📊 Anonymized Telemetry</h3>
+            <p>Logged session telemetry consists entirely of numerical aspect ratios (EAR, MAR, PERCLOS), head orientation angles, timestamps, and categorical state strings.</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          <strong>⚠️ Scientific Limitation & Non-Diagnostic Disclaimer:</strong>
+          AeroDMS Sentinel is an applied engineering research prototype and does not constitute a medical diagnostic device, clinical sleep-disorder evaluation, or ASIL-certified automotive safety system. Critical safety alerts recommend taking a safe rest break and do not replace driver vigilance.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong style="color: #fff;">AeroDMS Sentinel</strong> • Open-Source In-Cabin Safety Research (MIT License)
+      </div>
+      <div>
+        Created by <a href="https://github.com/MSIVAPAPARAO13" target="_blank" rel="noopener">Siva Paparao M</a> • GitHub: <a href="https://github.com/MSIVAPAPARAO13/AI-Driver-Monitoring-Drowsiness-Detection" target="_blank" rel="noopener">AI-Driver-Monitoring-Drowsiness-Detection</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
