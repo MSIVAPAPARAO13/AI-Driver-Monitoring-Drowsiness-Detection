@@ -508,16 +508,19 @@ def render_webrtc_monitor():
     st.subheader("📷 Live In-Cabin Camera Stream")
     st.caption("Continuously monitors driver eye state, yawning, and head posture in memory via WebRTC.")
 
-    ctx = webrtc_streamer(
-        key="driver-monitoring-streamer",
-        mode=WebRtcMode.SENDRECV,
-        rtc_configuration=RTC_CONFIG,
-        video_processor_factory=WebRTCVideoProcessor,
-        media_stream_constraints={"video": {"width": 640, "height": 480}, "audio": False},
-        async_processing=True,
-    )
+    try:
+        ctx = webrtc_streamer(
+            key="driver-monitoring-streamer",
+            mode=WebRtcMode.SENDRECV,
+            rtc_configuration=RTC_CONFIG,
+            video_processor_factory=WebRTCVideoProcessor,
+            media_stream_constraints={"video": {"width": 640, "height": 480}, "audio": False},
+            async_processing=True,
+        )
+    except Exception:
+        ctx = None
 
-    if ctx.video_processor:
+    if ctx and ctx.video_processor:
         st.success("🟢 Live Camera Feed Active — Analyzing Driver Vigilance")
     else:
         st.info("Click **'START'** above to grant browser camera access and initiate live monitoring.")

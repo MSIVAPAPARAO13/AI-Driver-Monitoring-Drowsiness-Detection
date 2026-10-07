@@ -65,7 +65,11 @@ class VideoSource(BaseInputSource):
     """Ingestion source for local video files (.mp4, .avi, etc.)."""
 
     def __init__(self, file_path: Union[str, Path]):
-        self.file_path = str(file_path)
+        p = Path(file_path)
+        repo_root = Path(__file__).resolve().parent.parent
+        if not p.is_absolute() and not p.exists() and (repo_root / file_path).exists():
+            p = repo_root / file_path
+        self.file_path = str(p)
         self.cap = cv2.VideoCapture(self.file_path)
         if not self.cap.isOpened():
             raise ValueError(f"Could not open video file: {self.file_path}")

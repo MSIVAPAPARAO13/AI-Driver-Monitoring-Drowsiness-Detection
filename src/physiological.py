@@ -110,6 +110,9 @@ class FaceLandmarkDetector:
         max_faces: int = 2,
     ):
         self.model_path = Path(model_path)
+        repo_root = Path(__file__).resolve().parent.parent
+        if not self.model_path.is_absolute() and not self.model_path.exists() and (repo_root / model_path).exists():
+            self.model_path = repo_root / model_path
         self.min_detection_confidence = min_detection_confidence
         self.min_tracking_confidence = min_tracking_confidence
         self.max_faces = max_faces

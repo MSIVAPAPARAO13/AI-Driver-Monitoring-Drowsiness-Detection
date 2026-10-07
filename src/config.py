@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Union
 import yaml
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
 # ==============================================================================
 # CANONICAL CLASS MAPPING
 # ==============================================================================
@@ -242,7 +244,7 @@ class AppConfig:
 
 def get_default_config(**overrides) -> AppConfig:
     """Return default configuration, optionally looking for configs/config.yaml."""
-    default_yaml = Path(__file__).resolve().parent.parent / "configs" / "config.yaml"
+    default_yaml = REPO_ROOT / "configs" / "config.yaml"
     if default_yaml.exists():
         return AppConfig.from_yaml(default_yaml, **overrides)
     return AppConfig(**overrides)

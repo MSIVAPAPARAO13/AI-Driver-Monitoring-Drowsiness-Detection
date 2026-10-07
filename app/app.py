@@ -65,114 +65,109 @@ st.set_page_config(
 )
 
 st.markdown(
-    """
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-    </head>
-    <style>
-    /* Global Reset & Stitch Typography */
-    html, body, [class*="css"] {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        color: #e4e1e6;
-        background-color: #0e0e11;
-    }
-    h1, h2, h3, h4, .font-headline {
-        font-family: 'Outfit', sans-serif !important;
-        letter-spacing: -0.01em;
-    }
-    code, pre, .font-mono, [data-testid="stMetricValue"] {
-        font-family: 'JetBrains Mono', monospace !important;
-    }
+    """<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
-    /* AeroDMS Top Bar */
-    .aerodms-header {
-        background-color: #131316;
-        border: 1px solid #27272a;
-        border-radius: 8px;
-        padding: 12px 18px;
-        margin-bottom: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    .aerodms-title {
-        font-family: 'Outfit', sans-serif;
-        font-size: 1.35rem;
-        font-weight: 700;
-        color: #f8fafc;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .aerodms-badge {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 11px;
-        font-weight: 600;
-        padding: 4px 10px;
-        border-radius: 9999px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    }
-    .badge-live-active {
-        background-color: rgba(78, 222, 163, 0.12);
-        border: 1px solid rgba(78, 222, 163, 0.4);
-        color: #4edea3;
-    }
-    .badge-cl-status {
-        background-color: rgba(56, 189, 248, 0.12);
-        border: 1px solid rgba(56, 189, 248, 0.4);
-        color: #38bdf8;
-    }
-    .aerodms-telemetry-pill {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 11px;
-        background-color: #1f1f22;
-        border: 1px solid #27272a;
-        border-radius: 4px;
-        padding: 4px 8px;
-        color: #bdc8d1;
-    }
+/* Global Reset & Stitch Typography */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #e4e1e6;
+    background-color: #0e0e11;
+}
+h1, h2, h3, h4, .font-headline {
+    font-family: 'Outfit', sans-serif !important;
+    letter-spacing: -0.01em;
+}
+code, pre, .font-mono, [data-testid="stMetricValue"] {
+    font-family: 'JetBrains Mono', monospace !important;
+}
 
-    /* Sidebar Clean Styling */
-    .sidebar-section-title {
-        font-family: 'Outfit', sans-serif;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #87929a;
-        margin-top: 14px;
-        margin-bottom: 8px;
-    }
+/* AeroDMS Top Bar */
+.aerodms-header {
+    background-color: #131316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.aerodms-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.aerodms-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.badge-live-active {
+    background-color: rgba(78, 222, 163, 0.12);
+    border: 1px solid rgba(78, 222, 163, 0.4);
+    color: #4edea3;
+}
+.badge-cl-status {
+    background-color: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+}
+.aerodms-telemetry-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background-color: #1f1f22;
+    border: 1px solid #27272a;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #bdc8d1;
+}
 
-    /* Tab Styling */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-        background-color: #131316;
-        padding: 4px;
-        border-radius: 8px;
-        border: 1px solid #27272a;
-    }
-    .stTabs [data-baseweb="tab"] {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        padding: 8px 16px;
-        color: #87929a;
-        border-radius: 6px;
-    }
-    .stTabs [aria-selected="true"] {
-        background-color: #2a2a2d !important;
-        color: #38bdf8 !important;
-    }
-    </style>
-    """,
+/* Sidebar Clean Styling */
+.sidebar-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #87929a;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+/* Tab Styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: #131316;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #27272a;
+}
+.stTabs [data-baseweb="tab"] {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    color: #87929a;
+    border-radius: 6px;
+}
+.stTabs [aria-selected="true"] {
+    background-color: #2a2a2d !important;
+    color: #38bdf8 !important;
+}
+</style>""",
     unsafe_allow_html=True,
 )
 
@@ -220,12 +215,12 @@ def main():
         )
 
         st.markdown('<div class="sidebar-section-title">Display Overlays</div>', unsafe_allow_html=True)
-        show_boxes = st.checkbox("Bounding Boxes (YOLO)", value=True, help="Render YOLO eye & mouth bounding boxes in real time.")
-        show_face = st.checkbox("Driver Face Box", value=True, help="Render 3D facial landmark centroid tracking region.")
-        show_labels = st.checkbox("Class Labels & Scores", value=True, help="Display class labels above detection bounding boxes.")
-        show_conf = st.checkbox("Confidence Values", value=True, help="Include numerical confidence percentages on tags.")
-        show_hud = st.checkbox("In-Video HUD Panels", value=True, help="Render top and bottom telemetry HUD bars on the video.")
-        show_fps = st.checkbox("Pipeline FPS Badge", value=True, help="Display real-time pipeline FPS counter.")
+        show_boxes = st.checkbox("Bounding Boxes (YOLO)", value=True, help="Render YOLO eye & mouth bounding boxes in real time.", key="sidebar_show_boxes")
+        show_face = st.checkbox("Driver Face Box", value=True, help="Render 3D facial landmark centroid tracking region.", key="sidebar_show_face")
+        show_labels = st.checkbox("Class Labels & Scores", value=True, help="Display class labels above detection bounding boxes.", key="sidebar_show_labels")
+        show_conf = st.checkbox("Confidence Values", value=True, help="Include numerical confidence percentages on tags.", key="sidebar_show_conf")
+        show_hud = st.checkbox("In-Video HUD Panels", value=True, help="Render top and bottom telemetry HUD bars on the video.", key="sidebar_show_hud")
+        show_fps = st.checkbox("Pipeline FPS Badge", value=True, help="Display real-time pipeline FPS counter.", key="sidebar_show_fps")
 
         st.divider()
         st.markdown('<div class="sidebar-section-title">Continual Adaptation Engine</div>', unsafe_allow_html=True)
@@ -233,6 +228,7 @@ def main():
             "Enable Continual Learning",
             value=cl_manager.config.enabled,
             help="Opt-in to background observation collection and adaptation. Frames held in volatile memory; zero identity tracking.",
+            key="sidebar_cl_enabled",
         )
         if cl_enabled:
             cl_manager.enable()
@@ -286,40 +282,92 @@ def main():
         col_video, col_alert = st.columns([1.35, 1.0])
 
         with col_video:
-            ctx = render_webrtc_monitor()
+            preview_choice = st.radio(
+                "Live In-Cabin Camera Stream Source",
+                ["Live WebRTC Camera", "Benchmark Feed: Normal Alertness", "Benchmark Feed: Warning State", "Benchmark Feed: Critical Alert"],
+                horizontal=True,
+                key="live_benchmark_feed_radio",
+            )
 
-            # Synchronize display preferences directly to active video processor
-            if ctx and ctx.video_processor:
-                ctx.video_processor.set_display_options(
-                    show_boxes=show_boxes,
-                    show_labels=show_labels,
-                    show_conf=show_conf,
-                    show_hud=show_hud,
-                    show_fps=show_fps,
-                    show_face_box=show_face,
-                )
+            sim_annotated = None
+            sim_telemetry = None
+            ctx = None
+
+            if preview_choice == "Live WebRTC Camera":
+                ctx = render_webrtc_monitor()
+                if ctx and ctx.video_processor:
+                    ctx.video_processor.set_display_options(
+                        show_boxes=show_boxes,
+                        show_labels=show_labels,
+                        show_conf=show_conf,
+                        show_hud=show_hud,
+                        show_fps=show_fps,
+                        show_face_box=show_face,
+                    )
+            else:
+                try:
+                    cap = cv2.VideoCapture(str(REPO_ROOT / "test_video.mp4"))
+                    b_engine = DriverMonitoringEngine()
+                    b_engine.set_display_options(
+                        show_boxes=show_boxes,
+                        show_labels=show_labels,
+                        show_conf=show_conf,
+                        show_hud=show_hud,
+                        show_fps=show_fps,
+                        show_face_box=show_face,
+                    )
+                    if "Normal" in preview_choice:
+                        ret, b_frame = cap.read()
+                        if ret:
+                            sim_annotated, sim_telemetry = b_engine.process_frame(b_frame)
+                    elif "Warning" in preview_choice:
+                        ret, b_frame = cap.read()
+                        if ret:
+                            b_engine.engine.yawn_frames = b_engine.engine.yawn_threshold + 5
+                            sim_annotated, sim_telemetry = b_engine.process_frame(b_frame)
+                    elif "Critical" in preview_choice:
+                        ret, b_frame = cap.read()
+                        if ret:
+                            b_engine.engine.eye_closed_frames = b_engine.engine.eye_threshold + 5
+                            sim_annotated, sim_telemetry = b_engine.process_frame(b_frame)
+                    cap.release()
+                    if sim_annotated is not None:
+                        st.image(sim_annotated, channels="BGR", use_container_width=True)
+                except Exception as e:
+                    print("BENCHMARK PREVIEW ERROR:", e, flush=True)
+                    sim_annotated = None
+                    sim_telemetry = None
 
             # Camera & Session Controls
             c_btn1, c_btn2 = st.columns(2)
             with c_btn1:
-                if st.button("🔄 Reset Session Telemetry", use_container_width=True):
+                if st.button("🔄 Reset Session Telemetry", use_container_width=True, key="live_reset_telemetry_btn"):
                     if ctx and ctx.video_processor:
                         ctx.video_processor.engine.reset_session()
-                        st.toast("Telemetry and metrics reset.")
+                    if "last_summary" in st.session_state:
+                        del st.session_state["last_summary"]
+                    st.toast("Telemetry and metrics reset.")
             with c_btn2:
-                if st.button("📋 Generate Session Summary", use_container_width=True):
+                if st.button("📋 Generate Session Summary", use_container_width=True, key="live_gen_session_summary_btn"):
                     if ctx and ctx.video_processor:
                         summary = ctx.video_processor.engine.get_session_summary()
                         st.session_state["last_summary"] = summary
+                    else:
+                        st.info("Start camera monitoring to generate live session metrics.")
 
             # Expandable Alert Conditions Guide directly below the video
             render_alert_conditions_expander()
 
-        # Telemetry ingestion from VideoProcessor
+        # Telemetry ingestion from VideoProcessor or active benchmark stream
         if ctx and ctx.video_processor:
             telemetry = ctx.video_processor.engine.get_telemetry_snapshot()
             history = ctx.video_processor.engine.get_history_snapshot()
             events = ctx.video_processor.engine.get_events_snapshot()
+            camera_active = True
+        elif sim_telemetry is not None:
+            telemetry = sim_telemetry
+            history = [sim_telemetry]
+            events = [sim_telemetry["current_alert"]] if sim_telemetry.get("current_alert") else []
             camera_active = True
         else:
             telemetry = {
@@ -363,6 +411,7 @@ def main():
             render_alert_history_panel(
                 events=events,
                 clear_callback=(lambda: ctx.video_processor.clear_events()) if (ctx and ctx.video_processor) else None,
+                key_prefix="live",
             )
 
         # Second Row Numerical Telemetry below Video and Alert panels
@@ -384,6 +433,9 @@ def main():
         if "last_summary" in st.session_state:
             st.divider()
             render_session_summary(st.session_state["last_summary"])
+            if st.button("❌ Close Session Summary", key="live_close_summary_btn"):
+                del st.session_state["last_summary"]
+                st.rerun()
 
     # ==========================================================================
     # TAB 2: OFFLINE VIDEO ANALYSIS
@@ -398,9 +450,10 @@ def main():
                 "Video Source",
                 ["Use Canonical test_video.mp4", "Upload Custom Video"],
                 horizontal=True,
+                key="video_sample_choice_radio",
             )
         with col_cfg:
-            eval_all = st.checkbox("Evaluate Full Duration", value=False, help="Process every frame rather than a 300-frame preview.")
+            eval_all = st.checkbox("Evaluate Full Duration", value=False, help="Process every frame rather than a 300-frame preview.", key="video_eval_all_duration_chk")
 
         video_path = None
         is_temp_file = False
@@ -408,7 +461,7 @@ def main():
             video_path = str(REPO_ROOT / "test_video.mp4")
             st.info(f"Loaded canonical driving benchmark video: `{video_path}`")
         else:
-            uploaded_file = st.file_uploader("Upload Video File", type=["mp4", "avi", "mov"])
+            uploaded_file = st.file_uploader("Upload Video File", type=["mp4", "avi", "mov"], key="video_file_uploader")
             if uploaded_file is not None:
                 tfile = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
                 tfile.write(uploaded_file.read())
@@ -417,7 +470,7 @@ def main():
                 video_path = tfile.name
                 is_temp_file = True
 
-        if video_path and st.button("🚀 Run Pipeline Evaluation", type="primary"):
+        if video_path and st.button("🚀 Run Pipeline Evaluation", type="primary", key="video_run_pipeline_eval_btn"):
             cap = cv2.VideoCapture(video_path)
             total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
             fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
@@ -490,17 +543,51 @@ def main():
                         pass
 
             progress_bar.progress(1.0, text="Processing complete!")
-            st.success(f"Successfully evaluated {processed_count} frames.")
+            # Store completed evaluation results in session state for rerun persistence
+            st.session_state["video_eval_results"] = {
+                "processed_count": processed_count,
+                "summary": engine.get_session_summary(),
+                "history": engine.get_history_snapshot(),
+                "events": engine.get_events_snapshot(),
+            }
 
-            # Final Session Summary
-            summary = engine.get_session_summary()
-            render_session_summary(summary)
+        # Render evaluation results if available in session state
+        if "video_eval_results" in st.session_state:
+            eval_res = st.session_state["video_eval_results"]
+            st.success(f"Evaluation complete! Successfully analyzed {eval_res['processed_count']} frames.")
+            render_session_summary(eval_res["summary"])
 
             col_c, col_e = st.columns([1.2, 0.8])
             with col_c:
-                render_timeseries_chart(engine.get_history_snapshot())
+                render_timeseries_chart(eval_res["history"])
             with col_e:
-                render_alert_history_panel(engine.get_events_snapshot(), clear_callback=engine.clear_events)
+                def clear_video_events():
+                    if "video_eval_results" in st.session_state:
+                        st.session_state["video_eval_results"]["events"] = []
+
+                render_alert_history_panel(
+                    eval_res["events"],
+                    clear_callback=clear_video_events,
+                    key_prefix="video",
+                )
+
+            col_dl, col_clr = st.columns(2)
+            with col_dl:
+                if eval_res.get("history"):
+                    df_telemetry = pd.DataFrame(eval_res["history"])
+                    csv_data = df_telemetry.to_csv(index=False).encode("utf-8")
+                    st.download_button(
+                        label="📥 Download Telemetry CSV",
+                        data=csv_data,
+                        file_name="video_evaluation_telemetry.csv",
+                        mime="text/csv",
+                        key="video_download_telemetry_csv_btn",
+                        use_container_width=True,
+                    )
+            with col_clr:
+                if st.button("🔄 Clear Video Results", key="video_clear_eval_results_btn", use_container_width=True):
+                    del st.session_state["video_eval_results"]
+                    st.rerun()
 
     # ==========================================================================
     # TAB 3: CONTINUAL LEARNING & ONLINE ADAPTATION

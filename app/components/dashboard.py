@@ -2,11 +2,35 @@
 Live Dashboard, Telemetry Cards, Charts & Summary Views.
 """
 
+from pathlib import Path
 import time
+import cv2
 import numpy as np
 import pandas as pd
 import streamlit as st
 from typing import Dict, Any, List, Optional
+
+def get_repo_root() -> Path:
+    """Robust project root resolution for local and cloud deployment environments."""
+    try:
+        from src.config import REPO_ROOT as cfg_root
+        if cfg_root and Path(cfg_root).exists():
+            return Path(cfg_root)
+    except Exception:
+        pass
+
+    try:
+        from src.utils import REPO_ROOT as util_root
+        if util_root and Path(util_root).exists():
+            return Path(util_root)
+    except Exception:
+        pass
+
+    # Fallback relative to app/components/dashboard.py -> app/components -> app -> repo root
+    return Path(__file__).resolve().parents[2]
+
+
+REPO_ROOT = get_repo_root()
 
 try:
     from app.components.recommendations import get_driver_recommendation
@@ -199,7 +223,7 @@ def render_current_alert_panel(current_alert: Optional[Dict[str, Any]], state: s
     )
 
 
-def render_alert_history_panel(events: List[Dict[str, Any]], clear_callback=None):
+def render_alert_history_panel(events: List[Dict[str, Any]], clear_callback=None, key_prefix: str = "live"):
     """
     Render ALERT HISTORY section with clear history action.
     """
@@ -207,7 +231,8 @@ def render_alert_history_panel(events: List[Dict[str, Any]], clear_callback=None
     with col_t:
         st.markdown("#### 📋 Alert History")
     with col_b:
-        if st.button("🗑️ Clear History", use_container_width=True, key="clear_alert_history_btn"):
+        btn_key = f"{key_prefix}_clear_alert_history_btn"
+        if st.button("🗑️ Clear History", use_container_width=True, key=btn_key):
             if clear_callback:
                 clear_callback()
             st.toast("Alert event history cleared.")
@@ -342,9 +367,9 @@ def render_timeseries_chart(telemetry_history: List[Dict[str, Any]]):
         st.line_chart(df[["fatigue_score", "ear", "mar"]], height=200)
 
 
-def render_event_log(events: List[Dict[str, Any]]):
+def render_event_log(events: List[Dict[str, Any]], key_prefix: str = "event_log"):
     """Legacy event log wrapper."""
-    render_alert_history_panel(events)
+    render_alert_history_panel(events, key_prefix=key_prefix)
 
 
 def render_session_summary(summary_data: Dict[str, Any]):
@@ -410,7 +435,8 @@ def render_offline_benchmarks_tab():
     st.success("Full Fusion eliminated all 7 false alerts (**0 false alerts on evaluated benchmark sequences**).")
 
     st.markdown("#### 4. Real-World External Dataset Multi-Condition Validation (Phase 2I Audit)")
-    ext_csv = REPO_ROOT / "results" / "external" / "external_baseline_results.csv"
+    root_path = get_repo_root()
+    ext_csv = root_path / "results" / "external" / "external_baseline_results.csv"
     if ext_csv.exists():
         ext_df = pd.read_csv(ext_csv)
         st.dataframe(ext_df, use_container_width=True, hide_index=True)
@@ -426,7 +452,10 @@ def render_architecture_tab():
         detection from high-frequency sub-pixel physiological landmark estimation.
         """
     )
-    st.image("app/assets/architecture.png", caption="System Architecture Diagram (300 DPI)", use_container_width=True)
+    root_path = get_repo_root()
+    arch_img = root_path / "app" / "assets" / "architecture.png"
+    if arch_img.exists():
+        st.image(str(arch_img), caption="System Architecture Diagram (300 DPI)", use_container_width=True)
 
     st.markdown(
         """
@@ -556,7 +585,7 @@ def render_continual_learning_tab(cl_manager):
 
         c_rb1, c_rb2 = st.columns([1, 1])
         with c_rb1:
-            if st.button("⏪ Rollback to Previous Model", use_container_width=True):
+            if st.button("⏪ Rollback to Previous Model", use_container_width=True, key="cl_rollback_model_btn"):
                 success, msg = cl_manager.rollback()
                 if success:
                     st.success(msg)
@@ -586,7 +615,7 @@ def render_continual_learning_tab(cl_manager):
 
         c_buf1, c_buf2 = st.columns(2)
         with c_buf1:
-            if st.button("🗑️ Clear Learning Buffer", use_container_width=True):
+            if st.button("🗑️ Clear Learning Buffer", use_container_width=True, key="cl_clear_buffer_btn"):
                 cl_manager.buffer.clear()
                 st.toast("Learning buffer cleared.")
                 st.rerun()
@@ -658,7 +687,7 @@ def render_continual_learning_tab(cl_manager):
         c_tr1, c_tr2, c_tr3 = st.columns(3)
         with c_tr1:
             can_train = usable_samples >= min_req and worker_status not in ("TRAINING", "VALIDATING")
-            if st.button("▶️ Start Training", use_container_width=True, disabled=not can_train):
+            if st.button("▶️ Start Training", use_container_width=True, disabled=not can_train, key="cl_start_training_btn"):
                 success, msg = cl_manager.worker.trigger_training()
                 if success:
                     st.success(msg)
@@ -666,12 +695,12 @@ def render_continual_learning_tab(cl_manager):
                 else:
                     st.warning(msg)
         with c_tr2:
-            if st.button("⏸️ Pause", use_container_width=True, disabled=(worker_status != "TRAINING")):
+            if st.button("⏸️ Pause", use_container_width=True, disabled=(worker_status != "TRAINING"), key="cl_pause_training_btn"):
                 cl_manager.worker.pause()
                 st.toast("Training paused.")
                 st.rerun()
         with c_tr3:
-            if st.button("⏯️ Resume", use_container_width=True, disabled=(worker_status != "PAUSED")):
+            if st.button("⏯️ Resume", use_container_width=True, disabled=(worker_status != "PAUSED"), key="cl_resume_training_btn"):
                 cl_manager.worker.resume()
                 st.toast("Training resumed.")
                 st.rerun()
@@ -704,7 +733,7 @@ def render_continual_learning_tab(cl_manager):
                 st.success(f"Candidate `{last_cand}`: {last_reason}")
                 c_pm1, c_pm2 = st.columns(2)
                 with c_pm1:
-                    if st.button(f"🚀 Promote {last_cand} to Active", type="primary", use_container_width=True):
+                    if st.button(f"🚀 Promote {last_cand} to Active", type="primary", use_container_width=True, key=f"cl_promote_{last_cand}_btn"):
                         success, msg = cl_manager.promote_candidate(last_cand, last_reason)
                         if success:
                             st.success(msg)
@@ -712,7 +741,7 @@ def render_continual_learning_tab(cl_manager):
                         else:
                             st.error(msg)
                 with c_pm2:
-                    if st.button(f"🚫 Reject {last_cand}", use_container_width=True):
+                    if st.button(f"🚫 Reject {last_cand}", use_container_width=True, key=f"cl_reject_{last_cand}_btn"):
                         success, msg = cl_manager.reject_candidate(last_cand, "Manually rejected by reviewer.")
                         st.toast(msg)
                         st.rerun()

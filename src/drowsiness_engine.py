@@ -82,7 +82,11 @@ class AlertManager:
         self.audio_critical_hz = int(audio_critical_hz)
         self.audio_duration_ms = int(audio_duration_ms)
         self.log_events = log_events
-        self.event_log_path = Path(event_log_path)
+        p = Path(event_log_path)
+        if not p.is_absolute():
+            repo_root = Path(__file__).resolve().parent.parent
+            p = repo_root / p
+        self.event_log_path = p
 
         self.last_alert_time: float = -999.0
         self.total_alerts: Dict[str, int] = {"WARNING": 0, "CRITICAL": 0}

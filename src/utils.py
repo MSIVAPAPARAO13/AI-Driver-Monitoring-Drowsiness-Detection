@@ -14,6 +14,9 @@ def get_project_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
+REPO_ROOT = get_project_root()
+
+
 def resolve_path(path: Union[str, Path]) -> Path:
     """
     Resolve a path. If relative, resolve against the project root.
